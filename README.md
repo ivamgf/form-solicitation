@@ -18,3 +18,5 @@ Ivam Galvão Filho
 ### Powered By:
 
 PHP 5.6, MySql, JS, Ajax and JQuery 3.4.1.
+
+### For More Information Visit Wiki.
