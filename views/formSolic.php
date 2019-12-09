@@ -13,15 +13,15 @@
   <script src="https://kit.fontawesome.com/95b2974fc9.js" crossorigin="anonymous"></script>
 
   <!-- Import JQuery -->
-  <script src="jquery-3.4.1.min.js"></script>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
   <!-- Import app.js -->
-  <script src="/controllers/app.js"></script>
+  <script src="app.js"></script>
 </head>
 <body>
 
 <div class="container">
-  <div id="blockForm1"></div>
+  <div id="blockForm1"> Form Solicitation V 2.0.0 </div>
 </div>
 
 </body>
