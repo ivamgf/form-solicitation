@@ -4,6 +4,11 @@
   <title>Solicitação</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Code Favicon -->
+  <link rel="shortcut icon" href="assets/icons/logo.jpg" />
+
+  <!-- Import Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -14,14 +19,29 @@
 
   <!-- Import JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
+
+  <!-- Others Imports -->
+
+  <!-- Import Style CSS -->
+  <link rel="stylesheet" href="style.css">
+
   <!-- Import app.js -->
   <script src="app.js"></script>
 </head>
 <body>
 
+<div class="container header">
+  <div id="header"></div>
+</div>
+
 <div class="container">
-  <div id="blockForm1"> Form Solicitation V 2.0.0 </div>
+  <div id="blockProgress1"></div>
+  <div id="blockProgress2"></div>
+</div>
+
+<div class="container form">
+  <div id="blockForm1" class="form1"></div>
+  <div id="blockForm2" class="form2"></div>
 </div>
 
 </body>

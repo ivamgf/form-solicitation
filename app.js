@@ -35,4 +35,12 @@ var imported = document.createElement('script');
 imported.src = '/controllers/form7-controller.js';
 document.head.appendChild(imported); 
 
+var imported = document.createElement('script');
+imported.src = '/components/header.js';
+document.head.appendChild(imported); 
+
+var imported = document.createElement('script');
+imported.src = '/components/footer.js';
+document.head.appendChild(imported);
+
 // Imports
