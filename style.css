@@ -67,12 +67,20 @@ ol.progtrckr li.progtrckr-todo:before {
     border: none;
     /*font-size: 18px;*/
 }
-
-.progress {
+.style-btn-prev {
+    margin-top: 2%;
+}
+.style-par {
+    text-align: justify;
+}
+.style-bagde {
+    cursor: pointer;
+}
+.style-card-head {
+    text-align: center;
     margin-top: 5%;
     margin-bottom: 2%;
 }
-
 .form {
     margin-top: 5%;
     margin-bottom: 2%;
@@ -84,8 +92,21 @@ ol.progtrckr li.progtrckr-todo:before {
     display: none;
     position: relative;
 }
-.style-btn-prev {
-    margin-top: 2%;
+.form3 {
+    display: none;
+    position: relative;
+}
+.form4 {
+    display: none;
+    position: relative;
+}
+.form5 {
+    display: none;
+    position: relative;
+}
+.progress {
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 #blockProgress1 {
     display: block;
@@ -93,9 +114,12 @@ ol.progtrckr li.progtrckr-todo:before {
 #blockProgress2 {
     display: none;
 }
-.style-par {
-    text-align: justify;
+#blockProgress3 {
+    display: none;
 }
-.style-bagde {
-    cursor: pointer;
+#blockProgress4 {
+    display: none;
+}
+#blockProgress5 {
+    display: none;
 }

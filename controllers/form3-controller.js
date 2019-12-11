@@ -4,4 +4,89 @@
 // Date: 06/12/2019.
 
 // Descriptions
-console.log("Form 3");
+
+// Functions
+function generateProgress3() {
+    // Variables
+    var progressBar3 =  `<ol class="progtrckr" data-progtrckr-steps="6">
+                            <li class="progtrckr-done">Regin</li>
+                            <li class="progtrckr-done">MEI</li>
+                            <li class="progtrckr-todo">Empresa</li>
+                            <li class="progtrckr-todo">Proprietário</li>
+                            <li class="progtrckr-todo">Edificação</li>
+                            <li class="progtrckr-todo">Finalizar</li>                            
+                        </ol>`;
+
+    // Handling variables
+    document.getElementById("blockProgress3").innerHTML = progressBar3;
+}
+
+function generateForm3() {
+    var blockForm3 =   `<div class="card">
+                            <div class="card-head style-card-head"><h4>Informações Sobre a Empresa</h4></div>
+                            <div class="card-body">                                
+
+                            <div class="form-group">
+                                <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
+                                <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fant">Nome Fantasia Empresa:</label>
+                                <input type="text" class="form-control" id="fant" placeholder="Digite o nome fantasia" name="fant" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fone">Telefone:</label>
+                                <input type="tel" class="form-control" id="fone" placeholder="Digite o telefone" name="fone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="razao">Razão Social:</label>
+                                <input type="text" class="form-control" id="razao" placeholder="Digite a razão social" name="razao" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contato">Nome Contato:</label>
+                                <input type="text" class="form-control" id="contato" placeholder="Digite o nome de contato" name="contato" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" required>
+                            </div>                            
+
+                                <ul class="pagination justify-content-end" style="margin:20px 0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" onclick="previousForm2()">Voltar</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" onclick="nextForm4()">Avançar</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>             
+
+                    </div>`;
+
+    // Disable form submissions if there are invalid fields
+
+    // Handling variables
+    document.getElementById("blockForm3").innerHTML = blockForm3;
+}
+
+function previousForm2() {
+    document.getElementById("blockForm2").style.display = "block";
+    document.getElementById("blockForm2").style.position = "relative";
+    document.getElementById("blockForm3").style.display = "none";
+    document.getElementById("blockForm3").style.position = "relative";
+    document.getElementById("blockProgress2").style.display = "block";
+    document.getElementById("blockProgress3").style.display = "none";
+}
+
+function nextForm4() {
+    document.getElementById("blockForm3").style.display = "none";
+    document.getElementById("blockForm3").style.position = "relative";
+    document.getElementById("blockForm4").style.display = "block";
+    document.getElementById("blockProgress3").style.display = "none";
+    document.getElementById("blockProgress4").style.display = "block";
+}
+
+// Excecute functions
+generateProgress3();
+generateForm3();

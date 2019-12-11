@@ -4,7 +4,6 @@
 // Date: 06/12/2019.
 
 // Descriptions
-console.log("Form 2");
 
 // Functions
 function generateProgress2() {
@@ -15,7 +14,7 @@ function generateProgress2() {
                             <li class="progtrckr-todo">Empresa</li>
                             <li class="progtrckr-todo">Proprietário</li>
                             <li class="progtrckr-todo">Edificação</li>
-                            <li class="progtrckr-todo">Captcha</li>                            
+                            <li class="progtrckr-todo">Finalizar</li>                            
                         </ol>`;
 
     // Handling variables
@@ -24,6 +23,7 @@ function generateProgress2() {
 
 function generateForm1() {
     var blockForm2 =   `<div class="card">
+                            <div class="card-head style-card-head"><h4>Classificação MEI</h4></div>
                             <div class="card-body">
                                 <div class="form-check">
                                     <label class="form-check-label">
@@ -121,6 +121,9 @@ function previousForm1() {
 function nextForm3() {
     document.getElementById("blockForm2").style.display = "none";
     document.getElementById("blockForm2").style.position = "relative";
+    document.getElementById("blockForm3").style.display = "block";
+    document.getElementById("blockProgress2").style.display = "none";
+    document.getElementById("blockProgress3").style.display = "block";    
 }
 
 // Excecute functions

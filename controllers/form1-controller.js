@@ -4,7 +4,6 @@
 // Date: 06/12/2019.
 
 // Descriptions
-console.log("Form 1");
 
 // Functions
 function generateProgress1() {
@@ -15,7 +14,7 @@ function generateProgress1() {
                             <li class="progtrckr-todo">Empresa</li>
                             <li class="progtrckr-todo">Proprietário</li>
                             <li class="progtrckr-todo">Edificação</li>
-                            <li class="progtrckr-todo">Captcha</li>                            
+                            <li class="progtrckr-todo">Finalizar</li>                            
                         </ol>`;
 
     // Handling variables
@@ -24,6 +23,7 @@ function generateProgress1() {
 
 function generateForm1() {
     var blockForm1 =   `<div class="card">
+                            <div class="card-head style-card-head"><h4>REGIN</h4></div>
                             <div class="card-body">
                                 <div class="form-check">
                                     <label class="form-check-label">
