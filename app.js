@@ -3,7 +3,7 @@
 // Date: 06/12/2019.
 
 // Descriptions
-console.log("Form Solicitation V 2.0.0");
+console.log("Form Solicitation Version 2.0.0");
 console.log("Application developed in PHP, JS, JQuery, Ajax and Bootstrap");
 
 // Imports

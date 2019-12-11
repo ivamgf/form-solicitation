@@ -37,11 +37,17 @@
 <div class="container">
   <div id="blockProgress1"></div>
   <div id="blockProgress2"></div>
+  <div id="blockProgress3"></div>
+  <div id="blockProgress4"></div>
+  <div id="blockProgress5"></div>
 </div>
 
 <div class="container form">
   <div id="blockForm1" class="form1"></div>
   <div id="blockForm2" class="form2"></div>
+  <div id="blockForm3" class="form3"></div>
+  <div id="blockForm4" class="form4"></div>
+  <div id="blockForm5" class="form5"></div>
 </div>
 
 </body>
