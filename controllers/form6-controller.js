@@ -34,15 +34,15 @@ function generateForm6() {
                                     </div>                                      
                                 </div>
 
-                                <div class="alert alert-success">
+                                <div class="alert alert-success style-success" id="valid">
                                     <strong>Captcha Válido!</strong> Você não é um robô!
                                 </div>
 
-                                <div class="alert alert-warning">
+                                <div class="alert alert-warning style-warning" id="warn">
                                     <strong>Não foi Possível Validar!</strong> Pergunta não respondida, responda para prosseguir.
                                 </div>
 
-                                <div class="alert alert-danger">
+                                <div class="alert alert-danger style-danger" id="nvalid">
                                     <strong>Captcha Não Validado!</strong> Há suspeitas de que você seja um robô!
                                 </div>
 
@@ -51,7 +51,10 @@ function generateForm6() {
                                         <a class="page-link" href="#" onclick="previousForm5()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm7()">Avançar</a>
+                                        <a id="next" class="page-link" href="#">Avançar</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a id="next2" class="page-link" href="#" onclick="nextForm7()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -63,6 +66,10 @@ function generateForm6() {
 
     // Handling variables
     document.getElementById("blockForm6").innerHTML = blockForm6;
+
+    // disable link next
+    document.getElementById('next').style.color = "grey";
+    document.getElementById("next2").style.display = "none";
 }
 
 function previousForm5() {
@@ -77,6 +84,9 @@ function previousForm5() {
 function nextForm7() {
     document.getElementById("blockForm6").style.display = "none";
     document.getElementById("blockForm6").style.position = "relative";
+    document.getElementById("blockForm7").style.display = "block";
+    document.getElementById("blockProgress6").style.display = "none";
+    document.getElementById("blockProgress7").style.display = "block";
 }
 
 function validaCaptcha() {
@@ -84,11 +94,24 @@ function validaCaptcha() {
     var lowCap = cap.toLowerCase();
     console.log(lowCap);
     document.getElementById("cap").value = "";
-    if(lowCap === "cbmsc") {
-        alert("Validado!");
+    if(lowCap !== "") {
+        if(lowCap === "cbmsc") {
+            document.getElementById("valid").style.display = "block";
+            document.getElementById("nvalid").style.display = "none";
+            document.getElementById("warn").style.display = "none";
+            document.getElementById("next").style.display = "none";
+            document.getElementById("next2").style.display = "block";
+        } else {
+            document.getElementById("nvalid").style.display = "block";
+            document.getElementById("valid").style.display = "none";
+            document.getElementById("warn").style.display = "none";
+        }
     } else {
-        alert("Não Validado!");
+        document.getElementById("warn").style.display = "block";
+        document.getElementById("valid").style.display = "none";
+        document.getElementById("nvalid").style.display = "none";
     }
+    
 }
 
 // Excecute functions
