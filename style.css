@@ -108,6 +108,10 @@ ol.progtrckr li.progtrckr-todo:before {
     display: none;
     position: relative;
 }
+.form7 {
+    display: none;
+    position: relative;
+}
 .progress {
     margin-top: 5%;
     margin-bottom: 2%;
@@ -128,5 +132,17 @@ ol.progtrckr li.progtrckr-todo:before {
     display: none;
 }
 #blockProgress6 {
+    display: none;
+}
+#blockProgress7 {
+    display: none;
+}
+.style-success {
+    display: none;
+}
+.style-warning {
+    display: none;
+}
+.style-danger {
     display: none;
 }
