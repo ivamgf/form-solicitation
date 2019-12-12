@@ -104,6 +104,10 @@ ol.progtrckr li.progtrckr-todo:before {
     display: none;
     position: relative;
 }
+.form6 {
+    display: none;
+    position: relative;
+}
 .progress {
     margin-top: 5%;
     margin-bottom: 2%;
@@ -121,5 +125,8 @@ ol.progtrckr li.progtrckr-todo:before {
     display: none;
 }
 #blockProgress5 {
+    display: none;
+}
+#blockProgress6 {
     display: none;
 }

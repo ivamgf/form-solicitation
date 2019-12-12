@@ -60,11 +60,14 @@ function generateForm5() {
                               </div>
                               <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                 <div class="card-body">                                    
-
-                                    <div class="form-group">
-                                        <label for="cep">CEP:</label>
-                                        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" required>
-                                    </div>
+                                    
+                                    <label for="cep">CEP:</label>
+                                    <div class="input-group mb-3">                                      
+                                      <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" required>
+                                      <div class="input-group-prepend">
+                                        <button class="btn btn-outline-primary" type="button" onclick="buscaCep()">Pesquisar CEP</button>
+                                      </div>                                      
+                                    </div>                              
 
                                     <div class="form-group">
                                         <label for="tiplog">Tipo Logradouro:</label>
@@ -146,8 +149,14 @@ function previousForm4() {
 function nextForm6() {
     document.getElementById("blockForm5").style.display = "none";
     document.getElementById("blockForm5").style.position = "relative";
+    document.getElementById("blockForm6").style.display = "block";
+    document.getElementById("blockProgress5").style.display = "none";
+    document.getElementById("blockProgress6").style.display = "block";
 }
 
+function buscaCep() {
+  window.open('http://www.buscacep.correios.com.br/sistemas/buscacep/', '_blank');
+}
 // Excecute functions
 generateProgress5();
 generateForm5();

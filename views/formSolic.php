@@ -40,6 +40,7 @@
   <div id="blockProgress3"></div>
   <div id="blockProgress4"></div>
   <div id="blockProgress5"></div>
+  <div id="blockProgress6"></div>
 </div>
 
 <div class="container form">
@@ -48,6 +49,7 @@
   <div id="blockForm3" class="form3"></div>
   <div id="blockForm4" class="form4"></div>
   <div id="blockForm5" class="form5"></div>
+  <div id="blockForm6" class="form6"></div>
 </div>
 
 </body>
