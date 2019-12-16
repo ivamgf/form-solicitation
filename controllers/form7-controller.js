@@ -23,16 +23,22 @@ function generateProgress7() {
 
 function generateForm7() {
     var blockForm7 =   `<div class="card">
-                            <div class="card-head style-card-head"><h4>Proprietário ou Responsável pela Empresa</h4></div>
+                            <div class="card-head style-card-head"><h4>Solicitação Concluída com Sucesso!</h4></div>
                             <div class="card-body">                                
-                                                      
+                                
+                                <div class="alert alert-success">
+                                    <span class="style-alert-fin">
+                                        <i class="fas fa-thumbs-up"></i> 
+                                        Clique em "Finalizar" para voltar ao site!
+                                    </span>
+                                </div>
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="previousForm3()">Voltar</a>
+                                        <a class="page-link" href="#" onclick="previousForm6()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm5()">Avançar</a>
+                                        <a class="page-link" href="#" onclick="finalize()">Finalizar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -55,8 +61,8 @@ function previousForm6() {
     document.getElementById("blockProgress7").style.display = "none";
 }
 
-function nextForm7() {
-    // window.open('https://www.cbm.sc.gov.br/');
+function finalize() {
+    window.location.href='https://www.cbm.sc.gov.br/';
 }
 
 // Excecute functions

@@ -43,4 +43,32 @@ var imported = document.createElement('script');
 imported.src = '/components/footer.js';
 document.head.appendChild(imported);
 
+var imported = document.createElement('script');
+imported.src = '/components/texts/occupation.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/situation.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/ladder.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/stocking.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/gas.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/reunion.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/edification.js';
+document.head.appendChild(imported);
+
 // Imports

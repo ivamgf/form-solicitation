@@ -86,13 +86,12 @@ function nextForm7() {
     document.getElementById("blockForm6").style.position = "relative";
     document.getElementById("blockForm7").style.display = "block";
     document.getElementById("blockProgress6").style.display = "none";
-    document.getElementById("blockProgress7").style.display = "block";
+    document.getElementById("blockProgress7").style.display = "block";    
 }
 
 function validaCaptcha() {
     var cap = document.getElementById("cap").value;
     var lowCap = cap.toLowerCase();
-    console.log(lowCap);
     document.getElementById("cap").value = "";
     if(lowCap !== "") {
         if(lowCap === "cbmsc") {

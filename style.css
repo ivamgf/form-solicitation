@@ -146,3 +146,25 @@ ol.progtrckr li.progtrckr-todo:before {
 .style-danger {
     display: none;
 }
+.style-alert-fin {
+    margin-left: 35%;
+}
+.style-text-modal {
+    text-align: justify;
+}
+.style-title-modal {
+    text-align: justify;
+    font-weight: bold;
+}
+.style-header-modal {
+    background-color:Orange;
+}
+.style-title-model {
+    color: white;
+}
+.style-body-model {
+    background-color:white;
+}
+.style-footer-model {
+    background-color:white;
+}
