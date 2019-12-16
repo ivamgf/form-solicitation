@@ -111,7 +111,7 @@ function generateForm5() {
                               </div>
                               <div id="collapseThree" class="collapse" data-parent="#accordion">
                                 <div class="card-body">
-                                  Lorem ipsum..
+                                  <div id="quest"></div>
                                 </div>
                               </div>
                             </div>
@@ -132,9 +132,171 @@ function generateForm5() {
                     </div>`;
 
     // Disable form submissions if there are invalid fields
+    var blockQuest = `<div class="form-group">
+                        <label for="ocup">Ocupação:
+                          <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal2">
+                              ?
+                          </span>
+                        </label>
+                        <select class="form-control" id="ocup">
+                          <option> Selecione uma opção </option>
+                          <option> Opção 1 </option>
+                          <option> Opção 2 </option>
+                          <option> Opção 3 </option>
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="ocup">Situação:
+                          <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal3">
+                              ?
+                          </span>
+                        </label>
+                        <select class="form-control" id="ocup">
+                          <option> Selecione uma opção </option>
+                          <option> Existente </option>
+                          <option> Nova </option>
+                          <option> Recente </option>
+                        </select>
+                      </div>
+                      
+                      <!-- The Modal -->
+                      <div class="modal" id="myModal2">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header style-header-modal">
+                              <h4 class="modal-title style-title-model">Saiba Mais</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body style-body-model">
+                              <b><div id="title1"></div></b><br>
+                              <div id="text1" class="style-text-modal"></div><br>
+                              <div id="textLink1" class="style-text-modal"></div>
+                              <a href="http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in" target="_blank">
+                                (Para acessar a norma clique aqui)
+                              </a><br>
+                              <div id="title2" class="style-title-modal"></div><br>
+                              <div id="text2" class="style-text-modal"></div><br>
+                              <div id="title3" class="style-title-modal"></div><br>
+                              <div id="text3" class="style-text-modal"></div><br>
+                              <div id="title4" class="style-title-modal"></div><br>
+                              <div id="text4" class="style-text-modal"></div><br>
+                              <div id="title5" class="style-title-modal"></div><br>
+                              <div id="text5" class="style-text-modal"></div><br>
+                              <div id="title6" class="style-title-modal"></div><br>
+                              <div id="text6" class="style-text-modal"></div><br>
+                              <div id="title7" class="style-title-modal"></div><br>
+                              <div id="text7" class="style-text-modal"></div><br>
+                              <div id="title8" class="style-title-modal"></div><br>
+                              <div id="text8" class="style-text-modal"></div><br>
+                              <div id="title9" class="style-title-modal"></div><br>
+                              <div id="text9" class="style-text-modal"></div><br>
+                              <div id="title10" class="style-title-modal"></div><br>
+                              <div id="text10" class="style-text-modal"></div><br>
+                              <div id="title11" class="style-title-modal"></div><br>
+                              <div id="text11" class="style-text-modal"></div><br>
+                              <div id="title12" class="style-title-modal"></div><br>
+                              <div id="text12" class="style-text-modal"></div><br>
+                              <div id="title13" class="style-title-modal"></div><br>
+                              <div id="text13" class="style-text-modal"></div><br>
+                              <div id="title14" class="style-title-modal"></div><br>
+                              <div id="text14" class="style-text-modal"></div><br>
+                              <div id="title15" class="style-title-modal"></div><br>
+                              <div id="text15" class="style-text-modal"></div><br>
+                              <div id="title16" class="style-title-modal"></div><br>
+                              <div id="text16" class="style-text-modal"></div><br>
+                              <div id="title17" class="style-title-modal"></div><br>
+                              <div id="text17" class="style-text-modal"></div><br>
+                              <div id="title18" class="style-title-modal"></div><br>
+                              <div id="text18" class="style-text-modal"></div><br>
+                              <div id="title19" class="style-title-modal"></div><br>
+                              <div id="text19" class="style-text-modal"></div><br>
+                              <div id="title20" class="style-title-modal"></div><br>
+                              <div id="text20" class="style-text-modal"></div><br>
+                              <div id="title21" class="style-title-modal"></div><br>
+                              <div id="text21" class="style-text-modal"></div><br>
+                              <div id="title22" class="style-title-modal"></div><br>
+                              <div id="text22" class="style-text-modal"></div><br>
+                              <div id="title23" class="style-title-modal"></div><br>
+                              <div id="text23" class="style-text-modal"></div><br>
+                              <div id="title24" class="style-title-modal"></div><br>
+                              <div id="text24" class="style-text-modal"></div><br>
+                              <div id="title25" class="style-title-modal"></div><br>
+                              <div id="text25" class="style-text-modal"></div><br>
+                              <div id="text252" class="style-text-modal"></div><br>
+                              <div id="text253" class="style-text-modal"></div><br>
+                              <div id="text254" class="style-text-modal"></div><br>
+                              <div id="text255" class="style-text-modal"></div><br>
+                              <div id="text256" class="style-text-modal"></div><br>
+                              <div id="text257" class="style-text-modal"></div><br>
+                              <div id="text26" class="style-text-modal"></div><br>
+                              <div id="text261" class="style-text-modal"></div><br>
+                              <div id="text262" class="style-text-modal"></div><br>
+                              <div id="text263" class="style-text-modal"></div><br>
+                              <div id="text264" class="style-text-modal"></div><br>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer style-footer-model">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- The Modal -->
+                      <div class="modal" id="myModal3">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header style-header-modal">
+                              <h4 class="modal-title style-title-model">Saiba Mais</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body style-body-model">
+                              <b><div id="title1"></div></b><br>
+                              <div id="text1" class="style-text-modal"></div><br>
+                              <div id="textLink1" class="style-text-modal"></div>
+                              <a href="http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in" target="_blank">
+                                (Para acessar a norma clique aqui)
+                              </a><br>
+                              <div id="title1" class="style-title-modal"></div><br>
+                              <div id="text1" class="style-text-modal"></div><br>
+                              <div id="textLink1" class="style-title-modal"></div><br>
+                              <div id="title2" class="style-title-modal"></div><br>
+                              <div id="text2" class="style-text-modal"></div><br>
+                              <div id="title3" class="style-title-modal"></div><br>
+                              <div id="text3" class="style-text-modal"></div><br>
+                              <div id="title4" class="style-title-modal"></div><br>
+                              <div id="text4" class="style-text-modal"></div><br>
+                              <div id="sit1" class="style-text-modal"></div><br>
+                              <div id="sit2" class="style-text-modal"></div><br>
+                              <div id="sit3" class="style-text-modal"></div><br>
+                              <div id="sit4" class="style-text-modal"></div><br>                              
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer style-footer-model">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      
+                      `;
 
     // Handling variables
     document.getElementById("blockForm5").innerHTML = blockForm5;
+    document.getElementById("quest").innerHTML = blockQuest;
 }
 
 function previousForm4() {
@@ -160,3 +322,4 @@ function buscaCep() {
 // Excecute functions
 generateProgress5();
 generateForm5();
+
