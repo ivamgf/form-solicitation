@@ -5,7 +5,12 @@ var text2 = `O número após o "P" indica quantos kg de GLP cada botijão possui
 var gas = {
     title1: "Exemplos de ocupação/atividade considerada como reunião de público:",
     text1: text1,
-    textLink1: "Conforme IN 008(Para acessar a norma clique aqui)",
+    textLink1: "Conforme IN 008",
     link1: "http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in",
     text2: text2
 };
+
+document.getElementById("modal3Title1").innerHTML = gas.title1;
+document.getElementById("modal3Text1").innerHTML = gas.text1;
+document.getElementById("modal3Link1").innerHTML = gas.textLink1;
+document.getElementById("modal3Text2").innerHTML = gas.text2;

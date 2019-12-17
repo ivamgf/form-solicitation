@@ -61,33 +61,39 @@ function generateForm5() {
                               <div id="collapseTwo" class="collapse" data-parent="#accordion">
                                 <div class="card-body">                                    
                                     
-                                    <label for="cep">CEP:</label>
-                                    <div class="input-group mb-3">                                      
-                                      <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" required>
-                                      <div class="input-group-prepend">
-                                        <button class="btn btn-outline-primary" type="button" onclick="buscaCep()">Pesquisar CEP</button>
-                                      </div>                                      
+                                  <div class="row">
+                                    <div class="col-6">
+                                      <label for="cep">CEP:</label>
+                                      <div class="input-group mb-3">                                      
+                                        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" required>
+                                        <div class="input-group-prepend">
+                                          <button class="btn btn-outline-primary" type="button" onclick="buscaCep()">Pesquisar CEP</button>
+                                        </div>                                      
+                                      </div>
                                     </div>                              
 
-                                    <div class="form-group">
+                                    <div class="form-group col-6">
                                         <label for="tiplog">Tipo Logradouro:</label>
                                         <input type="text" class="form-control" id="tiplog" name="tiplog">
                                     </div>
-
+                                  </div>
+                                  
                                     <div class="form-group">
                                         <label for="log">Logradouro:</label>
                                         <input type="text" class="form-control" id="log" name="log" required>
                                     </div>
 
-                                    <div class="form-group">
+                                  <div class="row">
+                                    <div class="form-group col-6">
                                         <label for="num">Número:</label>
                                         <input type="number" class="form-control" id="number" name="number">
                                     </div>
-
-                                    <div class="form-group">
+                                  
+                                    <div class="form-group col-6">
                                         <label for="comp">Complemento:</label>
                                         <input type="text" class="form-control" id="comp" name="comp">
                                     </div>
+                                  </div>
 
                                     <div class="form-group">
                                         <label for="cid">Cidade:</label>
@@ -133,7 +139,7 @@ function generateForm5() {
 
     // Disable form submissions if there are invalid fields
     var blockQuest = `<div class="form-group">
-                        <label for="ocup">Ocupação:
+                        <label for="ocup">*Ocupação:
                           <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal2">
                               ?
                           </span>
@@ -146,13 +152,14 @@ function generateForm5() {
                         </select>
                       </div>
 
-                      <div class="form-group">
-                        <label for="ocup">Situação:
+                    <div class="row">
+                      <div class="form-group col-6">
+                        <label for="sit">*Situação:
                           <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal3">
                               ?
                           </span>
                         </label>
-                        <select class="form-control" id="ocup">
+                        <select class="form-control" id="sit">
                           <option> Selecione uma opção </option>
                           <option> Existente </option>
                           <option> Nova </option>
@@ -160,7 +167,67 @@ function generateForm5() {
                         </select>
                       </div>
                       
-                      <!-- The Modal -->
+                      <div class="form-group col-6">
+                        <label for="floors">*Nº Pavimentos:</label>
+                        <select class="form-control" id="floors" name="comboFloors">
+                          
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-6">
+                        <label for="tipo">*Tipo de Escada:
+                          <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal4">
+                              ?
+                          </span>
+                        </label>
+                        <select class="form-control" id="tipo">
+                          <option> Selecione uma opção </option>
+                          <option> Sem escada </option>
+                          <option> Comum </option>
+                          <option> Protegida </option>
+                          <option> Enclausurada </option>
+                          <option> Enclausurada a prova de fumaça </option>
+                          <option> Pressurizada </option>
+                          <option> Acesso restrito </option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-6">
+                        <label for="lot">Qual é a lotação máxima de público:
+                          <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal2">
+                              ?
+                          </span>
+                        </label>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="lot" name="lot" required>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="form-group col-6">
+                        <label for="tip">*Tipo:
+                        </label>
+                        <select class="form-control" id="tip">
+                          <option> Selecione uma opção </option>
+                          <option> Alvenaria </option>
+                          <option> madeira </option>
+                          <option> mista </option>
+                          <option> metálica </option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-6">
+                        <label for="block">*Nº Blocos:</label>
+                        <select class="form-control" id="block" name="comboBlock">
+                          
+                        </select>
+                      </div>
+                    </div>
+
+                      <!-- The Modal 2 -->
                       <div class="modal" id="myModal2">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
@@ -249,7 +316,7 @@ function generateForm5() {
                         </div>
                       </div>
 
-                      <!-- The Modal -->
+                      <!-- The Modal 3 -->
                       <div class="modal" id="myModal3">
                         <div class="modal-dialog modal-lg">
                           <div class="modal-content">
@@ -262,21 +329,18 @@ function generateForm5() {
 
                             <!-- Modal body -->
                             <div class="modal-body style-body-model">
-                              <b><div id="title1"></div></b><br>
-                              <div id="text1" class="style-text-modal"></div><br>
-                              <div id="textLink1" class="style-text-modal"></div>
+                              <b><div id="modal2Title1" class="style-title-modal"></div></b><br>
+                              <div id="modal2Text1" class="style-text-modal"></div><br>
+                              <div id="modal2TextLink1" class="style-text-modal"></div>
                               <a href="http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in" target="_blank">
                                 (Para acessar a norma clique aqui)
                               </a><br>
-                              <div id="title1" class="style-title-modal"></div><br>
-                              <div id="text1" class="style-text-modal"></div><br>
-                              <div id="textLink1" class="style-title-modal"></div><br>
-                              <div id="title2" class="style-title-modal"></div><br>
-                              <div id="text2" class="style-text-modal"></div><br>
-                              <div id="title3" class="style-title-modal"></div><br>
-                              <div id="text3" class="style-text-modal"></div><br>
-                              <div id="title4" class="style-title-modal"></div><br>
-                              <div id="text4" class="style-text-modal"></div><br>
+                              <div id="modal2Title2" class="style-title-modal"></div><br>
+                              <div id="modal2Text2" class="style-text-modal"></div><br>
+                              <div id="modal2Title3" class="style-title-modal"></div><br>
+                              <div id="modal2Text3" class="style-text-modal"></div><br>
+                              <div id="modal2Title4" class="style-title-modal"></div><br>
+                              <div id="modal2Text4" class="style-text-modal"></div><br>
                               <div id="sit1" class="style-text-modal"></div><br>
                               <div id="sit2" class="style-text-modal"></div><br>
                               <div id="sit3" class="style-text-modal"></div><br>
@@ -292,6 +356,39 @@ function generateForm5() {
                         </div>
                       </div>
                       
+                      <!-- The Modal 4 -->
+                      <div class="modal" id="myModal4">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header style-header-modal">
+                              <h4 class="modal-title style-title-model">Saiba Mais</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body style-body-model">
+                              <b><div id="modal3Title1"></div></b><br>
+                              <div id="modal3Text1" class="style-text-modal"></div><br>
+                              <div id="modal3Link1" class="style-text-modal"></div>
+                              <a href="http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in" target="_blank">
+                                (Para acessar a norma clique aqui)
+                              </a><br>
+                              <div id="modal3Text2" class="style-text-modal"></div><br>                       
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer style-footer-model">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <br>
+                      <p>*Campos Obrigatórios!</p>
                       `;
 
     // Handling variables

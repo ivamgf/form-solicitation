@@ -71,4 +71,12 @@ var imported = document.createElement('script');
 imported.src = '/components/texts/edification.js';
 document.head.appendChild(imported);
 
+var imported = document.createElement('script');
+imported.src = '/components/texts/floors.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/texts/blocks.js';
+document.head.appendChild(imported);
+
 // Imports

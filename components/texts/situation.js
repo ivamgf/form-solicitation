@@ -27,15 +27,15 @@ var situation = {
     }
 };
 
-document.getElementById("title1").innerHTML = situation.title1;
-document.getElementById("text1").innerHTML = situation.text1;
-document.getElementById("textLink1").innerHTML = situation.textLink1;
-document.getElementById("title2").innerHTML = situation.title2;
-document.getElementById("text2").innerHTML = situation.text2;
-document.getElementById("title3").innerHTML = situation.title3;
-document.getElementById("text3").innerHTML = situation.text3;
-document.getElementById("title4").innerHTML = situation.title4;
-document.getElementById("text4").innerHTML = situation.text4;
+document.getElementById("modal2Title1").innerHTML = situation.title1;
+document.getElementById("modal2Text1").innerHTML = situation.text1;
+document.getElementById("modal2TextLink1").innerHTML = situation.textLink1;
+document.getElementById("modal2Title2").innerHTML = situation.title2;
+document.getElementById("modal2Text2").innerHTML = situation.text2;
+document.getElementById("modal2Title3").innerHTML = situation.title3;
+document.getElementById("modal2Text3").innerHTML = situation.text3;
+document.getElementById("modal2Title4").innerHTML = situation.title4;
+document.getElementById("modal2Text4").innerHTML = situation.text4;
 document.getElementById("sit1").innerHTML = situation.sit.a;
 document.getElementById("sit2").innerHTML = situation.sit.b;
 document.getElementById("sit3").innerHTML = situation.sit.c1;
