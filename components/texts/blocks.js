@@ -3,7 +3,7 @@
 var blockList = ["<option>Selecione uma opção</option>"];
 var optionsBlock =  ``;
 for (i = 1; i < 21; i++) {
-    blockList.push(`<option>`+ i +`</option>`);
+    blockList.push(`<option value="` + i + `">`+ i +`</option>`);
     optionsBlock =  blockList;
 };
 
