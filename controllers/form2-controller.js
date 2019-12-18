@@ -27,7 +27,7 @@ function generateForm1() {
                             <div class="card-body">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" value="">
+                                    <input type="checkbox" class="form-check-input" value="mei">
                                     A empresa é classificada como Micro Empreendor Individual (MEI)
                                     </label>
                                     <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal">
@@ -37,12 +37,12 @@ function generateForm1() {
 
                                 <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">Sim
+                                    <input id="meiYes" type="radio" class="form-check-input" value="sim" name="optMei">Sim
                                 </label>
                                 </div>
                                 <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="radio" class="form-check-input" name="optradio">Não
+                                    <input id="meiNo" type="radio" class="form-check-input" value="nao" name="optMei">Não
                                 </label>
                                 </div><br>
 

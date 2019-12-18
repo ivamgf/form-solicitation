@@ -10,7 +10,11 @@ var gas = {
     text2: text2
 };
 
-document.getElementById("modal3Title1").innerHTML = gas.title1;
-document.getElementById("modal3Text1").innerHTML = gas.text1;
-document.getElementById("modal3Link1").innerHTML = gas.textLink1;
-document.getElementById("modal3Text2").innerHTML = gas.text2;
+document.getElementById("modal5Title1").innerHTML = gas.title1;
+document.getElementById("modal5Text1").innerHTML = gas.text1;
+document.getElementById("modal5Link1").innerHTML = gas.textLink1;
+document.getElementById("modal5Text2").innerHTML = gas.text2;
+
+document.getElementById("modal6Title1").innerHTML = gas.title1;
+document.getElementById("modal6Text1").innerHTML = gas.text1;
+document.getElementById("modal6Link1").innerHTML = gas.textLink1;
