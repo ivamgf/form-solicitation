@@ -20,6 +20,9 @@
   <!-- Import JQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <!-- Import JQuery Mask -->
+  <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
   <!-- Others Imports -->
 
   <!-- Import Style CSS -->
@@ -40,6 +43,7 @@
   <div id="blockProgress3"></div>
   <div id="blockProgress4"></div>
   <div id="blockProgress5"></div>
+  <div id="blockProgress5b"></div>
   <div id="blockProgress6"></div>
   <div id="blockProgress7"></div>
 </div>
@@ -50,6 +54,7 @@
   <div id="blockForm3" class="form3"></div>
   <div id="blockForm4" class="form4"></div>
   <div id="blockForm5" class="form5"></div>
+  <div id="blockForm5b" class="form5b"></div>
   <div id="blockForm6" class="form6"></div>
   <div id="blockForm7" class="form7"></div>
 </div>

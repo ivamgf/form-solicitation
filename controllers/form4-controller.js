@@ -32,7 +32,7 @@ function generateForm4() {
                             </div>
                             <div class="form-group">
                                 <label for="fone">Telefone:</label>
-                                <input type="tel" class="form-control" id="fone" placeholder="Digite o telefone" name="fone" required>
+                                <input type="tel" class="form-control" id="fone2" placeholder="Digite o telefone" name="fone" required>
                             </div>
                             <div class="form-group">
                                 <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
@@ -79,6 +79,13 @@ function nextForm5() {
     document.getElementById("blockProgress5").style.display = "block";
 }
 
+function phoneMask() {
+    $(document).ready(function(){
+        $("#fone2").mask("(99) 9 9999-9999");
+    });
+}
+
 // Excecute functions
 generateProgress4();
 generateForm4();
+phoneMask();

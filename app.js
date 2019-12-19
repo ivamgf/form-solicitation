@@ -25,7 +25,11 @@ document.head.appendChild(imported);
 
 var imported = document.createElement('script');
 imported.src = '/controllers/form5-controller.js';
-document.head.appendChild(imported); 
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/controllers/form5-2-controller.js';
+document.head.appendChild(imported);
 
 var imported = document.createElement('script');
 imported.src = '/controllers/form6-controller.js';
