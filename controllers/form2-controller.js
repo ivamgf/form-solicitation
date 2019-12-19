@@ -48,7 +48,7 @@ function generateForm1() {
 
                                 <div class="form-group">
                                     <label for="qtd">Quantos funcionários há na empresa incluindo o proprietário?:</label>
-                                    <input type="number" class="form-control" id="qtd">
+                                    <input type="text" class="form-control" id="qtd" onblur="bindBack2()">
                                 </div>
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -76,7 +76,7 @@ function generateForm1() {
                             <!-- Modal body -->
                             <div class="modal-body style-body-model">
                                 <b>Microempreendedor Individual (MEI):</b> 
-                                <p class="">
+                                <p>
                                     Conforme IN 001(Para acessar a norma 
                                     <a href="http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in" target="_blank">clique aqui</a>)
                                 </p>
@@ -109,6 +109,10 @@ function generateForm1() {
     document.getElementById("blockForm2").innerHTML = blockForm2;
 }
 
+// Variables
+
+var qtdFunc = null;
+
 function previousForm1() {
     document.getElementById("blockForm1").style.display = "block";
     document.getElementById("blockForm1").style.position = "relative";
@@ -124,6 +128,11 @@ function nextForm3() {
     document.getElementById("blockForm3").style.display = "block";
     document.getElementById("blockProgress2").style.display = "none";
     document.getElementById("blockProgress3").style.display = "block";    
+}
+
+function bindBack2() {
+    qtdFunc = document.getElementById("qtd").value;
+    console.log(qtdFunc);
 }
 
 // Excecute functions

@@ -28,27 +28,27 @@ function generateForm3() {
 
                             <div class="form-group">
                                 <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
-                                <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" required>
+                                <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" onblur="bindNatId()" required>
                             </div>
                             <div class="form-group">
                                 <label for="fant">Nome Fantasia Empresa:</label>
-                                <input type="text" class="form-control" id="fant" placeholder="Digite o nome fantasia" name="fant" required>
+                                <input type="text" class="form-control" id="fant" placeholder="Digite o nome fantasia" name="fant" onblur="bindNameFant()" required>
                             </div>
                             <div class="form-group">
                                 <label for="fone">Telefone:</label>
-                                <input type="tel" class="form-control" id="fone" placeholder="Digite o telefone" name="fone" required>
+                                <input type="tel" class="form-control" id="fone" placeholder="Digite o telefone" name="fone" onblur="bindPhone()" required>
                             </div>
                             <div class="form-group">
                                 <label for="razao">Razão Social:</label>
-                                <input type="text" class="form-control" id="razao" placeholder="Digite a razão social" name="razao" required>
+                                <input type="text" class="form-control" id="razao" placeholder="Digite a razão social" name="razao" onblur="bindCorporate()" required>
                             </div>
                             <div class="form-group">
                                 <label for="contato">Nome Contato:</label>
-                                <input type="text" class="form-control" id="contato" placeholder="Digite o nome de contato" name="contato" required>
+                                <input type="text" class="form-control" id="contato" placeholder="Digite o nome de contato" name="contato" onblur="bindNameCont()" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail:</label>
-                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" required>
+                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" onblur="bindEmail()" required>
                             </div>                            
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -70,6 +70,15 @@ function generateForm3() {
     document.getElementById("blockForm3").innerHTML = blockForm3;
 }
 
+// Variables
+
+var natId = "";
+var nameFant = "";
+var phone = "";
+var corporateName = "";
+var nameCont = "";
+var email = "";
+
 function previousForm2() {
     document.getElementById("blockForm2").style.display = "block";
     document.getElementById("blockForm2").style.position = "relative";
@@ -87,6 +96,38 @@ function nextForm4() {
     document.getElementById("blockProgress4").style.display = "block";
 }
 
+function phoneMask() {
+    $(document).ready(function(){
+        $("#fone").mask("(99) 9999-9999");
+    });
+}
+
+function bindNatId() {
+    natId = document.getElementById("cpfcnpj").value;
+    console.log(natId);   
+}
+function bindNameFant() {
+    nameFant = document.getElementById("fant").value;
+    console.log(nameFant);
+}
+function bindPhone() {
+    phone = document.getElementById("fone").value;
+    console.log(phone);
+}
+function bindCorporate() {
+    corporateName = document.getElementById("razao").value;
+    console.log(corporateName);
+}
+function bindNameCont() {
+    nameCont = document.getElementById("contato").value;
+    console.log(nameCont);
+}
+function bindEmail() {
+    email = document.getElementById("email").value;
+    console.log(email);
+}
+
 // Excecute functions
 generateProgress3();
 generateForm3();
+phoneMask();

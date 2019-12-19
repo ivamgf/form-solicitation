@@ -48,7 +48,7 @@ function generateForm6() {
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="previousForm5()">Voltar</a>
+                                        <a class="page-link" href="#" onclick="previousFormc()">Voltar</a>
                                     </li>
                                     <li class="page-item">
                                         <a id="next" class="page-link" href="#">Avançar</a>
@@ -72,12 +72,12 @@ function generateForm6() {
     document.getElementById("next2").style.display = "none";
 }
 
-function previousForm5() {
-    document.getElementById("blockForm5").style.display = "block";
-    document.getElementById("blockForm5").style.position = "relative";
+function previousFormc() {
+    document.getElementById("blockForm5b").style.display = "block";
+    document.getElementById("blockForm5b").style.position = "relative";
     document.getElementById("blockForm6").style.display = "none";
     document.getElementById("blockForm6").style.position = "relative";
-    document.getElementById("blockProgress5").style.display = "block";
+    document.getElementById("blockProgress5b").style.display = "block";
     document.getElementById("blockProgress6").style.display = "none";
 }
 
