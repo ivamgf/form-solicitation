@@ -32,7 +32,7 @@ function generateForm1() {
                                     </label>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="prot" onblur="bindBack1()" placeholder="Digite o Número do Protocolo!">
+                                    <input type="text" class="form-control" id="prot" placeholder="Digite o Número do Protocolo!">
                                 </div><br>
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
@@ -56,12 +56,13 @@ function nextForm2() {
     document.getElementById("blockForm2").style.display = "block";
     document.getElementById("blockForm2").style.position = "relative";
     document.getElementById("blockProgress1").style.display = "none";
-    document.getElementById("blockProgress2").style.display = "block";    
+    document.getElementById("blockProgress2").style.display = "block";
+    bindBack1();   
 }
 
 function bindBack1() {
     protRegin = document.getElementById("prot").value;
-    console.log(protRegin);
+    console.log("protRegin:", protRegin);
 }
 
 // Excecute functions

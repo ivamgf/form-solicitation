@@ -28,7 +28,7 @@ function generateForm3() {
 
                             <div class="form-group">
                                 <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
-                                <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" onblur="bindNatId()" required>
+                                <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" onblur="bindCpfCnpj()" required>
                             </div>
                             <div class="form-group">
                                 <label for="fant">Nome Fantasia Empresa:</label>
@@ -48,7 +48,7 @@ function generateForm3() {
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail:</label>
-                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" onblur="bindEmail()" required>
+                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" required>
                             </div>                            
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -72,7 +72,7 @@ function generateForm3() {
 
 // Variables
 
-var natId = "";
+var cpfCnpj = "";
 var nameFant = "";
 var phone = "";
 var corporateName = "";
@@ -94,6 +94,7 @@ function nextForm4() {
     document.getElementById("blockForm4").style.display = "block";
     document.getElementById("blockProgress3").style.display = "none";
     document.getElementById("blockProgress4").style.display = "block";
+    bindEmail();
 }
 
 function phoneMask() {
@@ -102,29 +103,29 @@ function phoneMask() {
     });
 }
 
-function bindNatId() {
-    natId = document.getElementById("cpfcnpj").value;
-    console.log(natId);   
+function bindCpfCnpj() {
+    cpfCnpj = document.getElementById("cpfcnpj").value;
+    console.log("cpfCnpj:", cpfCnpj);   
 }
 function bindNameFant() {
     nameFant = document.getElementById("fant").value;
-    console.log(nameFant);
+    console.log("nameFant:", nameFant);
 }
 function bindPhone() {
     phone = document.getElementById("fone").value;
-    console.log(phone);
+    console.log("phone:", phone);
 }
 function bindCorporate() {
     corporateName = document.getElementById("razao").value;
-    console.log(corporateName);
+    console.log("corporateName:", corporateName);
 }
 function bindNameCont() {
     nameCont = document.getElementById("contato").value;
-    console.log(nameCont);
+    console.log("nameCont:", nameCont);
 }
 function bindEmail() {
     email = document.getElementById("email").value;
-    console.log(email);
+    console.log("email:", email);
 }
 
 // Excecute functions
