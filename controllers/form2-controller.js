@@ -48,7 +48,7 @@ function generateForm1() {
 
                                 <div class="form-group">
                                     <label for="qtd">Quantos funcionários há na empresa incluindo o proprietário?:</label>
-                                    <input type="text" class="form-control" id="qtd" onblur="bindBack2()">
+                                    <input type="text" class="form-control" id="qtd">
                                 </div>
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -127,12 +127,13 @@ function nextForm3() {
     document.getElementById("blockForm2").style.position = "relative";
     document.getElementById("blockForm3").style.display = "block";
     document.getElementById("blockProgress2").style.display = "none";
-    document.getElementById("blockProgress3").style.display = "block";    
+    document.getElementById("blockProgress3").style.display = "block";
+    bindBack2();    
 }
 
 function bindBack2() {
     qtdFunc = document.getElementById("qtd").value;
-    console.log(qtdFunc);
+    console.log("qtdFunc:", qtdFunc);
 }
 
 // Excecute functions

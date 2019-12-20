@@ -28,19 +28,19 @@ function generateForm4() {
                             
                             <div class="form-group">
                                 <label for="fant">Nome:</label>
-                                <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome" required>
+                                <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome" onblur="bindName()" required>
                             </div>
                             <div class="form-group">
                                 <label for="fone">Telefone:</label>
-                                <input type="tel" class="form-control" id="fone2" placeholder="Digite o telefone" name="fone" required>
+                                <input type="tel" class="form-control" id="fone2" placeholder="Digite o telefone" name="fone" onblur="bindPhoneAdm()" required>
                             </div>
                             <div class="form-group">
-                                <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
-                                <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" required>
+                                <label for="natId">CPF/CNPJ do Proprietário:</label>
+                                <input type="text" class="form-control" id="natId" placeholder="Digite o cpf/cnpj" name="natId" onblur="bindNatId()" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail:</label>
-                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" required>
+                                <input type="text" class="form-control" id="emailAdm" placeholder="Digite o E-mail" name="email" required>
                             </div>                            
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -62,6 +62,13 @@ function generateForm4() {
     document.getElementById("blockForm4").innerHTML = blockForm4;
 }
 
+// Variables
+
+var name = "";
+var phoneAdm = "";
+var natId = "";
+var emailAdm = "";
+
 function previousForm3() {
     document.getElementById("blockForm3").style.display = "block";
     document.getElementById("blockForm3").style.position = "relative";
@@ -77,12 +84,30 @@ function nextForm5() {
     document.getElementById("blockForm5").style.display = "block";
     document.getElementById("blockProgress4").style.display = "none";
     document.getElementById("blockProgress5").style.display = "block";
+    bindEmailAdm();
 }
 
 function phoneMask() {
     $(document).ready(function(){
         $("#fone2").mask("(99) 9 9999-9999");
     });
+}
+
+function bindName() {
+    name = document.getElementById("nome").value;
+    console.log("name:", name);
+}
+function bindPhoneAdm() {
+    phoneAdm = document.getElementById("fone2").value;
+    console.log("phoneAdm:", phoneAdm);
+}
+function bindNatId() {
+    natId = document.getElementById("natId").value;
+    console.log("natId:", natId);   
+}
+function bindEmailAdm() {
+    emailAdm = document.getElementById("emailAdm").value;
+    console.log("emailAdm:", emailAdm);
 }
 
 // Excecute functions
