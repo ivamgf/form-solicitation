@@ -27,12 +27,12 @@ function generateForm1() {
                             <div class="card-body">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" value="">
+                                    <input id="regin" type="checkbox" class="form-check-input" value="" onclick="checkEnab()">
                                     Existe protocolo de Alvará expedido pelo REGIN/JUCESC
                                     </label>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="prot" placeholder="Digite o Número do Protocolo!">
+                                    <input type="text" class="form-control" id="prot" placeholder="Digite o Número do Protocolo!" disabled="true">
                                 </div><br>
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
@@ -49,6 +49,7 @@ function generateForm1() {
 // Variables
 
 var protRegin = "";
+var radioRegin = "";
 
 function nextForm2() {
     document.getElementById("blockForm1").style.display = "none";
@@ -60,9 +61,17 @@ function nextForm2() {
     bindBack1();   
 }
 
+function checkEnab() {
+    checkRegin = document.getElementById("regin").checked;
+    console.log("Regin:", checkRegin);
+    if(checkRegin === true) {
+        document.getElementById("prot").disabled = false;        
+    }
+}
+
 function bindBack1() {
     protRegin = document.getElementById("prot").value;
-    console.log("protRegin:", protRegin);
+    console.log("protRegin:", protRegin);        
 }
 
 // Excecute functions

@@ -1,6 +1,8 @@
 # Form-Solicitation
 Form Solicitation Project
 
+![Logo SIGAT](assets/icons/logo.jpg)
+
 Request for operation
 
 ### Author: 

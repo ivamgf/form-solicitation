@@ -25,24 +25,21 @@ function generateForm1() {
     var blockForm2 =   `<div class="card">
                             <div class="card-head style-card-head"><h4>Classificação MEI</h4></div>
                             <div class="card-body">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" value="mei">
-                                    A empresa é classificada como Micro Empreendor Individual (MEI)
-                                    </label>
-                                    <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal">
-                                        ?
-                                    </span>
-                                </div><br>
+                            <label class="form-check-label">
+                                A empresa é classificada como Micro Empreendor Individual (MEI)
+                            </label>
+                            <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal">
+                                ?
+                            </span><br>
 
                                 <div class="form-check">
                                 <label class="form-check-label">
-                                    <input id="meiYes" type="radio" class="form-check-input" value="sim" name="optMei">Sim
+                                    <input id="meiYes" type="radio" class="form-check-input radioMei" value="sim" name="optMei" onclick="radioEnabYes()">Sim
                                 </label>
                                 </div>
                                 <div class="form-check">
                                 <label class="form-check-label">
-                                    <input id="meiNo" type="radio" class="form-check-input" value="nao" name="optMei">Não
+                                    <input id="meiNo" type="radio" class="form-check-input radioMei" value="nao" name="optMei" onclick="radioEnabNo()">Não
                                 </label>
                                 </div><br>
 
@@ -112,6 +109,7 @@ function generateForm1() {
 // Variables
 
 var qtdFunc = null;
+var radioMei = "";
 
 function previousForm1() {
     document.getElementById("blockForm1").style.display = "block";
@@ -134,6 +132,16 @@ function nextForm3() {
 function bindBack2() {
     qtdFunc = document.getElementById("qtd").value;
     console.log("qtdFunc:", qtdFunc);
+}
+
+function radioEnabYes() {
+    radioMei = document.getElementById("meiYes").value;
+    console.log("radioMei:", radioMei);    
+}
+
+function radioEnabNo() {
+    radioMei = document.getElementById("meiNo").value;
+    console.log("radioMei:", radioMei);    
 }
 
 // Excecute functions
