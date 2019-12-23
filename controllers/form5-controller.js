@@ -37,16 +37,16 @@ function generateForm5() {
                               <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                 <div class="card-body">
                                   <div class="form-group">
-                                      <label for="fant">Nome:</label>
-                                      <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome" required>
+                                      <label for="name">Nome:</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Digite o nome" name="nome" onblur="bindName2()" required>
                                   </div>
                                   <div class="form-group">
                                       <label for="fant">Nome Fantasia Empresa:</label>
-                                      <input type="text" class="form-control" id="fant" placeholder="Digite o nome fantasia" name="fant">
+                                      <input type="text" class="form-control" id="fant2" placeholder="Digite o nome fantasia" name="fant" onblur="bindFant2()">
                                   </div>
                                   <div class="form-group">
                                       <label for="re">RE:</label>
-                                      <input type="number" class="form-control" id="re" placeholder="Digite a RE" name="re" required>
+                                      <input type="number" class="form-control" id="re" placeholder="Digite a RE" name="re" onblur="bindRe()" required>
                                   </div>
                                 </div>
                               </div>
@@ -65,7 +65,7 @@ function generateForm5() {
                                     <div class="col-6">
                                       <label for="cep">CEP:</label>
                                       <div class="input-group mb-3">                                      
-                                        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" required>
+                                        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" onblur="bindcep()" required>
                                         <div class="input-group-prepend">
                                           <button class="btn btn-outline-primary" type="button" onclick="buscaCep()">Pesquisar CEP</button>
                                         </div>                                      
@@ -74,30 +74,30 @@ function generateForm5() {
 
                                     <div class="form-group col-6">
                                         <label for="tiplog">Tipo Logradouro:</label>
-                                        <input type="text" class="form-control" id="tiplog" name="tiplog">
+                                        <input type="text" class="form-control" id="tiplog" name="tiplog" onblur="bindTipLog()">
                                     </div>
                                   </div>
                                   
                                     <div class="form-group">
                                         <label for="log">Logradouro:</label>
-                                        <input type="text" class="form-control" id="log" name="log" required>
+                                        <input type="text" class="form-control" id="log" name="log" onblur="bindLog()" required>
                                     </div>
 
                                   <div class="row">
                                     <div class="form-group col-6">
                                         <label for="num">Número:</label>
-                                        <input type="number" class="form-control" id="number" name="number">
+                                        <input type="number" class="form-control" id="number" name="number" onblur="bindNum()">
                                     </div>
                                   
                                     <div class="form-group col-6">
                                         <label for="comp">Complemento:</label>
-                                        <input type="text" class="form-control" id="comp" name="comp">
+                                        <input type="text" class="form-control" id="comp" name="comp" onblur="bindCompl()">
                                     </div>
                                   </div>
 
                                     <div class="form-group">
                                         <label for="cid">Cidade:</label>
-                                        <input type="text" class="form-control" id="cid" name="cid" required>
+                                        <input type="text" class="form-control" id="cid" name="cid" onblur="bindCity()" required>
                                     </div>
 
                                     <div class="form-group">
@@ -125,6 +125,19 @@ function generateForm5() {
     document.getElementById("blockForm5").innerHTML = blockForm5;
 }
 
+// Variables
+
+var name = "";
+var fant2 = "";
+var re = "";
+var cep = "";
+var tipLog = "";
+var log = "";
+var num = null;
+var compl = "";
+var city = "";
+var block = "";
+
 function previousForm4() {
     document.getElementById("blockForm4").style.display = "block";
     document.getElementById("blockForm4").style.position = "relative";
@@ -140,6 +153,7 @@ function nextForm5b() {
     document.getElementById("blockForm5b").style.display = "block";
     document.getElementById("blockProgress5").style.display = "none";
     document.getElementById("blockProgress5b").style.display = "block";
+    bindBlock();
 }
 
 function buscaCep() {
@@ -150,6 +164,47 @@ function cepMask() {
   $(document).ready(function(){
       $("#cep").mask("99999-999", { reverse : true});
   });
+}
+
+function bindName2() {
+  name2 = document.getElementById("name").value;
+  console.log("name2:", name2);
+}
+function bindFant2() {
+  fant2 = document.getElementById("fant2").value;
+  console.log("Nome Fantasia:", fant2);
+}
+function bindRe() {
+  re = document.getElementById("re").value;
+  console.log("RE:", re);   
+}
+function bindcep() {
+  cep = document.getElementById("cep").value;
+  console.log("cep:", cep);
+}
+function bindTipLog() {
+  tipLog = document.getElementById("tiplog").value;
+  console.log("Tipo Logradouro:", tipLog);
+}
+function bindLog() {
+  log = document.getElementById("log").value;
+  console.log("Logradouro:", log);   
+}
+function bindNum() {
+  num = document.getElementById("number").value;
+  console.log("Número:", num);
+}
+function bindCompl() {
+  compl = document.getElementById("comp").value;
+  console.log("Complemento:", compl);
+}
+function bindCity() {
+  city = document.getElementById("cid").value;
+  console.log("Cidade:", city);   
+}
+function bindBlock() {
+  block = document.getElementById("bai").value;
+  console.log("Bairro:", block);   
 }
 
 // Excecute functions
