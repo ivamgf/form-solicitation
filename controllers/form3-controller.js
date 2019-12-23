@@ -31,7 +31,7 @@ function generateForm3() {
                                 <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj" name="cpfcnpj" onblur="bindCpfCnpj()" required>
                             </div>
                             <div class="form-group">
-                                <label for="fant">Nome Fantasia Empresa:</label>
+                                <label for="fantasia">Nome Fantasia Empresa:</label>
                                 <input type="text" class="form-control" id="fant" placeholder="Digite o nome fantasia" name="fant" onblur="bindNameFant()" required>
                             </div>
                             <div class="form-group">

@@ -27,7 +27,7 @@ function generateForm4() {
                             <div class="card-body">                                
                             
                             <div class="form-group">
-                                <label for="fant">Nome:</label>
+                                <label for="name">Nome:</label>
                                 <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome" onblur="bindName()" required>
                             </div>
                             <div class="form-group">
