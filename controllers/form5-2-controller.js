@@ -58,7 +58,7 @@ function generateForm5b() {
                               ?
                           </span>
                         </label>
-                        <select class="form-control" id="ocup">
+                        <select class="form-control" id="ocup" onclick="bindOccupation()">
                           <option> Selecione uma opção </option>
                           <option> Opção 1 </option>
                           <option> Opção 2 </option>
@@ -73,7 +73,7 @@ function generateForm5b() {
                               ?
                           </span>
                         </label>
-                        <select class="form-control" id="sit">
+                        <select class="form-control" id="sit" onclick="bindSituation()">
                           <option> Selecione uma opção </option>
                           <option> Existente </option>
                           <option> Nova </option>
@@ -83,7 +83,7 @@ function generateForm5b() {
                       
                       <div class="form-group col-6">
                         <label for="floors">*Nº Pavimentos:</label>
-                        <select class="form-control" id="floors" name="comboFloors">
+                        <select class="form-control" id="floors" name="comboFloors" onclick="bindFloors()">
                           
                         </select>
                       </div>
@@ -96,7 +96,7 @@ function generateForm5b() {
                                 ?
                             </span>
                             </label>
-                            <select class="form-control" id="tipo">
+                            <select class="form-control" id="tipo" onclick="bindStairs()">
                             <option> Selecione uma opção </option>
                             <option> Sem escada </option>
                             <option> Comum </option>
@@ -115,7 +115,7 @@ function generateForm5b() {
                             </span>
                             </label>
                             <div class="form-group">
-                                <input type="number" class="form-control" id="lot" name="lot" required>
+                                <input type="number" class="form-control" id="lot" name="lot" onblur="bindCapacity()" required>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ function generateForm5b() {
                         <div class="form-group col-6">
                             <label for="tip">*Tipo:
                             </label>
-                            <select class="form-control" id="tip">
+                            <select class="form-control" id="tip" onclick="bindType()">
                             <option> Selecione uma opção </option>
                             <option> Alvenaria </option>
                             <option> madeira </option>
@@ -135,7 +135,7 @@ function generateForm5b() {
 
                         <div class="form-group col-6">
                             <label for="block">*Nº Blocos:</label>
-                            <select class="form-control" id="block" name="comboBlock">
+                            <select class="form-control" id="block" name="comboBlock" onclick="bindBlock()">
                             
                             </select>
                         </div>
@@ -488,6 +488,16 @@ function generateForm5b() {
     document.getElementById("quest").innerHTML = blockQuest;
 }
 
+// Variables
+
+var occupation = "";
+var situation = "";
+var floors = "";
+var stairs = "";
+var capacity = "";
+var type = "";
+var block = "";
+
 function previousFormb() {
     document.getElementById("blockForm5").style.display = "block";
     document.getElementById("blockForm5").style.position = "relative";
@@ -520,6 +530,35 @@ function decimalMask() {
     $(document).ready(function(){
         $("#qtdLoc2").mask("9.999.999,99", { reverse : true});
     });
+}
+
+function bindOccupation() {
+  occupation = document.getElementById("ocup").value;
+  console.log("Ocupação:", occupation);
+}
+function bindSituation() {
+  situation = document.getElementById("sit").value;
+  console.log("Situação:", situation);
+}
+function bindFloors() {
+  floors = document.getElementById("floors").value;
+  console.log("Núm. de Pavimentos:", floors);
+}
+function bindStairs() {
+  stairs = document.getElementById("tipo").value;
+  console.log("Tipo de Escada:", stairs);
+}
+function bindCapacity() {
+  capacity = document.getElementById("lot").value;
+  console.log("Lotação:", capacity);
+}
+function bindType() {
+  type = document.getElementById("tip").value;
+  console.log("Tipo:", type);
+}
+function bindBlock() {
+  block = document.getElementById("block").value;
+  console.log("Núm. de Blocos:", block);
 }
 
 // Excecute functions
