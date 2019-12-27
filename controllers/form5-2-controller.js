@@ -150,18 +150,18 @@ function generateForm5b() {
                         </span>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="glpYes" type="radio" class="form-check-input" value="sim" name="optGlp">Sim
+                            <input id="glpYes" type="radio" class="form-check-input" value="sim" name="optGlp" onclick="bindGlp()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="glpNo" type="radio" class="form-check-input" value="nao" name="optGlp">Não
+                            <input id="glpNo" type="radio" class="form-check-input" value="nao" name="optGlp" onclick="bindGlp()">Não
                             </label>
                         </div>                      
                       
                         <div class="form-group">
                             <label for="qtd">Se a opção for sim, qual a quantidade? (kg)</label>
-                            <input type="number" class="form-control col-6" id="qtdGlp" name="qtdGlp">
+                            <input type="number" class="form-control col-6" id="qtdGlp" name="qtdGlp" disabled="true">
                         </div>
                     </div>
 
@@ -171,18 +171,18 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="depYes" type="radio" class="form-check-input" value="sim" name="optDep">Sim
+                            <input id="depYes" type="radio" class="form-check-input" value="sim" name="optDep" onclick="bindDep()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="depNo" type="radio" class="form-check-input" value="nao" name="optDep">Não
+                            <input id="depNo" type="radio" class="form-check-input" value="nao" name="optDep" onclick="bindDep()">Não
                             </label>
                         </div>                      
                       
                         <div class="form-group">
                             <label for="qtd">Se a opção for sim, Qual a quantidade? (L)</label>
-                            <input type="number" class="form-control col-6" id="qtdGlp" name="qtdGlp">
+                            <input type="number" class="form-control col-6" id="depGlp" name="qtdGlp" disabled="true">
                         </div>
                     </div>
 
@@ -192,12 +192,12 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="comYes" type="radio" class="form-check-input" value="sim" name="optCom">Sim
+                            <input id="expYes" type="radio" class="form-check-input" value="sim" name="optCom" onclick="bindExp()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="comNo" type="radio" class="form-check-input" value="nao" name="optCom">Não
+                            <input id="expNo" type="radio" class="form-check-input" value="nao" name="optCom" onclick="bindExp()">Não
                             </label>
                         </div> 
                     </div><br>
@@ -214,12 +214,12 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="atiYes" type="radio" class="form-check-input" value="sim" name="optAti">Sim
+                            <input id="atiYes" type="radio" class="form-check-input" value="sim" name="optAti" onclick="bindReunion()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="atiNo" type="radio" class="form-check-input" value="nao" name="optAti">Não
+                            <input id="atiNo" type="radio" class="form-check-input" value="nao" name="optAti" onclick="bindReunion()">Não
                             </label>
                         </div> 
                     </div><br>
@@ -230,18 +230,18 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="locYes" type="radio" class="form-check-input" value="sim" name="optLoc">Sim
+                            <input id="locYes" type="radio" class="form-check-input" value="sim" name="optLoc" onclick="bindEdif()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="locNo" type="radio" class="form-check-input" value="nao" name="optLoc">Não
+                            <input id="locNo" type="radio" class="form-check-input" value="nao" name="optLoc" onclick="bindEdif()">Não
                             </label>
                         </div>                      
                         
                         <div class="form-group">
                             <label for="loc">Se a opção for sim, Informe a área total da sua empresa (m²).</label>
-                            <input type="number" class="form-control col-6" id="qtdLoc" name="qtdLoc">
+                            <input type="number" class="form-control col-6" id="qtdLoc" name="qtdLoc" disabled="true">
                         </div>
                     </div><br>
 
@@ -497,6 +497,22 @@ var stairs = "";
 var capacity = "";
 var type = "";
 var block = "";
+var optionGlpYes = "";
+var optionGlpNo = "";
+var glp = "";
+var optionDepYes = "";
+var optionDepNo = "";
+var dep = "";
+var optionExpYes = "";
+var optionExpNo = "";
+var exp = "";
+var optionReuYes = "";
+var optionReuNo = "";
+var reunion = "";
+var optionEdiYes = "";
+var optionEdiNo = "";
+var edification = "";
+var area = "";
 
 function previousFormb() {
     document.getElementById("blockForm5").style.display = "block";
@@ -513,6 +529,7 @@ function nextForm6() {
     document.getElementById("blockForm6").style.display = "block";
     document.getElementById("blockProgress5b").style.display = "none";
     document.getElementById("blockProgress6").style.display = "block";
+    bindArea();
 }
 
 function buscaCep() {
@@ -522,7 +539,7 @@ function buscaCep() {
 function check() {
   document.getElementById("glpNo").checked = true;
   document.getElementById("depNo").checked = true;
-  document.getElementById("comNo").checked = true;
+  document.getElementById("expNo").checked = true;
   document.getElementById("atiNo").checked = true;
   document.getElementById("locNo").checked = true;
 }
@@ -560,10 +577,85 @@ function bindBlock() {
   block = document.getElementById("block").value;
   console.log("Núm. de Blocos:", block);
 }
+function bindGlp() {
+  optionGlpYes = document.getElementById("glpYes").checked;
+  optionGlpNo = document.getElementById("glpNo").checked;
+  if(optionGlpYes == true) {
+    glp = "Sim";
+    console.log("Gás Natural?", glp);
+    document.getElementById("qtdGlp").disabled = false;    
+  }
+  if(optionGlpNo == true) {
+    glp = "Não";
+    console.log("Gás Natural?", glp);
+    document.getElementById("qtdGlp").disabled = true;
+  }  
+}
+function bindDep() {
+  optionDepYes = document.getElementById("depYes").checked;
+  optionDepNo = document.getElementById("depNo").checked;
+  if(optionDepYes == true) {
+    dep = "Sim";
+    console.log("Tem depósito?", dep);
+    document.getElementById("depGlp").disabled = false;    
+  }
+  if(optionDepNo == true) {
+    dep = "Não";
+    console.log("Tem depósito?", dep);
+    document.getElementById("depGlp").disabled = true;
+  }  
+}
+function bindExp() {
+  optionExpYes = document.getElementById("expYes").checked;
+  optionExpNo = document.getElementById("expNo").checked;
+  if(optionExpYes == true) {
+    exp = "Sim";
+    console.log("Fabrica Explosivos, pólvora, ...?", exp);   
+  }
+  if(optionExpNo == true) {
+    exp = "Não";
+    console.log("Fabrica Explosivos, pólvora, ...?", exp);
+  }  
+}
+function bindReunion() {
+  optionReuYes = document.getElementById("atiYes").checked;
+  optionReuNo = document.getElementById("atiNo").checked;
+  if(optionReuYes == true) {
+    reunion = "Sim";
+    console.log("Reunião de público?", reunion);   
+  }
+  if(optionReuNo == true) {
+    reunion = "Não";
+    console.log("Reunião de público?", reunion);
+  }  
+}
+function bindEdif() {
+  optionEdiYes = document.getElementById("locYes").checked;
+  optionEdiNo = document.getElementById("locNo").checked;
+  if(optionEdiYes == true) {
+    edification = "Sim";
+    console.log("Edificação?", edification);
+    document.getElementById("qtdLoc").disabled = false;    
+  }
+  if(optionEdiNo == true) {
+    edification = "Não";
+    console.log("Edificação?", edification);
+    document.getElementById("qtdLoc").disabled = true;
+  }  
+}
+function bindArea() {
+  area = document.getElementById("qtdLoc2").value;
+  console.log("Área:", area);
+}
 
 // Excecute functions
 generateProgress5b();
 generateForm5b();
 check();
 decimalMask();
+bindGlp();
+bindDep();
+bindExp();
+bindReunion();
+bindEdif();
 
