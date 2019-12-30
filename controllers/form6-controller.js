@@ -48,6 +48,9 @@ function generateForm6() {
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
+                                        <a class="page-link" href="#" onclick="clearForm7()">Limpar</a>
+                                    </li>    
+                                    <li class="page-item">
                                         <a class="page-link" href="#" onclick="previousFormc()">Voltar</a>
                                     </li>
                                     <li class="page-item">
@@ -111,6 +114,10 @@ function validaCaptcha() {
         document.getElementById("nvalid").style.display = "none";
     }
     
+}
+
+function clearForm7() {
+    document.getElementById("cap").value = "";
 }
 
 // Excecute functions
