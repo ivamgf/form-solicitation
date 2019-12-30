@@ -32,7 +32,7 @@ function generateForm1() {
                                     </label>
                                 </div><br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="prot" placeholder="Digite o Número do Protocolo!" disabled="true">
+                                    <input type="text" class="form-control col-6" id="prot" placeholder="Digite o Número do Protocolo!" disabled="true">
                                 </div><br>
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
@@ -65,7 +65,7 @@ function checkEnab() {
     checkRegin = document.getElementById("regin").checked;
     console.log("Regin:", checkRegin);
     if(checkRegin === true) {
-        document.getElementById("prot").disabled = false;        
+        document.getElementById("prot").disabled = false;       
     }
 }
 

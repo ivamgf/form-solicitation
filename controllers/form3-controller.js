@@ -53,6 +53,9 @@ function generateForm3() {
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
+                                        <a class="page-link" href="#" onclick="clearForm3()">Limpar</a>
+                                    </li>    
+                                    <li class="page-item">
                                         <a class="page-link" href="#" onclick="previousForm2()">Voltar</a>
                                     </li>
                                     <li class="page-item">
@@ -126,6 +129,15 @@ function bindNameCont() {
 function bindEmail() {
     email = document.getElementById("email").value;
     console.log("email:", email);
+}
+
+function clearForm3() {
+    document.getElementById("cpfcnpj").value = "";
+    document.getElementById("fant").value = "";
+    document.getElementById("fone").value = "";
+    document.getElementById("razao").value = "";
+    document.getElementById("contato").value = "";
+    document.getElementById("email").value = "";
 }
 
 // Excecute functions

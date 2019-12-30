@@ -45,6 +45,9 @@ function generateForm4() {
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
+                                        <a class="page-link" href="#" onclick="clearForm1()">Limpar</a>
+                                    </li>    
+                                    <li class="page-item">
                                         <a class="page-link" href="#" onclick="previousForm3()">Voltar</a>
                                     </li>
                                     <li class="page-item">
@@ -108,6 +111,12 @@ function bindNatId() {
 function bindEmailAdm() {
     emailAdm = document.getElementById("emailAdm").value;
     console.log("emailAdm:", emailAdm);
+}
+function clearForm1() {
+    document.getElementById("nome").value = "";
+    document.getElementById("fone2").value = "";
+    document.getElementById("natId").value = "";
+    document.getElementById("emailAdm").value = "";
 }
 
 // Excecute functions

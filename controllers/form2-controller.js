@@ -44,11 +44,14 @@ function generateForm1() {
                                 </div><br>
 
                                 <div class="form-group">
-                                    <label for="qtd">Quantos funcionários há na empresa incluindo o proprietário?:</label>
-                                    <input type="text" class="form-control" id="qtd">
+                                    <label for="qtd">Quantos funcionários há na empresa incluindo o proprietário?</label>
+                                    <input type="number" class="form-control col-6" id="qtd">
                                 </div>
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" onclick="clearForm4()">Limpar</a>
+                                    </li>    
                                     <li class="page-item">
                                         <a class="page-link" href="#" onclick="previousForm1()">Voltar</a>
                                     </li>
@@ -142,6 +145,10 @@ function radioEnabYes() {
 function radioEnabNo() {
     radioMei = document.getElementById("meiNo").value;
     console.log("radioMei:", radioMei);    
+}
+
+function clearForm4() {
+    document.getElementById("qtd").value = "";
 }
 
 // Excecute functions

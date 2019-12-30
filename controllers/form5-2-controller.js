@@ -41,6 +41,9 @@ function generateForm5b() {
                                     </div>                      
                                         <ul class="pagination justify-content-end" style="margin:20px 0">
                                             <li class="page-item">
+                                                <a class="page-link" href="#" onclick="clearForm6()">Limpar</a>
+                                            </li>
+                                            <li class="page-item">
                                                 <a class="page-link" href="#" onclick="previousFormb()">Voltar</a>
                                             </li>
                                             <li class="page-item">
@@ -646,6 +649,23 @@ function bindEdif() {
 function bindArea() {
   area = document.getElementById("qtdLoc2").value;
   console.log("Área:", area);
+}
+function clearForm6() {
+  document.getElementById("ocup").value = "";
+  document.getElementById("sit").value = "";
+  document.getElementById("floors").value = "";
+  document.getElementById("tipo").value = "";
+  document.getElementById("lot").value = "";
+  document.getElementById("tip").value = "";
+  document.getElementById("block").value = "";
+  document.getElementById("qtdGlp").value = "";
+  document.getElementById("depGlp").value = "";
+  document.getElementById("qtdLoc").value = "";
+  document.getElementById("qtdLoc2").value = "";
+  document.getElementById("qtdGlp").disabled = true;
+  document.getElementById("depGlp").disabled = true;
+  document.getElementById("qtdLoc").disabled = true;
+  check();
 }
 
 // Excecute functions

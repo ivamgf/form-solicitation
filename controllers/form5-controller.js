@@ -111,6 +111,9 @@ function generateForm5() {
                           </div>                       
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
+                                        <a class="page-link" href="#" onclick="clearForm5()">Limpar</a>
+                                    </li>
+                                    <li class="page-item">
                                         <a class="page-link" href="#" onclick="previousForm4()">Voltar</a>
                                     </li>
                                     <li class="page-item">
@@ -205,6 +208,18 @@ function bindCity() {
 function bindBlock() {
   block = document.getElementById("bai").value;
   console.log("Bairro:", block);   
+}
+function clearForm5() {
+  document.getElementById("name").value = "";
+  document.getElementById("fant2").value = "";
+  document.getElementById("re").value = "";
+  document.getElementById("cep").value = "";
+  document.getElementById("tiplog").value = "";
+  document.getElementById("log").value = "";
+  document.getElementById("number").value = "";
+  document.getElementById("comp").value = "";
+  document.getElementById("cid").value = "";
+  document.getElementById("bai").value = "";
 }
 
 // Excecute functions
