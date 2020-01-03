@@ -48,43 +48,51 @@ imported.src = '/components/footer.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/occupation.js';
+imported.src = '/components/occupation.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/situation.js';
+imported.src = '/components/situation.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/ladder.js';
+imported.src = '/components/ladder.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/stocking.js';
+imported.src = '/components/stocking.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/gas.js';
+imported.src = '/components/gas.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/reunion.js';
+imported.src = '/components/reunion.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/edification.js';
+imported.src = '/components/edification.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/floors.js';
+imported.src = '/components/floors.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/blocks.js';
+imported.src = '/components/blocks.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/texts/stairs.js';
+imported.src = '/components/stairs.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/controllers/loader.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/services/webService-cep.js';
 document.head.appendChild(imported);
 
 // Imports

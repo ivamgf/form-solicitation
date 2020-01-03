@@ -85,7 +85,7 @@ ol.progtrckr li.progtrckr-todo:before {
     margin-bottom: 2%;
 }
 .form1 {
-    display: block;
+    display: none;
 }
 .form2 {
     display: none;
@@ -120,7 +120,7 @@ ol.progtrckr li.progtrckr-todo:before {
     margin-bottom: 2%;
 }
 #blockProgress1 {
-    display: block;
+    display: none;
 }
 #blockProgress2 {
     display: none;
@@ -176,4 +176,30 @@ ol.progtrckr li.progtrckr-todo:before {
 }
 .loc2 {
     margin-left: 1%;
+}
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #FFD700; /* Blue */
+    border-right: 16px solid green;
+    border-bottom: 16px solid red;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    display: block;
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.textLoader {
+    display: block;
+    margin-left: 46%;
+    margin-top: 2%;
+}
+.alertError{
+    display: none;
 }

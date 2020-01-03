@@ -56,7 +56,7 @@ function generateForm1() {
                                         <a class="page-link" href="#" onclick="previousForm1()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm3()">Avançar</a>
+                                        <a class="page-link" id="next2" href="#" onclick="nextForm3()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -132,6 +132,12 @@ function nextForm3() {
     bindBack2();    
 }
 
+function check() {
+    document.getElementById("meiNo").checked = true;
+    radioMei = document.getElementById("meiNo").value;
+    console.log("radioMei:", radioMei);
+  }
+
 function bindBack2() {
     qtdFunc = document.getElementById("qtd").value;
     console.log("qtdFunc:", qtdFunc);
@@ -151,6 +157,11 @@ function clearForm4() {
     document.getElementById("qtd").value = "";
 }
 
+$(document).keypress(function(e) {
+    if(e.which == 13) $('#next2').click();
+});
+
 // Excecute functions
 generateProgress2();
 generateForm1();
+check();

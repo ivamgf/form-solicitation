@@ -40,7 +40,7 @@ function generateForm4() {
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail:</label>
-                                <input type="text" class="form-control" id="emailAdm" placeholder="Digite o E-mail" name="email" required>
+                                <input type="text" class="form-control" id="emailAdm" placeholder="Digite o E-mail" name="email" onblur="bindEmailAdm()" required>
                             </div>                            
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -51,7 +51,7 @@ function generateForm4() {
                                         <a class="page-link" href="#" onclick="previousForm3()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm5()">Avançar</a>
+                                        <a class="page-link" id="next4" href="#" onclick="validationForm4()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -72,6 +72,26 @@ var phoneAdm = "";
 var natId = "";
 var emailAdm = "";
 
+function validationForm4() {
+    if(name !== "") {
+        if(phoneAdm !== "") {
+            if(natId !== "") {
+                if(emailAdm !== "") {
+                    nextForm5(); 
+                } else {
+                    alert("Favor digitar um E-mail!");
+                }                    
+            } else {
+                alert("Favor digitar um CPF ou CNPJ!"); 
+            }
+        } else {
+            alert("Favor digitar um Telefone!");
+        }
+    } else {
+        alert("Favor digitar um nome!");
+    }
+}
+
 function previousForm3() {
     document.getElementById("blockForm3").style.display = "block";
     document.getElementById("blockForm3").style.position = "relative";
@@ -86,14 +106,24 @@ function nextForm5() {
     document.getElementById("blockForm4").style.position = "relative";
     document.getElementById("blockForm5").style.display = "block";
     document.getElementById("blockProgress4").style.display = "none";
-    document.getElementById("blockProgress5").style.display = "block";
-    bindEmailAdm();
+    document.getElementById("blockProgress5").style.display = "block";    
 }
 
-function phoneMask() {
-    $(document).ready(function(){
-        $("#fone2").mask("(99) 9 9999-9999");
-    });
+function phoneMask4() {
+    var typePhone2 = phoneAdm.length;
+    if(typePhone2 < 10 || typePhone2 > 11) {
+        alert("Favor digitar um número de telefone válido!");
+    } else {
+        if(typePhone2 == 10) {
+            $(document).ready(function(){
+                $("#fone2").mask("(99) 9999-9999");
+            });
+        } else {
+            $(document).ready(function(){
+                $("#fone2").mask("(99) 9 9999-9999");
+            });
+        }
+    }
 }
 
 function bindName() {
@@ -103,6 +133,7 @@ function bindName() {
 function bindPhoneAdm() {
     phoneAdm = document.getElementById("fone2").value;
     console.log("phoneAdm:", phoneAdm);
+    phoneMask4();
 }
 function bindNatId() {
     natId = document.getElementById("natId").value;
@@ -119,7 +150,11 @@ function clearForm1() {
     document.getElementById("emailAdm").value = "";
 }
 
+$(document).keypress(function(e) {
+    if(e.which == 13) $('#next4').click();
+});
+
 // Excecute functions
 generateProgress4();
 generateForm4();
-phoneMask();
+

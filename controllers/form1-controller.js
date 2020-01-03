@@ -6,6 +6,7 @@
 // Descriptions
 
 // Functions
+
 function generateProgress1() {
     // Variables
     var progressBar1 =  `<ol class="progtrckr" data-progtrckr-steps="6">
@@ -36,7 +37,7 @@ function generateForm1() {
                                 </div><br>
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm2()">Avançar</a>
+                                        <a class="page-link" id="next1" href="#" onclick="nextForm2()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -73,6 +74,10 @@ function bindBack1() {
     protRegin = document.getElementById("prot").value;
     console.log("protRegin:", protRegin);        
 }
+
+$(document).keypress(function(e) {
+    if(e.which == 13) $('#next1').click();
+});
 
 // Excecute functions
 generateProgress1();

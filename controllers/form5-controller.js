@@ -8,6 +8,7 @@
 // Functions
 function generateProgress5() {
     // Variables
+    
     var progressBar5 =  `<ol class="progtrckr" data-progtrckr-steps="6">
                             <li class="progtrckr-done">Regin</li>
                             <li class="progtrckr-done">MEI</li>
@@ -19,6 +20,14 @@ function generateProgress5() {
 
     // Handling variables
     document.getElementById("blockProgress5").innerHTML = progressBar5;
+}
+
+function alertError() {
+  
+  var blockError = `<div class="alert alert-danger">
+                      <strong>Erro!</strong> CEP Inválido! Digite Novamente.
+                    </div>`;
+  document.getElementById("error").innerHTML = blockError;
 }
 
 function generateForm5() {
@@ -117,7 +126,7 @@ function generateForm5() {
                                         <a class="page-link" href="#" onclick="previousForm4()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm5b()">Avançar</a>
+                                        <a class="page-link" id="next5" href="#" onclick="nextForm5b()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -184,6 +193,9 @@ function bindRe() {
 function bindcep() {
   cep = document.getElementById("cep").value;
   console.log("cep:", cep);
+  $(document).ready(function(){
+    apiCep();
+  });
 }
 function bindTipLog() {
   tipLog = document.getElementById("tiplog").value;
@@ -220,9 +232,15 @@ function clearForm5() {
   document.getElementById("comp").value = "";
   document.getElementById("cid").value = "";
   document.getElementById("bai").value = "";
+  document.getElementById("error").style.display = "none";
 }
+
+$(document).keypress(function(e) {
+  if(e.which == 13) $('#next5').click();
+});
 
 // Excecute functions
 generateProgress5();
 generateForm5();
 cepMask();
+alertError();
