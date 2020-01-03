@@ -47,7 +47,7 @@ function generateForm5b() {
                                                 <a class="page-link" href="#" onclick="previousFormb()">Voltar</a>
                                             </li>
                                             <li class="page-item">
-                                                <a class="page-link" href="#" onclick="nextForm6()">Avançar</a>
+                                                <a class="page-link" id="next5b" href="#" onclick="nextForm6()">Avançar</a>
                                             </li>
                                         </ul>
                                 </div>
@@ -667,6 +667,10 @@ function clearForm6() {
   document.getElementById("qtdLoc").disabled = true;
   check();
 }
+
+$(document).keypress(function(e) {
+  if(e.which == 13) $('#next5b').click();
+});
 
 // Excecute functions
 generateProgress5b();

@@ -36,7 +36,7 @@ function generateForm3() {
                             </div>
                             <div class="form-group">
                                 <label for="fone">Telefone:</label>
-                                <input type="tel" class="form-control" id="fone" placeholder="Digite o telefone" name="fone" onblur="bindPhone()" required>
+                                <input type="tel" class="form-control" id="fone" max="11" placeholder="Digite o telefone" name="fone" onblur="bindPhone()" required>
                             </div>
                             <div class="form-group">
                                 <label for="razao">Razão Social:</label>
@@ -48,7 +48,7 @@ function generateForm3() {
                             </div>
                             <div class="form-group">
                                 <label for="email">E-mail:</label>
-                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" required>
+                                <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" onblur="bindEmail()" required>
                             </div>                            
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
@@ -59,7 +59,7 @@ function generateForm3() {
                                         <a class="page-link" href="#" onclick="previousForm2()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="nextForm4()">Avançar</a>
+                                        <a class="page-link" id="next3" href="#" onclick="validationForm3()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -82,6 +82,34 @@ var corporateName = "";
 var nameCont = "";
 var email = "";
 
+function validationForm3() {
+    if(cpfCnpj !== "") {
+        if(nameFant !== "") {
+            if(phone !== "") {
+                if(corporateName !== "") {
+                    if(nameCont !== "") {
+                        if(email !== "") {
+                            nextForm4();
+                        } else {
+                            alert("Favor informar um E-mail!");
+                        }
+                    } else {
+                        alert("Favor informar um contato!");
+                    }
+                } else {
+                    alert("Favor digitar uma Razão Social!"); 
+                }
+            } else {
+                alert("Favor digitar um Telefone!"); 
+            }
+        } else {
+            alert("Favor digitar um Nome Fantasia!");
+        }
+    } else {
+        alert("Favor digitar um CPF ou CNPJ!");
+    }
+}
+
 function previousForm2() {
     document.getElementById("blockForm2").style.display = "block";
     document.getElementById("blockForm2").style.position = "relative";
@@ -96,14 +124,24 @@ function nextForm4() {
     document.getElementById("blockForm3").style.position = "relative";
     document.getElementById("blockForm4").style.display = "block";
     document.getElementById("blockProgress3").style.display = "none";
-    document.getElementById("blockProgress4").style.display = "block";
-    bindEmail();
+    document.getElementById("blockProgress4").style.display = "block";    
 }
 
-function phoneMask() {
-    $(document).ready(function(){
-        $("#fone").mask("(99) 9999-9999");
-    });
+function phoneMask3() {
+    var typePhone = phone.length;
+    if(typePhone < 10 || typePhone > 11) {
+        alert("Favor digitar um número de telefone válido!");
+    } else {
+        if(typePhone == 10) {
+            $(document).ready(function(){
+                $("#fone").mask("(99) 9999-9999");
+            });
+        } else {
+            $(document).ready(function(){
+                $("#fone").mask("(99) 9 9999-9999");
+            });
+        }
+    }    
 }
 
 function bindCpfCnpj() {
@@ -117,6 +155,7 @@ function bindNameFant() {
 function bindPhone() {
     phone = document.getElementById("fone").value;
     console.log("phone:", phone);
+    phoneMask3();
 }
 function bindCorporate() {
     corporateName = document.getElementById("razao").value;
@@ -140,7 +179,10 @@ function clearForm3() {
     document.getElementById("email").value = "";
 }
 
+$(document).keypress(function(e) {
+    if(e.which == 13) $('#next3').click();
+});
+
 // Excecute functions
 generateProgress3();
 generateForm3();
-phoneMask();

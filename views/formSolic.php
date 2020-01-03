@@ -38,6 +38,8 @@
 </div>
 
 <div class="container">
+  <div id="loader"></div>
+  <div id="text"></div>
   <div id="blockProgress1"></div>
   <div id="blockProgress2"></div>
   <div id="blockProgress3"></div>
@@ -49,6 +51,7 @@
 </div>
 
 <div class="container form">
+  <div id="error" class="alertError"></div>
   <div id="blockForm1" class="form1"></div>
   <div id="blockForm2" class="form2"></div>
   <div id="blockForm3" class="form3"></div>

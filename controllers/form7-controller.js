@@ -38,7 +38,7 @@ function generateForm7() {
                                         <a class="page-link" href="#" onclick="previousForm6()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="finalize()">Finalizar</a>
+                                        <a class="page-link" id="next7" href="#" onclick="finalize()">Finalizar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -64,6 +64,10 @@ function previousForm6() {
 function finalize() {
     window.location.href='https://www.cbm.sc.gov.br/';
 }
+
+$(document).keypress(function(e) {
+    if(e.which == 13) $('#next7').click();
+});
 
 // Excecute functions
 generateProgress7();

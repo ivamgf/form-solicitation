@@ -57,7 +57,7 @@ function generateForm6() {
                                         <a id="next" class="page-link" href="#">Avançar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a id="next2" class="page-link" href="#" onclick="nextForm7()">Avançar</a>
+                                        <a id="next6" class="page-link" href="#" onclick="nextForm7()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -72,7 +72,7 @@ function generateForm6() {
 
     // disable link next
     document.getElementById('next').style.color = "grey";
-    document.getElementById("next2").style.display = "none";
+    document.getElementById("next6").style.display = "none";
 }
 
 function previousFormc() {
@@ -102,7 +102,7 @@ function validaCaptcha() {
             document.getElementById("nvalid").style.display = "none";
             document.getElementById("warn").style.display = "none";
             document.getElementById("next").style.display = "none";
-            document.getElementById("next2").style.display = "block";
+            document.getElementById("next6").style.display = "block";
         } else {
             document.getElementById("nvalid").style.display = "block";
             document.getElementById("valid").style.display = "none";
@@ -119,6 +119,10 @@ function validaCaptcha() {
 function clearForm7() {
     document.getElementById("cap").value = "";
 }
+
+$(document).keypress(function(e) {
+    if(e.which == 13) $('#next6').click();
+});
 
 // Excecute functions
 generateProgress6();
