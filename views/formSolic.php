@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <title>Solicitação</title>
   <meta charset="utf-8">
@@ -37,9 +38,12 @@
   <div id="header"></div>
 </div>
 
-<div class="container">
+<div class="container style-loader">
   <div id="loader"></div>
   <div id="text"></div>
+</div>
+
+<div class="container style-progress">
   <div id="blockProgress1"></div>
   <div id="blockProgress2"></div>
   <div id="blockProgress3"></div>
@@ -51,6 +55,24 @@
 </div>
 
 <div class="container form">
+  <div id="result1"></div>
+  <div id="result2"></div>
+  <div id="result3"></div>
+  <div id="result4"></div>
+  <div id="result5"></div>
+  <div id="result5b"></div>
+  <div id="blockAlert1"></div>
+  <div id="blockAlert2"></div>
+  <div id="blockAlert3"></div>
+  <div id="blockAlert4"></div>
+  <div id="blockAlert5"></div>
+  <div id="blockAlert6"></div>
+  <div id="blockFrm4Alert1"></div>
+  <div id="blockFrm4Alert2"></div>
+  <div id="blockFrm4Alert3"></div>
+  <div id="blockFrm4Alert4"></div>
+  <div id="blockFrm5Alert1"></div>
+  <div id="blockAlertQuestions"></div>
   <div id="error" class="alertError"></div>
   <div id="blockForm1" class="form1"></div>
   <div id="blockForm2" class="form2"></div>

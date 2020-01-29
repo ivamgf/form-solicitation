@@ -50,7 +50,17 @@ function generateForm1() {
 // Variables
 
 var protRegin = "";
-var radioRegin = "";
+var checkRegin = false;
+// Functions
+
+function regin() {    
+    if(checkRegin === false) {
+        checkRegin = "nao";
+    }
+    if(checkRegin === true) {
+        checkRegin = "sim";
+    }
+}
 
 function nextForm2() {
     document.getElementById("blockForm1").style.display = "none";
@@ -59,13 +69,18 @@ function nextForm2() {
     document.getElementById("blockForm2").style.position = "relative";
     document.getElementById("blockProgress1").style.display = "none";
     document.getElementById("blockProgress2").style.display = "block";
-    bindBack1();   
+    bindBack1();
+    transferVar1();   
 }
 
 function checkEnab() {
     checkRegin = document.getElementById("regin").checked;
-    console.log("Regin:", checkRegin);
     if(checkRegin === true) {
+        checkRegin = "sim";       
+    }
+    console.log("Regin:", checkRegin);
+    if(checkRegin === "sim") {
+        checkRegin = "sim";
         document.getElementById("prot").disabled = false;       
     }
 }
@@ -74,11 +89,34 @@ function bindBack1() {
     protRegin = document.getElementById("prot").value;
     console.log("protRegin:", protRegin);        
 }
+function transferVar1() {
+    if(checkRegin === true) {
+        checkRegin = "sim";       
+    }
+    var sl_checkRegin = checkRegin; 
+    var sl_protRegin = protRegin;
+    $.ajax({
+        type: "POST",
+        url: "../classes/request.php",
+        data:{
+            sl_checkRegin: sl_checkRegin,
+            sl_protRegin: sl_protRegin
+            },
+            success: function (result) {
+                $('#result1').html(result);
+            },
+            error: function (result) {
+                $('#result1').html(result);
+            }              
+    });
+}
 
+/*
 $(document).keypress(function(e) {
     if(e.which == 13) $('#next1').click();
 });
-
+*/
 // Excecute functions
 generateProgress1();
 generateForm1();
+regin();

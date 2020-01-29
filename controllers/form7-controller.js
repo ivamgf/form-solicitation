@@ -65,10 +65,6 @@ function finalize() {
     window.location.href='https://www.cbm.sc.gov.br/';
 }
 
-$(document).keypress(function(e) {
-    if(e.which == 13) $('#next7').click();
-});
-
 // Excecute functions
 generateProgress7();
 generateForm7();

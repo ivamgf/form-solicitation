@@ -5,6 +5,11 @@
 
 // Descriptions
 
+// Imports
+var imported = document.createElement('script');
+imported.src = '/components/typeLog.js';
+document.head.appendChild(imported);
+
 // Functions
 function generateProgress5() {
     // Variables
@@ -27,7 +32,12 @@ function alertError() {
   var blockError = `<div class="alert alert-danger">
                       <strong>Erro!</strong> CEP Inválido! Digite Novamente.
                     </div>`;
+
+  var blockTipLog = `<div class="alert alert-danger">
+                      <strong>Atenção!</strong> Você precisa informar um tipo de logradouro!
+                  </div>`;
   document.getElementById("error").innerHTML = blockError;
+  document.getElementById("blockFrm5Alert1").innerHTML = blockTipLog;
 }
 
 function generateForm5() {
@@ -55,7 +65,7 @@ function generateForm5() {
                                   </div>
                                   <div class="form-group">
                                       <label for="re">RE:</label>
-                                      <input type="number" class="form-control" id="re" placeholder="Digite a RE" name="re" onblur="bindRe()" required>
+                                      <input type="number" class="form-control" id="re" placeholder="Digite a RE" name="re" onblur="bindRe()">
                                   </div>
                                 </div>
                               </div>
@@ -74,7 +84,7 @@ function generateForm5() {
                                     <div class="col-6">
                                       <label for="cep">CEP:</label>
                                       <div class="input-group mb-3">                                      
-                                        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP" name="cep" onblur="bindcep()" required>
+                                        <input type="text" class="form-control" id="cep" placeholder="Digite o CEP (Somente números)" name="cep" onblur="bindcep()" required>
                                         <div class="input-group-prepend">
                                           <button class="btn btn-outline-primary" type="button" onclick="buscaCep()">Pesquisar CEP</button>
                                         </div>                                      
@@ -82,14 +92,139 @@ function generateForm5() {
                                     </div>                              
 
                                     <div class="form-group col-6">
-                                        <label for="tiplog">Tipo Logradouro:</label>
-                                        <input type="text" class="form-control" id="tiplog" name="tiplog" onblur="bindTipLog()">
+                                        
+                                        <label for="typ">Tipo de Logradouro:</label>
+                                        <select class="form-control" id="typLog" name="typLog" onclick="bindTipLog()">
+                                          <option>Selecione um tipo de logradouro</option>
+                                          <option>10ª Avenida</option> 
+                                          <option>10ª Travessa</option> 
+                                          <option>11ª Avenida</option>
+                                          <option>11ª Travessa</option>
+                                          <option>12ª Travessa</option>
+                                          <option>13ª Travessa</option>
+                                          <option>14ª Travessa</option>
+                                          <option>15ª Travessa</option>
+                                          <option>16ª Travessa</option>
+                                          <option>17ª Travessa</option>
+                                          <option>18ª Travessa</option>
+                                          <option>19ª Travessa</option>
+                                          <option>1ª Avenida</option>
+                                          <option>1ª Ladeira</option>
+                                          <option>1ª Paralela</option>
+                                          <option>1ª Rua</option>
+                                          <option>1ª Subida</option>
+                                          <option>1ª Travessa</option>
+                                          <option>1ª Travessa da Rodovia</option>
+                                          <option>1ª Vila</option>
+                                          <option>1º Alto</option>
+                                          <option>1º Beco</option>
+                                          <option>20ª Travessa</option>
+                                          <option>21ª Travessa</option>
+                                          <option>22ª Travessa</option>
+                                          <option>26ª Travessa</option>
+                                          <option>2ª Avenida</option>
+                                          <option>2ª Ladeira</option>
+                                          <option>2ª Paralela</option> 
+                                          <option>2ª Rua</option>
+                                          <option>2ª Subida</option>
+                                          <option>2ª Travessa</option>
+                                          <option>2ª Travessa da Rodovia</option>
+                                          <option>2ª Vila</option>
+                                          <option>2º Alto</option>
+                                          <option>2º Beco</option>
+                                          <option>3ª Avenida</option>
+                                          <option>3ª Ladeira</option>
+                                          <option>3ª Paralela</option> 
+                                          <option>3ª Rua</option>
+                                          <option>3ª Subida</option>
+                                          <option>3ª Travessa</option>
+                                          <option>3ª Vil</option>
+                                          <option>3º Alto</option>
+                                          <option>3º Beco</option>
+                                          <option>4ª Avenida</option>
+                                          <option>4ª Paralela</option>
+                                          <option>4ª Rua</option>
+                                          <option>4ª Subida</option>
+                                          <option>4ª Travessa</option>
+                                          <option>4ª Vila</option>
+                                          <option>5ª Avenida</option>
+                                          <option>5ª Rua</option>
+                                          <option>5ª Subida</option>
+                                          <option>5ª Travessa</option>
+                                          <option>5ª Vila</option>
+                                          <option>6ª Avenida</option>
+                                          <option>6ª Rua</option>
+                                          <option>6ª Subida</option>
+                                          <option>6ª Travessa</option>
+                                          <option>6ª Vila</option>
+                                          <option>7ª Avenida</option>
+                                          <option>7ª Travessa</option>
+                                          <option>8ª Avenida</option>
+                                          <option>8ª Travessa</option>
+                                          <option>9ª Avenida</option>
+                                          <option>9ª Travessa</option>
+                                          <option>Acampamento</option>
+                                          <option>Acesso</option>
+                                          <option>Acesso Estadual</option>
+                                          <option>Acesso Local</option>
+                                          <option>Adro</option>
+                                          <option>Aeroporto</option>
+                                          <option>Alameda</option>
+                                          <option>Alça de Acesso</option>
+                                          <option>Alto</option>
+                                          <option>Anel Viário</option>
+                                          <option>Antiga Estação</option>
+                                          <option>Antiga Estrada</option>
+                                          <option>Área</option>
+                                          <option>Área Especial</option>
+                                          <option>Área Verde</option>
+                                          <option>Artéria</option>
+                                          <option>Atalho</option>
+                                          <option>Avenida</option>
+                                          <option>Avenida Contorno</option>
+                                          <option>Avenida Marginal</option>
+                                          <option>Avenida Marginal Direita</option>
+                                          <option>Avenida Marginal Esquerda</option>
+                                          <option>Avenida Marginal Norte</option>
+                                          <option>Avenida Perimetral</option>
+                                          <option>Baixa</option>
+                                          <option>Balão</option>
+                                          <option>Beco</option>
+                                          <option>Beco 1</option>
+                                          <option>Beco 2</option>
+                                          <option>Beco 3</option>
+                                          <option>Belvedere</option>
+                                          <option>Bloco</option>
+                                          <option>Blocos</option>
+                                          <option>Bosque</option>
+                                          <option>Boulevard</option>
+                                          <option>Bulevar</option>
+                                          <option>Buraco</option>
+                                          <option>Cais</option>
+                                          <option>Calçada</option>
+                                          <option>Calçadão</option>
+                                          <option>Caminho</option>
+                                          <option>Caminho de Servidão</option>
+                                          <option>Campo</option>
+                                          <option>Campus</option>
+                                          <option>Canal</option>
+                                          <option>Chácara</option>
+                                          <option>Ciclovia</option>
+                                          <option>Circular</option>
+                                          <option>Colina</option>
+                                          <option>Colônia</option>
+                                          <option>Complexo Viário</option>
+                                          <option>Comunidade</option>
+                                          <option>Condomínio</option>
+                                          <option>Condomínio Residencial</option>
+                                        </select> 
+                                        
                                     </div>
                                   </div>
                                   
                                     <div class="form-group">
                                         <label for="log">Logradouro:</label>
-                                        <input type="text" class="form-control" id="log" name="log" onblur="bindLog()" required>
+                                        <input type="text" class="form-control" id="log" name="log" onchange="bindLog()" required>
                                     </div>
 
                                   <div class="row">
@@ -106,7 +241,7 @@ function generateForm5() {
 
                                     <div class="form-group">
                                         <label for="cid">Cidade:</label>
-                                        <input type="text" class="form-control" id="cid" name="cid" onblur="bindCity()" required>
+                                        <input type="text" class="form-control" id="cid" name="cid" onchange="bindCity()" required>
                                     </div>
 
                                     <div class="form-group">
@@ -126,7 +261,7 @@ function generateForm5() {
                                         <a class="page-link" href="#" onclick="previousForm4()">Voltar</a>
                                     </li>
                                     <li class="page-item">
-                                        <a class="page-link" id="next5" href="#" onclick="nextForm5b()">Avançar</a>
+                                        <a class="page-link" id="next5" href="#" onclick="validationForm5()">Avançar</a>
                                     </li>
                                 </ul>
                             </div>
@@ -139,7 +274,7 @@ function generateForm5() {
 
 // Variables
 
-var name = "";
+var name2 = "";
 var fant2 = "";
 var re = "";
 var cep = "";
@@ -165,7 +300,10 @@ function nextForm5b() {
     document.getElementById("blockForm5b").style.display = "block";
     document.getElementById("blockProgress5").style.display = "none";
     document.getElementById("blockProgress5b").style.display = "block";
-    bindBlock();
+    bindLog();
+    bindCity();
+    bindBlock();    
+    transferVar5();
 }
 
 function buscaCep() {
@@ -178,9 +316,22 @@ function cepMask() {
   });
 }
 
+function validationForm5() {
+  if(name2 !== "") {
+    if(tipLog !== "") {
+      nextForm5b();
+    } else {
+      document.getElementById("blockFrm5Alert1").style.display = "block";
+    }    
+  } else {
+    document.getElementById("blockFrm4Alert1").style.display = "block";
+  }
+}
+
 function bindName2() {
   name2 = document.getElementById("name").value;
   console.log("name2:", name2);
+  document.getElementById("blockFrm4Alert1").style.display = "none";
 }
 function bindFant2() {
   fant2 = document.getElementById("fant2").value;
@@ -196,11 +347,20 @@ function bindcep() {
   $(document).ready(function(){
     apiCep();
   });
+  document.getElementById("error").style.display = "none";  
 }
+
 function bindTipLog() {
-  tipLog = document.getElementById("tiplog").value;
+  /*
+  $(document).ready(function(){
+    completType();
+  });
+  */
+  tipLog = document.getElementById("typLog").value;
   console.log("Tipo Logradouro:", tipLog);
+  document.getElementById("blockFrm5Alert1").style.display = "none";
 }
+
 function bindLog() {
   log = document.getElementById("log").value;
   console.log("Logradouro:", log);   
@@ -234,10 +394,40 @@ function clearForm5() {
   document.getElementById("bai").value = "";
   document.getElementById("error").style.display = "none";
 }
-
-$(document).keypress(function(e) {
-  if(e.which == 13) $('#next5').click();
-});
+function transferVar5() {  
+  var sl_name2 = name2; 
+  var sl_fant2 = fant2;
+  var sl_re = re; 
+  var sl_cep = cep;
+  var sl_tipLog = tipLog; 
+  var sl_log = log;
+  var sl_num = num; 
+  var sl_compl = compl;
+  var sl_city = city; 
+  var sl_block = block;
+  $.ajax({
+      type: "POST",
+      url: "../classes/request5.php",
+      data:{
+          sl_name2: sl_name2,
+          sl_fant2: sl_fant2,
+          sl_re: sl_re,area,
+          sl_cep: sl_cep,
+          sl_tipLog: sl_tipLog,
+          sl_log: sl_log,
+          sl_num: sl_num,
+          sl_compl: sl_compl,
+          sl_city: sl_city,
+          sl_block: sl_block
+          },
+          success: function (result) {
+              $('#result5').html(result);
+          },
+          error: function (result) {
+              $('#result5').html(result);
+          }              
+  });
+}
 
 // Excecute functions
 generateProgress5();

@@ -1,14 +1,14 @@
 <?php
-    // Form 1
-    $frm_checkRegin = $_POST['sl_checkRegin'];
-    $frm_protRegin = $_POST['sl_protRegin'];
+    // Form 2
+    $frm_radioMei = $_POST['sl_radioMei'];
+    $frm_qtdFunc = $_POST['sl_qtdFunc'];
     if(
-        $frm_checkRegin == ''
+        $frm_radioMei == '' 
         ) {
         throw new Exception('Recebido valor em branco!');
         echo "<div class='alert alert-danger'>
                 <strong>Atenção!</strong> Algum valor recebido estava em branco, favor preencher todos os campos!
             </div>";
     }
-    // Form 1
+    // Form 2
 ?>

@@ -95,4 +95,12 @@ var imported = document.createElement('script');
 imported.src = '/services/webService-cep.js';
 document.head.appendChild(imported);
 
+var imported = document.createElement('script');
+imported.src = '/controllers/key-controller.js';
+document.head.appendChild(imported);
+
+var imported = document.createElement('script');
+imported.src = '/components/typeLog.js';
+document.head.appendChild(imported);
+
 // Imports
