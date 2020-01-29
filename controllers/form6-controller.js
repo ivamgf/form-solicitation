@@ -120,10 +120,6 @@ function clearForm7() {
     document.getElementById("cap").value = "";
 }
 
-$(document).keypress(function(e) {
-    if(e.which == 13) $('#next6').click();
-});
-
 // Excecute functions
 generateProgress6();
 generateForm6();

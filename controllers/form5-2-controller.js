@@ -21,6 +21,15 @@ function generateProgress5b() {
     document.getElementById("blockProgress5b").innerHTML = progressBar5b;
 }
 
+function alertErrorQuestion() {
+  
+  var blockErrorQuestion = `<div class="alert alert-danger">
+                              <strong>Erro!</strong> Alguma questão deve estar em branco, verifique novamente!
+                            </div>`;
+  
+  document.getElementById("blockAlertQuestions").innerHTML = blockErrorQuestion;
+}
+
 function generateForm5b() {
     var blockForm5b =   `<div class="card">
                             <div class="card-head style-card-head"><h4>Edificação</h4></div>
@@ -47,7 +56,7 @@ function generateForm5b() {
                                                 <a class="page-link" href="#" onclick="previousFormb()">Voltar</a>
                                             </li>
                                             <li class="page-item">
-                                                <a class="page-link" id="next5b" href="#" onclick="nextForm6()">Avançar</a>
+                                                <a class="page-link" id="next5b" href="#" onclick="validationForm5b()">Avançar</a>
                                             </li>
                                         </ul>
                                 </div>
@@ -62,10 +71,7 @@ function generateForm5b() {
                           </span>
                         </label>
                         <select class="form-control" id="ocup" onclick="bindOccupation()">
-                          <option> Selecione uma opção </option>
-                          <option> Opção 1 </option>
-                          <option> Opção 2 </option>
-                          <option> Opção 3 </option>
+                          
                         </select>
                       </div>
 
@@ -138,7 +144,7 @@ function generateForm5b() {
 
                         <div class="form-group col-6">
                             <label for="block">*Nº Blocos:</label>
-                            <select class="form-control" id="block" name="comboBlock" onclick="bindBlock()">
+                            <select class="form-control" id="comboBlock" name="comboBlock" onclick="bindComboBlock()">
                             
                             </select>
                         </div>
@@ -164,7 +170,7 @@ function generateForm5b() {
                       
                         <div class="form-group">
                             <label for="qtd">Se a opção for sim, qual a quantidade? (kg)</label>
-                            <input type="number" class="form-control col-6" id="qtdGlp" name="qtdGlp" disabled="true">
+                            <input type="text" class="form-control col-6" id="qtdGlp" name="qtdGlp" onblur="bindQtdGlp()" disabled="true">
                         </div>
                     </div>
 
@@ -185,7 +191,7 @@ function generateForm5b() {
                       
                         <div class="form-group">
                             <label for="qtd">Se a opção for sim, Qual a quantidade? (L)</label>
-                            <input type="number" class="form-control col-6" id="depGlp" name="qtdGlp" disabled="true">
+                            <input type="text" class="form-control col-6" id="depGlp" name="depGlp" onblur="bindDepGlp()" disabled="true">
                         </div>
                     </div>
 
@@ -195,12 +201,12 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="expYes" type="radio" class="form-check-input" value="sim" name="optCom" onclick="bindExp()">Sim
+                            <input id="expYes" type="radio" class="form-check-input" value="sim" name="optCom" onblur="bindExp()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="expNo" type="radio" class="form-check-input" value="nao" name="optCom" onclick="bindExp()">Não
+                            <input id="expNo" type="radio" class="form-check-input" value="nao" name="optCom" onblur="bindExp()">Não
                             </label>
                         </div> 
                     </div><br>
@@ -217,12 +223,12 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="atiYes" type="radio" class="form-check-input" value="sim" name="optAti" onclick="bindReunion()">Sim
+                            <input id="atiYes" type="radio" class="form-check-input" value="sim" name="optAti" onblur="bindReunion()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="atiNo" type="radio" class="form-check-input" value="nao" name="optAti" onclick="bindReunion()">Não
+                            <input id="atiNo" type="radio" class="form-check-input" value="nao" name="optAti" onblur="bindReunion()">Não
                             </label>
                         </div> 
                     </div><br>
@@ -244,7 +250,7 @@ function generateForm5b() {
                         
                         <div class="form-group">
                             <label for="loc">Se a opção for sim, Informe a área total da sua empresa (m²).</label>
-                            <input type="number" class="form-control col-6" id="qtdLoc" name="qtdLoc" disabled="true">
+                            <input type="text" class="form-control col-6" id="qtdLoc" name="qtdLoc" onblur="bindEdifArea()" disabled="true">
                         </div>
                     </div><br>
 
@@ -256,7 +262,7 @@ function generateForm5b() {
                         </label>                                           
                         
                         <div class="form-group row">                          
-                            <input type="text" class="form-control col-6" id="qtdLoc2" name="qtdLoc2"> 
+                            <input type="text" class="form-control col-6" id="qtdLoc2" name="qtdLoc2" onblur="bindArea()"> 
                             <label class="loc2" for="loc2"> (m²).</label>
                         </div>
                     </div>
@@ -499,22 +505,25 @@ var floors = "";
 var stairs = "";
 var capacity = "";
 var type = "";
-var block = "";
+var comboBlock = "";
 var optionGlpYes = "";
 var optionGlpNo = "";
+var quantGlp = "";
 var glp = "";
 var optionDepYes = "";
 var optionDepNo = "";
 var dep = "";
+var depLiq = "";
 var optionExpYes = "";
 var optionExpNo = "";
 var exp = "";
 var optionReuYes = "";
 var optionReuNo = "";
-var reunion = "";
+var comboReunion = "";
 var optionEdiYes = "";
 var optionEdiNo = "";
 var edification = "";
+var edifArea = "";
 var area = "";
 
 function previousFormb() {
@@ -533,6 +542,7 @@ function nextForm6() {
     document.getElementById("blockProgress5b").style.display = "none";
     document.getElementById("blockProgress6").style.display = "block";
     bindArea();
+    transferVar5b();
 }
 
 function buscaCep() {
@@ -551,34 +561,40 @@ function decimalMask() {
         $("#qtdLoc2").mask("9.999.999,99", { reverse : true});
     });
 }
-
 function bindOccupation() {
   occupation = document.getElementById("ocup").value;
   console.log("Ocupação:", occupation);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
 function bindSituation() {
   situation = document.getElementById("sit").value;
   console.log("Situação:", situation);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
 function bindFloors() {
   floors = document.getElementById("floors").value;
   console.log("Núm. de Pavimentos:", floors);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
 function bindStairs() {
   stairs = document.getElementById("tipo").value;
   console.log("Tipo de Escada:", stairs);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
 function bindCapacity() {
   capacity = document.getElementById("lot").value;
   console.log("Lotação:", capacity);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
 function bindType() {
   type = document.getElementById("tip").value;
   console.log("Tipo:", type);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
-function bindBlock() {
-  block = document.getElementById("block").value;
-  console.log("Núm. de Blocos:", block);
+function bindComboBlock() {
+  comboBlock = document.getElementById("comboBlock").value;
+  console.log("Núm. de Blocos:", comboBlock);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
 function bindGlp() {
   optionGlpYes = document.getElementById("glpYes").checked;
@@ -586,13 +602,18 @@ function bindGlp() {
   if(optionGlpYes == true) {
     glp = "Sim";
     console.log("Gás Natural?", glp);
-    document.getElementById("qtdGlp").disabled = false;    
+    document.getElementById("qtdGlp").disabled = false;      
   }
   if(optionGlpNo == true) {
     glp = "Não";
     console.log("Gás Natural?", glp);
     document.getElementById("qtdGlp").disabled = true;
-  }  
+  }
+  document.getElementById("blockAlertQuestions").style.display = "none";  
+}
+function bindQtdGlp() {
+  quantGlp =  document.getElementById("qtdGlp").value;
+  console.log("Quant. Gás:", quantGlp);
 }
 function bindDep() {
   optionDepYes = document.getElementById("depYes").checked;
@@ -600,13 +621,18 @@ function bindDep() {
   if(optionDepYes == true) {
     dep = "Sim";
     console.log("Tem depósito?", dep);
-    document.getElementById("depGlp").disabled = false;    
+    document.getElementById("depGlp").disabled = false;           
   }
   if(optionDepNo == true) {
     dep = "Não";
     console.log("Tem depósito?", dep);
     document.getElementById("depGlp").disabled = true;
   }  
+  document.getElementById("blockAlertQuestions").style.display = "none";  
+}
+function bindDepGlp() {
+  depLiq = document.getElementById("depGlp").value;
+  console.log("Quant. em Litros?", depLiq);
 }
 function bindExp() {
   optionExpYes = document.getElementById("expYes").checked;
@@ -618,19 +644,21 @@ function bindExp() {
   if(optionExpNo == true) {
     exp = "Não";
     console.log("Fabrica Explosivos, pólvora, ...?", exp);
-  }  
+  }
+  document.getElementById("blockAlertQuestions").style.display = "none";  
 }
 function bindReunion() {
   optionReuYes = document.getElementById("atiYes").checked;
   optionReuNo = document.getElementById("atiNo").checked;
   if(optionReuYes == true) {
-    reunion = "Sim";
-    console.log("Reunião de público?", reunion);   
+    comboReunion = "Sim";
+    console.log("Reunião de público?", comboReunion);   
   }
   if(optionReuNo == true) {
-    reunion = "Não";
-    console.log("Reunião de público?", reunion);
-  }  
+    comboReunion = "Não";
+    console.log("Reunião de público?", comboReunion);
+  }
+  document.getElementById("blockAlertQuestions").style.display = "none";  
 }
 function bindEdif() {
   optionEdiYes = document.getElementById("locYes").checked;
@@ -638,18 +666,69 @@ function bindEdif() {
   if(optionEdiYes == true) {
     edification = "Sim";
     console.log("Edificação?", edification);
-    document.getElementById("qtdLoc").disabled = false;    
+    document.getElementById("qtdLoc").disabled = false;        
   }
   if(optionEdiNo == true) {
     edification = "Não";
     console.log("Edificação?", edification);
     document.getElementById("qtdLoc").disabled = true;
-  }  
+  }
+  document.getElementById("blockAlertQuestions").style.display = "none";  
+}
+function bindEdifArea() {
+  edifArea = document.getElementById("qtdLoc").value;
+  console.log("Área da Edificação?", edifArea);
 }
 function bindArea() {
   area = document.getElementById("qtdLoc2").value;
   console.log("Área:", area);
+  document.getElementById("blockAlertQuestions").style.display = "none";
 }
+
+function validationForm5b() {
+  console.log(occupation);
+  console.log(situation);
+  console.log(floors);
+  console.log(stairs);
+  console.log(capacity);
+  console.log(type);
+  console.log(comboBlock);
+  console.log(area);
+  if(occupation !== "") {
+    if(situation !== "") {
+      if(floors !== "") {
+        if(stairs !== "") {
+          if(capacity !== "") {
+            if(type !== "") {
+              if(comboBlock !== "") {
+                if(area !== "") {
+                  nextForm6();
+                } else {
+                  document.getElementById("blockAlertQuestions").style.display = "block";
+                }
+              } else {
+                document.getElementById("blockAlertQuestions").style.display = "block";
+              }
+            } else {
+              document.getElementById("blockAlertQuestions").style.display = "block";
+            }
+          } else {
+            document.getElementById("blockAlertQuestions").style.display = "block";
+          }
+        } else {
+          document.getElementById("blockAlertQuestions").style.display = "block";
+        }
+      } else {
+        document.getElementById("blockAlertQuestions").style.display = "block";
+      }
+    } else {
+      document.getElementById("blockAlertQuestions").style.display = "block";
+    }    
+  } else {
+    document.getElementById("blockAlertQuestions").style.display = "block";
+  }
+}
+
 function clearForm6() {
   document.getElementById("ocup").value = "";
   document.getElementById("sit").value = "";
@@ -667,9 +746,79 @@ function clearForm6() {
   document.getElementById("qtdLoc").disabled = true;
   check();
 }
+function transferVar5b() {  
+  var sl_occupation = occupation;
+  console.log(sl_occupation); 
+  var sl_situation = situation;
+  console.log(sl_situation);
+  var sl_floors = floors; 
+  console.log(sl_floors);
+  var sl_stairs = stairs;
+  console.log(sl_stairs);
+  var sl_capacity = capacity; 
+  console.log(sl_capacity);
+  var sl_type = type;
+  console.log(sl_type);
+  var sl_nbBlock = comboBlock; 
+  console.log(sl_nbBlock);
+  var sl_glp = glp;
+  console.log(sl_glp);
+  var sl_quantGlp = quantGlp; 
+  console.log(sl_quantGlp);
+  var sl_dep = dep;
+  console.log(sl_dep);
+  var sl_depLiq = depLiq;
+  console.log(sl_depLiq);
+  var sl_exp = exp;
+  console.log(sl_exp);
+  var sl_reunion = comboReunion;
+  console.log(sl_reunion);
+  var sl_edification = edification;
+  console.log(sl_edification);
+  var sl_edifArea = edifArea;
+  console.log(sl_edifArea);
+  var sl_area = area;
+  console.log(sl_area);
+  $.ajax({
+      type: "POST",
+      url: "../classes/request5-2.php",
+      data:{
+        sl_occupation: sl_occupation,
+        sl_situation: sl_situation,
+        sl_floors: sl_floors,
+        sl_stairs: sl_stairs,
+        sl_capacity: sl_capacity,
+        sl_type: sl_type,
+        sl_nbBlock: sl_nbBlock,
+        sl_glp: sl_glp,
+        sl_quantGlp: sl_quantGlp,
+        sl_dep: sl_dep,
+        sl_depLiq: sl_depLiq,
+        sl_exp: sl_exp,
+        sl_reunion: sl_reunion,
+        sl_edification: sl_edification,
+        sl_edifArea: sl_edifArea,
+        sl_area: sl_area
+          },
+          success: function (result) {
+              $('#result5b').html(result);
+          },
+          error: function (result) {
+              $('#result5b').html(result);
+          }              
+  });
+}
 
-$(document).keypress(function(e) {
-  if(e.which == 13) $('#next5b').click();
+$(document).ready(function(){
+  $('#qtdGlp').mask('0#');
+});
+
+$(document).ready(function(){
+  $('#depGlp').mask('0#');
+});
+
+$(document).ready(function(){
+  $('#qtdLoc').mask('0#');
 });
 
 // Excecute functions
@@ -682,4 +831,4 @@ bindDep();
 bindExp();
 bindReunion();
 bindEdif();
-
+alertErrorQuestion();

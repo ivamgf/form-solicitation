@@ -203,3 +203,86 @@ ol.progtrckr li.progtrckr-todo:before {
 .alertError{
     display: none;
 }
+#blockAlert1 {
+    display: none;
+}
+#blockAlert2 {
+    display: none;
+}
+#blockAlert3 {
+    display: none;
+}
+#blockAlert4 {
+    display: none;
+}
+#blockAlert5 {
+    display: none;
+}
+#blockAlert6 {
+    display: none;
+}
+#blockFrm4Alert1 {
+    display: none;
+}
+#blockFrm4Alert2 {
+    display: none;
+}
+#blockFrm4Alert3 {
+    display: none;
+}
+#blockFrm4Alert4 {
+    display: none;
+}
+#blockFrm5Alert1 {
+    display: none;
+}
+#blockAlertQuestions {
+    display: none;
+}
+.style-alert-form {
+    color: goldenrod;
+    margin-bottom: 2%;
+}
+.style-btn {
+    margin-left: 20%;
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px){
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 992px){
+    
+}
+@media only screen and (min-width: 576px) and (max-width: 768px){
+    .style-progress {
+        display: none;
+    }
+    .style-loader {
+        margin-left: 8%;
+    }
+}
+@media only screen and (max-width: 576px){
+    .style-progress {
+        display: none;
+    }
+    .style-loader {
+        float: left;
+    }
+    .loader {
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 16px solid #FFD700; /* Blue */
+        border-right: 16px solid green;
+        border-bottom: 16px solid red;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        display: block;
+        margin-left: 40%;
+        margin-top: 10%;
+    }
+    .textLoader {
+        display: block;
+        margin-left: 40%;
+        margin-top: 2%;
+    }
+}

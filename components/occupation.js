@@ -1,3 +1,13 @@
+// Ocupation
+
+// Variables
+
+var ocup;
+var ocupArray = [];
+var cmbInit;
+var cmbOcupation = [];
+var itemCombo = "";
+
 // Text ocupation
 
 var text1 = `(Boates, Clubes noturnos em geral, Salões de Baile, Restaurantes dançantes, Bares dançantes, Clubes sociais e assemelhados, Circos, Auditórios ou salas de reunião com mais de 100m², Teatros, Cinemas, Óperas, Templos religiosos, Estádios, Ginásios, Piscinas cobertas com arquibancadas e arenas em geral.)`;
@@ -113,6 +123,55 @@ var occupation = {
     }
 };
 
+function ocupCombo() {
+    ocup = {
+        1: "RESIDENCIAL PRIVATIVA MULTIFAMILIAR",
+        2: "RESIDENCIAL PRIVATIVA UNIFAMILIAR",
+        3: "RESIDENCIAL COLETIVA",
+        4: "RESIDENCIAL TRANSITÓRIA",
+        5: "COMERCIAL",
+        6: "INDUSTRIAL",
+        7: "MISTA",
+        8: "PÚBLICA",
+        9: "ESCOLAR GERAL",
+        10: "HOSPITALAR COM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE",
+        11: "GARAGENS",
+        12: "REUNIÄO DE PÚBLICO",
+        13: "EDIFICAÇÖES ESPECIAIS",
+        14: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE COMBUSTIVEIS E/OU INFLAMÁVEIS",
+        15: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE EXPLOSIVOS E MUNIÇÕES",
+        16: "POSTOS PARA REABASTECIMENTOS DE COMBUSTÍVEIS",
+        17: "POSTOS DE REVENDA DE GLP",
+        18: "DEPÓSITOS",
+        19: "LOCAIS COM RESTRIÇÃO DE LIBERDADE",
+        20: "MATAS NATIVAS E REFLORESTAMENTOS",
+        21: "PARQUES AQUÁTICOS",
+        22: "ATIVIDADES AGROPASTORIS E SILOS",
+        23: "TÚNEIS, GALERIAS E MINAS",
+        24: "RISCOS DIFERENCIADOS - ESTAÇÃO DE RÁDIO E TV",
+        25: "RISCOS DIFERENCIADOS - CENTRO DE COMPUTAÇÃO",
+        26: "RISCOS DIFERENCIADOS - SUBESTAÇÃO ELÉTRICA",
+        27: "RISCOS DIFERENCIADOS - HIDROELÉTRICA, TERMOELÉTRICA OU USINA EÓLICA",
+        28: "RISCOS DIFERENCIADOS - CENTRAIS TELEFÔNICAS OU DE TELECOMUNICAÇÕES",
+        29: "RISCOS DIFERENCIADOS - TORRE DE TRANSMISSÃO DE RÁDIO, TV OU TELEFONIA",
+        30: "RISCOS DIFERENCIADOS - PORTOS",
+        31: "EDIFICAÇÖES ESPECIAIS - OFICINAS DE CONSERTOS DE VEICULOS AUTOMOTORES",
+        32: "EDIFICAÇÖES ESPECIAIS - CALDEIRAS E VASOS DE PRESSÃO",
+        33: "SHOPPING CENTER",
+        34: "ESCOLAR DIFERENCIADA",
+        35: "HOSPITALAR SEM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE"
+    }
+
+    cmbInit = `<option value="">Selecione uma ocupação</option>`;
+    cmbOcupation.push(cmbInit);
+    for(i = 1; i < 37; i++) {
+        ocupArray = ocup;        
+        itemCombo = `<option value="`+ocupArray[i]+`">`+ocupArray[i]+`</option>`;
+        cmbOcupation.push(itemCombo);
+        document.getElementById("ocup").innerHTML = cmbOcupation;
+    }
+}
+
 document.getElementById("title1").innerHTML = occupation.title1;
 document.getElementById("text1").innerHTML = occupation.text1;
 document.getElementById("textLink1").innerHTML = occupation.textLink1;
@@ -175,3 +234,7 @@ document.getElementById("text261").innerHTML = occupation.text25.text26.h;
 document.getElementById("text262").innerHTML = occupation.text25.text26.i;
 document.getElementById("text263").innerHTML = occupation.text25.text26.j;
 document.getElementById("text264").innerHTML = occupation.text25.text26.k;
+
+// Execute functions
+
+ocupCombo();

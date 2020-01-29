@@ -129,7 +129,8 @@ function nextForm3() {
     document.getElementById("blockForm3").style.display = "block";
     document.getElementById("blockProgress2").style.display = "none";
     document.getElementById("blockProgress3").style.display = "block";
-    bindBack2();    
+    bindBack2();
+    transferVar2();    
 }
 
 function check() {
@@ -156,11 +157,30 @@ function radioEnabNo() {
 function clearForm4() {
     document.getElementById("qtd").value = "";
 }
+function transferVar2() {
+    var sl_radioMei = radioMei;
+    var sl_qtdFunc = qtdFunc;
+    $.ajax({
+        type: "POST",
+        url: "../classes/request2.php",
+        data:{
+            sl_radioMei: sl_radioMei,
+            sl_qtdFunc: sl_qtdFunc
+            },
+            success: function (result) {
+                $('#result2').html(result);
+            },
+            error: function (result) {
+                $('#result2').html(result);
+            }              
+    });
+}
 
+/*
 $(document).keypress(function(e) {
     if(e.which == 13) $('#next2').click();
 });
-
+*/
 // Excecute functions
 generateProgress2();
 generateForm1();

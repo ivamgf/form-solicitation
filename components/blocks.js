@@ -7,4 +7,4 @@ for (i = 1; i < 21; i++) {
     optionsBlock =  blockList;
 };
 
-document.getElementById("block").innerHTML = optionsBlock;
+document.getElementById("comboBlock").innerHTML = optionsBlock;
