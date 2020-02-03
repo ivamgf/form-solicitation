@@ -395,38 +395,17 @@ function clearForm5() {
   document.getElementById("error").style.display = "none";
 }
 function transferVar5() {  
-  var sl_name2 = name2; 
-  var sl_fant2 = fant2;
-  var sl_re = re; 
-  var sl_cep = cep;
-  var sl_tipLog = tipLog; 
-  var sl_log = log;
-  var sl_num = num; 
-  var sl_compl = compl;
-  var sl_city = city; 
-  var sl_block = block;
-  $.ajax({
-      type: "POST",
-      url: "../classes/request5.php",
-      data:{
-          sl_name2: sl_name2,
-          sl_fant2: sl_fant2,
-          sl_re: sl_re,area,
-          sl_cep: sl_cep,
-          sl_tipLog: sl_tipLog,
-          sl_log: sl_log,
-          sl_num: sl_num,
-          sl_compl: sl_compl,
-          sl_city: sl_city,
-          sl_block: sl_block
-          },
-          success: function (result) {
-              $('#result5').html(result);
-          },
-          error: function (result) {
-              $('#result5').html(result);
-          }              
-  });
+  response.push(name2); 
+  response.push(fant2);
+  response.push(re); 
+  response.push(cep);
+  response.push(tipLog); 
+  response.push(log);
+  response.push(num); 
+  response.push(compl);
+  response.push(city); 
+  response.push(block);
+  showresponse();
 }
 
 // Excecute functions

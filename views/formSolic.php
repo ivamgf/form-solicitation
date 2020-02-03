@@ -55,6 +55,7 @@
 </div>
 
 <div class="container form">
+  <div id="result"></div>
   <div id="result1"></div>
   <div id="result2"></div>
   <div id="result3"></div>

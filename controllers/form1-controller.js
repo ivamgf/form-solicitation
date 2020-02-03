@@ -89,26 +89,14 @@ function bindBack1() {
     protRegin = document.getElementById("prot").value;
     console.log("protRegin:", protRegin);        
 }
+var response = [];
 function transferVar1() {
     if(checkRegin === true) {
         checkRegin = "sim";       
     }
-    var sl_checkRegin = checkRegin; 
-    var sl_protRegin = protRegin;
-    $.ajax({
-        type: "POST",
-        url: "../classes/request.php",
-        data:{
-            sl_checkRegin: sl_checkRegin,
-            sl_protRegin: sl_protRegin
-            },
-            success: function (result) {
-                $('#result1').html(result);
-            },
-            error: function (result) {
-                $('#result1').html(result);
-            }              
-    });
+    response.push(checkRegin);
+    response.push(protRegin);    
+    showresponse();
 }
 
 /*
