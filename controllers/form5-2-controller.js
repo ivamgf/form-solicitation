@@ -747,66 +747,23 @@ function clearForm6() {
   check();
 }
 function transferVar5b() {  
-  var sl_occupation = occupation;
-  console.log(sl_occupation); 
-  var sl_situation = situation;
-  console.log(sl_situation);
-  var sl_floors = floors; 
-  console.log(sl_floors);
-  var sl_stairs = stairs;
-  console.log(sl_stairs);
-  var sl_capacity = capacity; 
-  console.log(sl_capacity);
-  var sl_type = type;
-  console.log(sl_type);
-  var sl_nbBlock = comboBlock; 
-  console.log(sl_nbBlock);
-  var sl_glp = glp;
-  console.log(sl_glp);
-  var sl_quantGlp = quantGlp; 
-  console.log(sl_quantGlp);
-  var sl_dep = dep;
-  console.log(sl_dep);
-  var sl_depLiq = depLiq;
-  console.log(sl_depLiq);
-  var sl_exp = exp;
-  console.log(sl_exp);
-  var sl_reunion = comboReunion;
-  console.log(sl_reunion);
-  var sl_edification = edification;
-  console.log(sl_edification);
-  var sl_edifArea = edifArea;
-  console.log(sl_edifArea);
-  var sl_area = area;
-  console.log(sl_area);
-  $.ajax({
-      type: "POST",
-      url: "../classes/request5-2.php",
-      data:{
-        sl_occupation: sl_occupation,
-        sl_situation: sl_situation,
-        sl_floors: sl_floors,
-        sl_stairs: sl_stairs,
-        sl_capacity: sl_capacity,
-        sl_type: sl_type,
-        sl_nbBlock: sl_nbBlock,
-        sl_glp: sl_glp,
-        sl_quantGlp: sl_quantGlp,
-        sl_dep: sl_dep,
-        sl_depLiq: sl_depLiq,
-        sl_exp: sl_exp,
-        sl_reunion: sl_reunion,
-        sl_edification: sl_edification,
-        sl_edifArea: sl_edifArea,
-        sl_area: sl_area
-          },
-          success: function (result) {
-              $('#result5b').html(result);
-          },
-          error: function (result) {
-              $('#result5b').html(result);
-          }              
-  });
+  response.push(occupation);
+  response.push(situation);
+  response.push(floors); 
+  response.push(stairs);
+  response.push(capacity); 
+  response.push(type);
+  response.push(comboBlock); 
+  response.push(glp);
+  response.push(quantGlp); 
+  response.push(dep);
+  response.push(depLiq);
+  response.push(exp);
+  response.push(comboReunion);
+  response.push(edification);
+  response.push(edifArea);
+  response.push(area);
+  showresponse();
 }
 
 $(document).ready(function(){

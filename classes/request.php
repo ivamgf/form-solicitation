@@ -9,6 +9,11 @@
         echo "<div class='alert alert-danger'>
                 <strong>Atenção!</strong> Algum valor recebido estava em branco, favor preencher todos os campos!
             </div>";
+    } else {
+        echo 'Tem Regin?' . $frm_checkRegin;
+        echo 'Regin:' . $frm_protRegin;
+       
     }
     // Form 1
+
 ?>
