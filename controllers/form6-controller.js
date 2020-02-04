@@ -51,7 +51,7 @@ function generateForm6() {
                                         <a class="page-link" href="#" onclick="clearForm7()">Limpar</a>
                                     </li>    
                                     <li class="page-item">
-                                        <a class="page-link" href="#" onclick="previousFormc()">Voltar</a>
+                                        <a class="page-link" href="#" onclick="cancel()">Cancelar</a>
                                     </li>
                                     <li class="page-item">
                                         <a id="next" class="page-link" href="#">Avançar</a>
@@ -82,6 +82,10 @@ function previousFormc() {
     document.getElementById("blockForm6").style.position = "relative";
     document.getElementById("blockProgress5b").style.display = "block";
     document.getElementById("blockProgress6").style.display = "none";
+}
+
+function cancel() {
+    location.reload();
 }
 
 function nextForm7() {
