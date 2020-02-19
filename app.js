@@ -48,27 +48,11 @@ imported.src = '/components/footer.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
-imported.src = '/components/occupation.js';
-document.head.appendChild(imported);
-
-var imported = document.createElement('script');
-imported.src = '/components/situation.js';
-document.head.appendChild(imported);
-
-var imported = document.createElement('script');
 imported.src = '/components/ladder.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
 imported.src = '/components/stocking.js';
-document.head.appendChild(imported);
-
-var imported = document.createElement('script');
-imported.src = '/components/gas.js';
-document.head.appendChild(imported);
-
-var imported = document.createElement('script');
-imported.src = '/components/reunion.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');
@@ -81,10 +65,6 @@ document.head.appendChild(imported);
 
 var imported = document.createElement('script');
 imported.src = '/components/blocks.js';
-document.head.appendChild(imported);
-
-var imported = document.createElement('script');
-imported.src = '/components/stairs.js';
 document.head.appendChild(imported);
 
 var imported = document.createElement('script');

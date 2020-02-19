@@ -211,26 +211,11 @@ function clearForm1() {
 }
 function transferVar4() {
     natId = natId.replace(/[^0-9]+/g,'');
-    var sl_name = name; 
-    var sl_phoneAdm = phoneAdm;
-    var sl_natId2 = natId; 
-    var sl_emailAdm = emailAdm;
-    $.ajax({
-        type: "POST",
-        url: "../classes/request4.php",
-        data:{
-            sl_name: sl_name,
-            sl_phoneAdm: sl_phoneAdm,
-            sl_natId2: sl_natId2,
-            sl_emailAdm: sl_emailAdm
-            },
-            success: function (result) {
-                $('#result4').html(result);
-            },
-            error: function (result) {
-                $('#result4').html(result);
-            }              
-    });
+    response.push(name); 
+    response.push(phoneAdm);
+    response.push(natId); 
+    response.push(emailAdm);
+    showresponse();    
 }
 
 // ====================================================================================

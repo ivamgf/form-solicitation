@@ -747,66 +747,23 @@ function clearForm6() {
   check();
 }
 function transferVar5b() {  
-  var sl_occupation = occupation;
-  console.log(sl_occupation); 
-  var sl_situation = situation;
-  console.log(sl_situation);
-  var sl_floors = floors; 
-  console.log(sl_floors);
-  var sl_stairs = stairs;
-  console.log(sl_stairs);
-  var sl_capacity = capacity; 
-  console.log(sl_capacity);
-  var sl_type = type;
-  console.log(sl_type);
-  var sl_nbBlock = comboBlock; 
-  console.log(sl_nbBlock);
-  var sl_glp = glp;
-  console.log(sl_glp);
-  var sl_quantGlp = quantGlp; 
-  console.log(sl_quantGlp);
-  var sl_dep = dep;
-  console.log(sl_dep);
-  var sl_depLiq = depLiq;
-  console.log(sl_depLiq);
-  var sl_exp = exp;
-  console.log(sl_exp);
-  var sl_reunion = comboReunion;
-  console.log(sl_reunion);
-  var sl_edification = edification;
-  console.log(sl_edification);
-  var sl_edifArea = edifArea;
-  console.log(sl_edifArea);
-  var sl_area = area;
-  console.log(sl_area);
-  $.ajax({
-      type: "POST",
-      url: "../classes/request5-2.php",
-      data:{
-        sl_occupation: sl_occupation,
-        sl_situation: sl_situation,
-        sl_floors: sl_floors,
-        sl_stairs: sl_stairs,
-        sl_capacity: sl_capacity,
-        sl_type: sl_type,
-        sl_nbBlock: sl_nbBlock,
-        sl_glp: sl_glp,
-        sl_quantGlp: sl_quantGlp,
-        sl_dep: sl_dep,
-        sl_depLiq: sl_depLiq,
-        sl_exp: sl_exp,
-        sl_reunion: sl_reunion,
-        sl_edification: sl_edification,
-        sl_edifArea: sl_edifArea,
-        sl_area: sl_area
-          },
-          success: function (result) {
-              $('#result5b').html(result);
-          },
-          error: function (result) {
-              $('#result5b').html(result);
-          }              
-  });
+  response.push(occupation);
+  response.push(situation);
+  response.push(floors); 
+  response.push(stairs);
+  response.push(capacity); 
+  response.push(type);
+  response.push(comboBlock); 
+  response.push(glp);
+  response.push(quantGlp); 
+  response.push(dep);
+  response.push(depLiq);
+  response.push(exp);
+  response.push(comboReunion);
+  response.push(edification);
+  response.push(edifArea);
+  response.push(area);
+  showresponse();
 }
 
 $(document).ready(function(){
@@ -821,6 +778,344 @@ $(document).ready(function(){
   $('#qtdLoc').mask('0#');
 });
 
+function textGas() {
+  // Text gas
+
+  var text1 = `(Boates, Clubes noturnos em geral, Salões de Baile, Restaurantes dançantes, Bares dançantes, Clubes sociais e assemelhados, Circos, Auditórios ou salas de reunião com mais de 100m², Teatros, Cinemas, Óperas, Templos religiosos, Estádios, Ginásios, Piscinas cobertas com arquibancadas e arenas em geral.)`;
+  var text2 = `O número após o "P" indica quantos kg de GLP cada botijão possui. Basta somar quantos botijões de cada você possui.`;
+  var gas = {
+      title1: "Exemplos de ocupação/atividade considerada como reunião de público:",
+      text1: text1,
+      textLink1: "Conforme IN 008",
+      link1: "http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in",
+      text2: text2
+  };
+
+  document.getElementById("modal5Title1").innerHTML = gas.title1;
+  document.getElementById("modal5Text1").innerHTML = gas.text1;
+  document.getElementById("modal5Link1").innerHTML = gas.textLink1;
+  document.getElementById("modal5Text2").innerHTML = gas.text2;
+
+  document.getElementById("modal6Title1").innerHTML = gas.title1;
+  document.getElementById("modal6Text1").innerHTML = gas.text1;
+  document.getElementById("modal6Link1").innerHTML = gas.textLink1;
+}
+
+function textOccupation() {
+  // Ocupation
+
+  // Variables
+
+  var ocup;
+  var ocupArray = [];
+  var cmbInit;
+  var cmbOcupation = [];
+  var itemCombo = "";
+
+  // Text ocupation
+
+  var text1 = `(Boates, Clubes noturnos em geral, Salões de Baile, Restaurantes dançantes, Bares dançantes, Clubes sociais e assemelhados, Circos, Auditórios ou salas de reunião com mais de 100m², Teatros, Cinemas, Óperas, Templos religiosos, Estádios, Ginásios, Piscinas cobertas com arquibancadas e arenas em geral.)`;
+
+  var text2 = `São os auditórios ou salas de reunião com mais de 100m2, boates, clubes noturnos em geral, salões de baile, restaurantes dançantes, bares dançantes, clubes sociais, circos, teatros, cinemas, óperas, templos religiosos sem assentos (cadeira, banco ou poltrona), estádios, ginásios e piscinas cobertas com arquibancadas, arenas em geral.`;
+
+  var text3 = `Auditórios ou salas de reunião com até 100m2, restaurantes, lanchonetes, bares, cafés, refeitórios, cantinas, templos religiosos com assentos (cadeiras, bancos ou poltrona), museus, cartórios, piscinas cobertas sem arquibancadas, galerias de arte, bibliotecas, rodoviárias, parques de diversões, aeroportos, aeroclubes).`;
+
+  var text6 = `Edificações destinadas a desenvolver atividades os pensionatos, asilos, conventos, internatos e congêneres.`;
+
+  var text8 = `São os imóveis destinadas a desenvolver as atividades como: mercantil, comercial em geral, lojas, mercados, escritórios, galerias comerciais, supermercados e congêneres.`;
+
+  var text9 = `Empreendimento constituído por um conjunto planejado de lojas, operando de forma integrada, sob administração única e centralizada; composto de lojas destinadas à exploração de ramos diversificados ou especializados de comércio e prestação de serviços (Assoc. Bras. de Shopping Centers ABRASCE).`;
+
+  var text10 = `Edificações que executam um conjunto de operações com a finalidade de transformar uma matéria-prima em outra matéria-prima ou produto final.`;
+
+  var text12 = `Imóveis utilizados com atividade de quartéis, secretarias, tribunais, delegacias, consulados e outros.`;
+
+  var text13 = `São as escolas de ensino fundamental, médio ou superior, creches, jardins de infância, maternal, cursos supletivo, cursos pré-vestibulares e congêneres.`;
+
+  var text14 = `São as escolas de artes, artesanatos, profissionalizantes, academias de ginásticas, escolas de idiomas, escolas de músicas e outros.`;
+
+  var text15 = `Hospital, laboratório, unidades de pronto atendimento, clínica médica e congêneres quando houver internação ou ocorrer, mesmo que por breve período, a restrição de mobilidade do paciente (procedimentos como anestesia, sedação ou que impossibilite, ainda que temporária, a saída por conta própria a qualquer tempo)`;
+
+  var text16 = `Hospital, laboratório, unidades de pronto atendimento, clínica médica e congêneres quando não houver internação ou não ocorrer a restrição de mobilidade do paciente.`;
+
+  var text17 = `São os edifícios garagem, garagens em geral, hangares, marinas e congêneres.`;
+
+  var text18 = `Postos de combustíveis em geral, inclusive aqueles que realizar reabastecimento de GNV.`;
+
+  var text19 = `São as edificações destinadas ao armazenamento de recipientes transportáveis de gás liquefeito de petróleo (GLP) (IN 29).`;
+
+  var text20 = `Imóveis utilizados como galpões, centros de distribuição, centro atacadista, entre outros.`;
+
+  var text21 = `São as penitenciárias, presídios, centro de internação de menor infrator, manicômio e congêneres.`;
+
+  var text22 = `São as edificações ou complexo de edificações do tipo sociedades recreativas, clubes, hotéis, pousadas, parques aquáticos, estações termais, hidrominerais e empreendimentos de lazer e turismo que possuam piscinas de uso coletivo e/ou áreas com opção aquática de lazer, como lagos, lagoas, represas e similares (Complemento IN 33)`;
+
+  var text23 = `São aquelas edificações e instalações de caráter rudimentar ou provisório, edificações que abrigam aviários, chiqueiros, pocilgas, estrebarias, estábulos, retes, canis, gatis, haras, criadouros diversos, estufas destinadas à produção de mudas ou hortifrutigranjeiros, edificações para estocagem de forrageiras ou fardos, silos para estocagem de grãos, secadores de grãos ou folhas, paióis e outros (Complemento IN34).`;
+
+  var text24 = `Minas de extração de minério, túneis rodoviários, etc..`;
+
+  var textLink1 = `Conforme IN 001`;
+
+  var occupation = { 
+      text0: "Ocupação", 
+      title1: "Exemplos de ocupação/atividade considerada como reunião de público:", 
+      text1: text1,
+      textLink1: textLink1,
+      link1: "http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in",
+      title2: "Reunião de público com concentração:",
+      text2:  text2,
+      title3: "Reunião de público sem concentração:",
+      text3: text3,
+      title4: "Residencial Privativa Multifamiliar:",
+      text4: "Edificações na qual exista duas ou mais unidades residenciais.",
+      title5: "Residencial Privativa Unifamiliar:",
+      text5: "Edificações destinadas a abrigar apenas uma família com apenas uma unidade residencial.",
+      title6: "Residencial Coletiva:",
+      text6: text6,
+      title7: "Residencial Transitória:",
+      text7: "São os hotéis, apart-hotéis, albergues, motéis e congêneres.",
+      title8: "Comercial:",
+      text8: text8,
+      title9: "Shopping Center:",
+      text9: text9,
+      title10: "Industrial:",
+      text10: text10,
+      title11: "Mista:",
+      text11: "É o imóvel com duas ou mais ocupações diferentes.",
+      title12: "Pública:",
+      text12: text12,
+      title13: "Escolar geral:",
+      text13: text13,
+      title14: "Escolar Diferenciada:",
+      text14: text14,
+      title15: "Hospitalar com internação ou com restrição de mobilidade:",
+      text15: text15,
+      title16: "Hospitalar sem internação e sem restrição de mobilidade:",
+      text16: text16,
+      title17: "Garagens:",
+      text17: text17,
+      title18: "Postos para reabastecimentos de combustíveis (líquidos inflamáveis e GNV):",
+      text18: text18,
+      title19: "Postos de revenda de glp (PRGLP):",
+      text19: text19,
+      title20: "Depósitos:",
+      text20: text20,
+      title21: "Locais com restrição de liberdade:",
+      text21: text21,
+      title22: "Parques aquáticos:",
+      text22: text22,
+      title23: "Atividades agropastoris e silos:",
+      text23: text23,
+      title24: "Túneis, galerias e minas:",
+      text24: text24,
+      title25: "Riscos diferenciados:",
+      text25: {
+          a: "a) estação de rádio ou TV;",
+          b: "b) centro de computação;",
+          c: "c) subestação elétrica (complemento IN 16);",
+          d: "d) hidroelétrica, termoelétrica ou usina eólica;",
+          e: "e) centrais telefônicas ou de telecomunicações;",
+          f: "f) estações de serviço (torre de transmissão de rádio, TV ou telefonia);",
+          g: "g) portos;",
+          text26: {
+              title26: "Edificações Especiais:",
+              h: "a) oficinas de consertos de veículos automotores;",
+              i: "b) depósito de combustíveis e/ou inflamáveis (complemento IN 29);",
+              j: "c) depósito de armas, explosivos e munições (complemento IN 30);",
+              k: "d) caldeiras e vasos de pressão (complemento IN 32)."
+          }
+      }
+  };
+
+  function ocupCombo() {
+      ocup = {
+          1: "RESIDENCIAL PRIVATIVA MULTIFAMILIAR",
+          2: "RESIDENCIAL PRIVATIVA UNIFAMILIAR",
+          3: "RESIDENCIAL COLETIVA",
+          4: "RESIDENCIAL TRANSITÓRIA",
+          5: "COMERCIAL",
+          6: "INDUSTRIAL",
+          7: "MISTA",
+          8: "PÚBLICA",
+          9: "ESCOLAR GERAL",
+          10: "HOSPITALAR COM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE",
+          11: "GARAGENS",
+          12: "REUNIÄO DE PÚBLICO",
+          13: "EDIFICAÇÖES ESPECIAIS",
+          14: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE COMBUSTIVEIS E/OU INFLAMÁVEIS",
+          15: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE EXPLOSIVOS E MUNIÇÕES",
+          16: "POSTOS PARA REABASTECIMENTOS DE COMBUSTÍVEIS",
+          17: "POSTOS DE REVENDA DE GLP",
+          18: "DEPÓSITOS",
+          19: "LOCAIS COM RESTRIÇÃO DE LIBERDADE",
+          20: "MATAS NATIVAS E REFLORESTAMENTOS",
+          21: "PARQUES AQUÁTICOS",
+          22: "ATIVIDADES AGROPASTORIS E SILOS",
+          23: "TÚNEIS, GALERIAS E MINAS",
+          24: "RISCOS DIFERENCIADOS - ESTAÇÃO DE RÁDIO E TV",
+          25: "RISCOS DIFERENCIADOS - CENTRO DE COMPUTAÇÃO",
+          26: "RISCOS DIFERENCIADOS - SUBESTAÇÃO ELÉTRICA",
+          27: "RISCOS DIFERENCIADOS - HIDROELÉTRICA, TERMOELÉTRICA OU USINA EÓLICA",
+          28: "RISCOS DIFERENCIADOS - CENTRAIS TELEFÔNICAS OU DE TELECOMUNICAÇÕES",
+          29: "RISCOS DIFERENCIADOS - TORRE DE TRANSMISSÃO DE RÁDIO, TV OU TELEFONIA",
+          30: "RISCOS DIFERENCIADOS - PORTOS",
+          31: "EDIFICAÇÖES ESPECIAIS - OFICINAS DE CONSERTOS DE VEICULOS AUTOMOTORES",
+          32: "EDIFICAÇÖES ESPECIAIS - CALDEIRAS E VASOS DE PRESSÃO",
+          33: "SHOPPING CENTER",
+          34: "ESCOLAR DIFERENCIADA",
+          35: "HOSPITALAR SEM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE"
+      }
+
+      cmbInit = `<option value="">Selecione uma ocupação</option>`;
+      cmbOcupation.push(cmbInit);
+      for(i = 1; i < 37; i++) {
+          ocupArray = ocup;        
+          itemCombo = `<option value="`+ocupArray[i]+`">`+ocupArray[i]+`</option>`;
+          cmbOcupation.push(itemCombo);
+          document.getElementById("ocup").innerHTML = cmbOcupation;
+      }
+  }
+
+  document.getElementById("title1").innerHTML = occupation.title1;
+  document.getElementById("text1").innerHTML = occupation.text1;
+  document.getElementById("textLink1").innerHTML = occupation.textLink1;
+  document.getElementById("title2").innerHTML = occupation.title2;
+  document.getElementById("text2").innerHTML = occupation.text2;
+  document.getElementById("title3").innerHTML = occupation.title3;
+  document.getElementById("text3").innerHTML = occupation.text3;
+  document.getElementById("title4").innerHTML = occupation.title4;
+  document.getElementById("text4").innerHTML = occupation.text4;
+  document.getElementById("title5").innerHTML = occupation.title5;
+  document.getElementById("text5").innerHTML = occupation.text5;
+  document.getElementById("title6").innerHTML = occupation.title6;
+  document.getElementById("text6").innerHTML = occupation.text6;
+  document.getElementById("title7").innerHTML = occupation.title7;
+  document.getElementById("text7").innerHTML = occupation.text7;
+  document.getElementById("title8").innerHTML = occupation.title8;
+  document.getElementById("text8").innerHTML = occupation.text8;
+  document.getElementById("title9").innerHTML = occupation.title9;
+  document.getElementById("text9").innerHTML = occupation.text9;
+  document.getElementById("title10").innerHTML = occupation.title10;
+  document.getElementById("text10").innerHTML = occupation.text10;
+  document.getElementById("title11").innerHTML = occupation.title11;
+  document.getElementById("text11").innerHTML = occupation.text11;
+  document.getElementById("title12").innerHTML = occupation.title12;
+  document.getElementById("text12").innerHTML = occupation.text12;
+  document.getElementById("title13").innerHTML = occupation.title13;
+  document.getElementById("text13").innerHTML = occupation.text13;
+  document.getElementById("title14").innerHTML = occupation.title14;
+  document.getElementById("text14").innerHTML = occupation.text14;
+  document.getElementById("title15").innerHTML = occupation.title15;
+  document.getElementById("text15").innerHTML = occupation.text15;
+  document.getElementById("title16").innerHTML = occupation.title16;
+  document.getElementById("text16").innerHTML = occupation.text16;
+  document.getElementById("title17").innerHTML = occupation.title17;
+  document.getElementById("text17").innerHTML = occupation.text17;
+  document.getElementById("title18").innerHTML = occupation.title18;
+  document.getElementById("text18").innerHTML = occupation.text18;
+  document.getElementById("title19").innerHTML = occupation.title19;
+  document.getElementById("text19").innerHTML = occupation.text19;
+  document.getElementById("title20").innerHTML = occupation.title20;
+  document.getElementById("text20").innerHTML = occupation.text20;
+  document.getElementById("title21").innerHTML = occupation.title21;
+  document.getElementById("text21").innerHTML = occupation.text21;
+  document.getElementById("title22").innerHTML = occupation.title22;
+  document.getElementById("text22").innerHTML = occupation.text22;
+  document.getElementById("title23").innerHTML = occupation.title23;
+  document.getElementById("text23").innerHTML = occupation.text23;
+  document.getElementById("title24").innerHTML = occupation.title24;
+  document.getElementById("text24").innerHTML = occupation.text24;
+  document.getElementById("title25").innerHTML = occupation.title25;
+  document.getElementById("text25").innerHTML = occupation.text25.a;
+  document.getElementById("text252").innerHTML = occupation.text25.b;
+  document.getElementById("text253").innerHTML = occupation.text25.c;
+  document.getElementById("text254").innerHTML = occupation.text25.d;
+  document.getElementById("text255").innerHTML = occupation.text25.e;
+  document.getElementById("text256").innerHTML = occupation.text25.f;
+  document.getElementById("text257").innerHTML = occupation.text25.g;
+  document.getElementById("text26").innerHTML = occupation.text25.text26.title26;
+  document.getElementById("text261").innerHTML = occupation.text25.text26.h;
+  document.getElementById("text262").innerHTML = occupation.text25.text26.i;
+  document.getElementById("text263").innerHTML = occupation.text25.text26.j;
+  document.getElementById("text264").innerHTML = occupation.text25.text26.k;
+
+  // Execute functions
+
+  ocupCombo();
+}
+
+function textSituation() {
+  // Text situation
+
+  var text1 = `(Boates, Clubes noturnos em geral, Salões de Baile, Restaurantes dançantes, Bares dançantes, Clubes sociais e assemelhados, Circos, Auditórios ou salas de reunião com mais de 100m², Teatros, Cinemas, Óperas, Templos religiosos, Estádios, Ginásios, Piscinas cobertas com arquibancadas e arenas em geral.)`;
+  var text2 = `aquela que já se encontrava edificada, acabada ou concluída na data de publicação (11/11/2013) da Lei no 16.157, de 07/11/2013.`;
+  var text3 = `aquela que ainda se encontrava em fase de projeto ou de construção na data de publicação (11/11/2013) da Lei no 16.157, de 07/11/2013, e a que vier a ser construída posteriormente.`;
+  var textA = `não obteve aprovação de projeto preventivo quando foi edificada pelo fato de a ocupação original e/ou a legislação vigente na época não exigir; ou `;
+  var textB = `embora anteriormente aprovada pelo Corpo de Bombeiros Militar, venha a enquadrar-se posteriormente numa das seguintes situações:`;
+  var c1 = `(1) aprovada para ocupação diversa da atual ou pretendida; ou`;
+  var c2 = `(2) desatualizada em relação às normas vigentes, mantendo ou modificando a ocupação original.`;
+
+  var situation = {
+      title1: "Exemplos de ocupação/atividade considerada como reunião de público:",
+      text1: text1,
+      textLink1: "Conforme IN 001(Para acessar a norma clique aqui)",
+      link1: "http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in",
+      title2: "Edificação existente:",
+      text2: text2,
+      title3: "Edificação nova:",
+      text3: text3,
+      title4: "Edificação recente:",
+      text4: "aquela que se enquadra nas seguintes situações:",
+      sit: {
+          a: textA,
+          b: textB,
+          c1: c1,
+          c2: c2
+      }
+  };
+
+  document.getElementById("modal2Title1").innerHTML = situation.title1;
+  document.getElementById("modal2Text1").innerHTML = situation.text1;
+  document.getElementById("modal2TextLink1").innerHTML = situation.textLink1;
+  document.getElementById("modal2Title2").innerHTML = situation.title2;
+  document.getElementById("modal2Text2").innerHTML = situation.text2;
+  document.getElementById("modal2Title3").innerHTML = situation.title3;
+  document.getElementById("modal2Text3").innerHTML = situation.text3;
+  document.getElementById("modal2Title4").innerHTML = situation.title4;
+  document.getElementById("modal2Text4").innerHTML = situation.text4;
+  document.getElementById("sit1").innerHTML = situation.sit.a;
+  document.getElementById("sit2").innerHTML = situation.sit.b;
+  document.getElementById("sit3").innerHTML = situation.sit.c1;
+  document.getElementById("sit4").innerHTML = situation.sit.c2;
+}
+
+function textStairs() {
+  // Text stairs
+
+  var text1 = `(Boates, Clubes noturnos em geral, Salões de Baile, Restaurantes dançantes, Bares dançantes, Clubes sociais e assemelhados, Circos, Auditórios ou salas de reunião com mais de 100m², Teatros, Cinemas, Óperas, Templos religiosos, Estádios, Ginásios, Piscinas cobertas com arquibancadas e arenas em geral.)`;
+  var gas = {
+      title1: "Exemplos de ocupação/atividade considerada como reunião de público:",
+      text1: text1,
+      textLink1: "Conforme IN 008, SISTEMA DE SAIDA DE EMERGÊNCIA",
+      link1: "http://www.cbm.sc.gov.br/dat/index.php/instrucoes-normativas-in"
+  };
+
+  document.getElementById("modal3Title1").innerHTML = gas.title1;
+  document.getElementById("modal3Text1").innerHTML = gas.text1;
+  document.getElementById("modal3Link1").innerHTML = gas.textLink1;
+}
+
+function textReunion() {
+  // Text reunion
+
+  var text1 = `(Boates, Clubes noturnos em geral, Salões de Baile, Restaurantes dançantes, Bares dançantes, Clubes sociais e assemelhados, Circos, Auditórios ou salas de reunião com mais de 100m², Teatros, Cinemas, Óperas, Templos religiosos, Estádios, Ginásios, Piscinas cobertas com arquibancadas e arenas em geral.)`;
+
+  var reunion = {
+      title1: "Exemplos de ocupação/atividade considerada como reunião de público:",
+      text1: text1
+  };
+}
+
 // Excecute functions
 generateProgress5b();
 generateForm5b();
@@ -832,3 +1127,8 @@ bindExp();
 bindReunion();
 bindEdif();
 alertErrorQuestion();
+textGas();
+textOccupation();
+textSituation();
+textStairs();
+textReunion();

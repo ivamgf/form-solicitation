@@ -216,32 +216,14 @@ function bindCpfCnpj() {
     validnatId(natIdLenght);    
 }
 function transferVar3() {
-    cpfCnpj = cpfCnpj.replace(/[^0-9]+/g,'');
-    var sl_natId = cpfCnpj;
-    var sl_nameFant = nameFant;
-    var sl_phone = phone;
-    var sl_corporateName = corporateName;
-    var sl_nameCont = nameCont;
-    var sl_email = email;     
-        $.ajax({
-            type: "POST",
-            url: "../classes/request3.php",
-            data:{
-                sl_natId: sl_natId,
-                sl_nameFant: sl_nameFant,
-                sl_phone: sl_phone,
-                sl_corporateName: sl_corporateName,
-                sl_nameCont: sl_nameCont,
-                sl_email: sl_email
-                },
-                success: function (result) {
-                    $('#result3').html(result);
-                },
-                error: function (result) {
-                    $('#result3').html(result);
-                }              
-        });
-   
+    cpfCnpj = cpfCnpj.replace(/[^0-9]+/g,'');    
+    response.push(cpfCnpj);
+    response.push(nameFant);
+    response.push(phone);
+    response.push(corporateName);
+    response.push(nameCont);
+    response.push(email);
+    showresponse();   
 }
 function bindNameFant() {
     nameFant = document.getElementById("fant").value;
