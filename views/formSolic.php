@@ -55,12 +55,8 @@
 </div>
 
 <div class="container form">
+  <div id="result"></div>
   <div id="result1"></div>
-  <div id="result2"></div>
-  <div id="result3"></div>
-  <div id="result4"></div>
-  <div id="result5"></div>
-  <div id="result5b"></div>
   <div id="blockAlert1"></div>
   <div id="blockAlert2"></div>
   <div id="blockAlert3"></div>

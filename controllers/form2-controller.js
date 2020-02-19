@@ -5,6 +5,16 @@
 
 // Descriptions
 
+// Imports
+var imported = document.createElement('script');
+imported.src = '/controllers/form1-controller.js';
+document.head.appendChild(imported);
+
+function showresponse() {
+    console.log(response);
+}
+
+
 // Functions
 function generateProgress2() {
     // Variables
@@ -158,22 +168,9 @@ function clearForm4() {
     document.getElementById("qtd").value = "";
 }
 function transferVar2() {
-    var sl_radioMei = radioMei;
-    var sl_qtdFunc = qtdFunc;
-    $.ajax({
-        type: "POST",
-        url: "../classes/request2.php",
-        data:{
-            sl_radioMei: sl_radioMei,
-            sl_qtdFunc: sl_qtdFunc
-            },
-            success: function (result) {
-                $('#result2').html(result);
-            },
-            error: function (result) {
-                $('#result2').html(result);
-            }              
-    });
+    response.push(radioMei);
+    response.push(qtdFunc);
+    showresponse();
 }
 
 /*
