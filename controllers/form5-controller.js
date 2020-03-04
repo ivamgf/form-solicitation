@@ -95,74 +95,7 @@ function generateForm5() {
                                         
                                         <label for="typ">Tipo de Logradouro:</label>
                                         <select class="form-control" id="typLog" name="typLog" onclick="bindTipLog()">
-                                          <option>Selecione um tipo de logradouro</option>
-                                          <option>10ª Avenida</option> 
-                                          <option>10ª Travessa</option> 
-                                          <option>11ª Avenida</option>
-                                          <option>11ª Travessa</option>
-                                          <option>12ª Travessa</option>
-                                          <option>13ª Travessa</option>
-                                          <option>14ª Travessa</option>
-                                          <option>15ª Travessa</option>
-                                          <option>16ª Travessa</option>
-                                          <option>17ª Travessa</option>
-                                          <option>18ª Travessa</option>
-                                          <option>19ª Travessa</option>
-                                          <option>1ª Avenida</option>
-                                          <option>1ª Ladeira</option>
-                                          <option>1ª Paralela</option>
-                                          <option>1ª Rua</option>
-                                          <option>1ª Subida</option>
-                                          <option>1ª Travessa</option>
-                                          <option>1ª Travessa da Rodovia</option>
-                                          <option>1ª Vila</option>
-                                          <option>1º Alto</option>
-                                          <option>1º Beco</option>
-                                          <option>20ª Travessa</option>
-                                          <option>21ª Travessa</option>
-                                          <option>22ª Travessa</option>
-                                          <option>26ª Travessa</option>
-                                          <option>2ª Avenida</option>
-                                          <option>2ª Ladeira</option>
-                                          <option>2ª Paralela</option> 
-                                          <option>2ª Rua</option>
-                                          <option>2ª Subida</option>
-                                          <option>2ª Travessa</option>
-                                          <option>2ª Travessa da Rodovia</option>
-                                          <option>2ª Vila</option>
-                                          <option>2º Alto</option>
-                                          <option>2º Beco</option>
-                                          <option>3ª Avenida</option>
-                                          <option>3ª Ladeira</option>
-                                          <option>3ª Paralela</option> 
-                                          <option>3ª Rua</option>
-                                          <option>3ª Subida</option>
-                                          <option>3ª Travessa</option>
-                                          <option>3ª Vil</option>
-                                          <option>3º Alto</option>
-                                          <option>3º Beco</option>
-                                          <option>4ª Avenida</option>
-                                          <option>4ª Paralela</option>
-                                          <option>4ª Rua</option>
-                                          <option>4ª Subida</option>
-                                          <option>4ª Travessa</option>
-                                          <option>4ª Vila</option>
-                                          <option>5ª Avenida</option>
-                                          <option>5ª Rua</option>
-                                          <option>5ª Subida</option>
-                                          <option>5ª Travessa</option>
-                                          <option>5ª Vila</option>
-                                          <option>6ª Avenida</option>
-                                          <option>6ª Rua</option>
-                                          <option>6ª Subida</option>
-                                          <option>6ª Travessa</option>
-                                          <option>6ª Vila</option>
-                                          <option>7ª Avenida</option>
-                                          <option>7ª Travessa</option>
-                                          <option>8ª Avenida</option>
-                                          <option>8ª Travessa</option>
-                                          <option>9ª Avenida</option>
-                                          <option>9ª Travessa</option>
+                                          <option>Selecione um tipo de logradouro</option>                                          
                                           <option>Acampamento</option>
                                           <option>Acesso</option>
                                           <option>Acesso Estadual</option>
@@ -217,6 +150,11 @@ function generateForm5() {
                                           <option>Comunidade</option>
                                           <option>Condomínio</option>
                                           <option>Condomínio Residencial</option>
+                                          <option>Rua</option>
+                                          <option>Subida</option>
+                                          <option>Travessa</option>
+                                          <option>Travessa da Rodovia</option>
+                                          <option>Vila</option>
                                         </select> 
                                         
                                     </div>
