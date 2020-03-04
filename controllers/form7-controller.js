@@ -23,15 +23,241 @@ function generateProgress7() {
 
 function generateForm7() {
     var blockForm7 =   `<div class="card">
-                            <div class="card-head style-card-head"><h4>Solicitação Concluída com Sucesso!</h4></div>
-                            <div class="card-body">                                
+                            <div class="card-head style-card-head"><h4>Confirmação dos Dados</h4></div>
+                            <div class="card-body">    
+                                                           
+                                <div id="accordion">
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                                            Empresa
+                                            </a>
+                                        </div>
+                                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                            <div class="card-body">
+                                            
+                                                <div class="form-group" id="natIdGroupConf">
+                                                    <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
+                                                    <input type="text" class="form-control" id="cpfcnpjConf" name="cpfcnpjConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="fantasia">Nome Fantasia Empresa:</label>
+                                                    <input type="text" class="form-control" id="fantConf" name="fantConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="fone">Telefone:</label>
+                                                    <input type="tel" class="form-control" id="foneConf" name="foneConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="razao">Razão Social:</label>
+                                                    <input type="text" class="form-control" id="razaoConf" name="razaoConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="contato">Nome Contato:</label>
+                                                    <input type="text" class="form-control" id="contatoConf" name="contatoConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">E-mail:</label>
+                                                    <input type="text" class="form-control" id="emailConf" name="emailConf" disabled>
+                                                </div>                            
+                                                                                            
+                                            </div>
+                                        </div>
+                                    </div>
                                 
-                                <div class="alert alert-success">
-                                    <span class="style-alert-fin">
-                                        <i class="fas fa-thumbs-up"></i> 
-                                        Clique em "Finalizar" para voltar ao site!
-                                    </span>
-                                </div>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                                            Proprietário da Edificação
+                                            </a>
+                                        </div>
+                                            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                                <div class="card-body">
+                                                <div class="form-group">
+                                                <label for="name">Nome:</label>
+                                                <input type="text" class="form-control" id="nomeConf" name="nomeConf" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="fone">Telefone:</label>
+                                                <input type="tel" class="form-control" id="fone2Conf" name="foneConf" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="natId">CPF/CNPJ do Proprietário:</label>
+                                                <input type="text" class="form-control" id="natIdConf" name="natIdConf" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">E-mail:</label>
+                                                <input type="text" class="form-control" id="emailAdmConf" name="emailConf" disabled>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                                            Edificação
+                                            </a>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <div class="form-group">
+                                                    <label for="name">Nome:</label>
+                                                    <input type="text" class="form-control" id="nameConf" name="nomeConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="fant">Nome Fantasia Empresa:</label>
+                                                    <input type="text" class="form-control" id="fant2Conf" name="fantConf" disabled>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="re">RE:</label>
+                                                    <input type="number" class="form-control" id="reConf" name="reConf">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+                                            Endereço
+                                            </a>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                    <label for="cep">CEP:</label>
+                                                    <div class="input-group mb-3">                                      
+                                                        <input type="text" class="form-control" id="cepConf" name="cepConf" disabled>
+                                                    </div>
+                                                    </div>                              
+
+                                                    <div class="form-group">
+                                                        <label for="typ">Tipo Logradouro:</label>
+                                                        <input type="text" class="form-control" id="typLogConf" name="typLogConf" disabled>
+                                                    </div>
+   
+                                                    <div class="form-group">
+                                                        <label for="log">Logradouro:</label>
+                                                        <input type="text" class="form-control" id="logConf" name="logConf" disabled>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col-6">
+                                                        <label for="num">Número:</label>
+                                                        <input type="number" class="form-control" id="numberConf" name="numberConf" disabled>
+                                                    </div>
+                                                
+                                                    <div class="form-group col-6">
+                                                        <label for="comp">Complemento:</label>
+                                                        <input type="text" class="form-control" id="compConf" name="compConf" disabled>
+                                                    </div>
+                                                </div>
+
+                                                    <div class="form-group">
+                                                        <label for="cid">Cidade:</label>
+                                                        <input type="text" class="form-control" id="cidConf" name="cidConf" disabled>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="bai">Bairro:</label>
+                                                        <input type="text" class="form-control" id="baiConf" name="baiConf" disabled>
+                                                    </div>
+                                    
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+                                            Caracterìsticas da Edificação
+                                            </a>
+                                        </div>
+                                        <div id="collapseFive" class="collapse" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label for="ocupConf">Ocupação:</label>
+                                                    <input type="text" class="form-control" id="ocupConf" name="ocupConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="numbConf">Número de Pessoas:</label>
+                                                    <input type="text" class="form-control" id="numbConf" name="numbConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="sitConf">Situação:</label>
+                                                    <input type="text" class="form-control" id="sitConf" name="sitConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="pavConf">Número de Pavimentos:</label>
+                                                    <input type="text" class="form-control" id="pavConf" name="pavConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="stairsConf">Tipo de Escadas:</label>
+                                                    <input type="text" class="form-control" id="stairsConf" name="stairsConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="tipoEdifConf">Tipo:</label>
+                                                    <input type="text" class="form-control" id="tipoEdifConf" name="tipoEdifConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="blocksEdifConf">Número de Blocos:</label>
+                                                    <input type="text" class="form-control" id="blocksEdifConf" name="blocksEdifConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="blocksEdifConf">Número de Blocos:</label>
+                                                    <input type="text" class="form-control" id="blocksEdifConf" name="blocksEdifConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="glpConf">A Empresa fara uso de gás de petróleo liquefeito?</label>
+                                                    <input type="text" class="form-control" id="glpConf" name="glpConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="infConf">Comércio ou depósito de líquido inflamável/combustível?</label>
+                                                    <input type="text" class="form-control" id="infConf" name="infConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="depConf">Fabricação, o comércio ou depósito de: explosivos, fogos de artifício, artigos pirotécnicos, munições, detonantes ou materiais radioativos?</label>
+                                                    <input type="text" class="form-control" id="depConf" name="depConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="meiConf">Micro Empreendedor Individual (MEI)?</label>
+                                                    <input type="text" class="form-control" id="meiConf" name="meiConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="predConf">Seu Estabelecimento fica dentro de outro prédio? Exemplo: Dentro de Shopping, Centros Comerciais, Galerias ou dentro de um Apartamento / Hotel.</label>
+                                                    <input type="text" class="form-control" id="predConf" name="predConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="reunionConf">Sua empresa possui ocupação/atividade de Reunião de público? E a lotação máxima de público é superior a 100 pessoas?</label>
+                                                    <input type="text" class="form-control" id="reunionConf" name="reunionConf" disabled>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="areaConf">Qual é a área total construída/utilizada pela empresa:</label>
+                                                    <input type="text" class="form-control" id="areaConf" name="areaConf" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                              
+                                </div> 
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
