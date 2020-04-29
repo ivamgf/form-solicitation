@@ -52,25 +52,25 @@ function generateAlerts2() {
 
 function generateForm4() {
     var blockForm4 =   `<div class="card" id="form4">
-                            <div class="card-head style-card-head"><h4>Proprietário ou Responsável pela Empresa</h4></div>
+                            <div class="card-head style-card-head"><h4>*Proprietário ou Responsável pela Empresa</h4></div>
                             <div class="card-body">                                
                             
-                            <label class="style-alert-form"><i class="fas fa-exclamation-triangle"></i> Favor preencher todos os campos!</label><br>
+                            <label class="style-alert-form"><i class="fas fa-exclamation-triangle"></i> *Favor preencher todos os campos!</label><br>
 
                             <div class="form-group">
-                                <label for="name">Nome:</label>
+                                <label for="name">*Nome:</label>
                                 <input type="text" class="form-control" id="nome" placeholder="Digite o nome" name="nome" onblur="bindName()" required>
                             </div>
                             <div class="form-group">
-                                <label for="fone">Telefone:</label>
+                                <label for="fone">*Telefone:</label>
                                 <input type="tel" class="form-control" id="fone2" placeholder="Digite o telefone com DDD (Somente números)" name="fone" onblur="bindPhoneAdm()" required>
                             </div>
                             <div class="form-group">
-                                <label for="natId">CPF/CNPJ do Proprietário:</label>
+                                <label for="natId">*CPF/CNPJ do Proprietário:</label>
                                 <input type="text" class="form-control" id="natId" placeholder="Digite o cpf/cnpj (Somente números)" name="natId" onblur="bindNatId()" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">E-mail:</label>
+                                <label for="email">*E-mail:</label>
                                 <input type="text" class="form-control" id="emailAdm" placeholder="Digite o E-mail" name="email" onchange="bindEmailAdm()" required>
                             </div>                            
 
@@ -88,7 +88,9 @@ function generateForm4() {
                             </div>
                         </div>             
 
-                    </div>`;
+                    </div>
+                    <br>
+                    <p>*Campos Obrigatórios!</p>`;
 
     // Disable form submissions if there are invalid fields
     document.getElementById("blockForm4").innerHTML = blockForm4;

@@ -69,27 +69,27 @@ function generateForm3() {
                             <label class="style-alert-form"><i class="fas fa-exclamation-triangle"></i> Favor preencher todos os campos!</label><br>
 
                             <div class="form-group" id="natIdGroup">
-                                <label for="cpfcnpj">CPF/CNPJ da Empresa:</label>
+                                <label for="cpfcnpj">*CPF/CNPJ da Empresa:</label>
                                 <input type="text" class="form-control" id="cpfcnpj" placeholder="Digite o cpf/cnpj (Somente números)" name="cpfcnpj" onblur="bindCpfCnpj()" required>
                             </div>
                             <div class="form-group">
-                                <label for="fantasia">Nome Fantasia Empresa:</label>
+                                <label for="fantasia">*Nome Fantasia Empresa:</label>
                                 <input type="text" class="form-control" id="fant" placeholder="Digite o nome fantasia" name="fant" onblur="bindNameFant()" required>
                             </div>
                             <div class="form-group">
-                                <label for="fone">Telefone:</label>
+                                <label for="fone">*Telefone:</label>
                                 <input type="tel" class="form-control" id="fone" max="11" placeholder="Digite o telefone com DDD (Somente números)" name="fone" onblur="bindPhone()" required>
                             </div>
                             <div class="form-group">
-                                <label for="razao">Razão Social:</label>
+                                <label for="razao">*Razão Social:</label>
                                 <input type="text" class="form-control" id="razao" placeholder="Digite a razão social" name="razao" onblur="bindCorporate()" required>
                             </div>
                             <div class="form-group">
-                                <label for="contato">Nome Contato:</label>
+                                <label for="contato">*Nome Contato:</label>
                                 <input type="text" class="form-control" id="contato" placeholder="Digite o nome de contato" name="contato" onblur="bindNameCont()" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">E-mail:</label>
+                                <label for="email">*E-mail:</label>
                                 <input type="text" class="form-control" id="email" placeholder="Digite o E-mail" name="email" onchange="bindEmail()" required>
                             </div>                            
 
@@ -107,7 +107,9 @@ function generateForm3() {
                             </div>
                         </div>             
 
-                    </div>`;
+                    </div>
+                    <br>
+                    <p>*Campos Obrigatórios!</p>`;
 
     // Disable form submissions if there are innatIdGroupalid fields
 

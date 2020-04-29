@@ -29,7 +29,7 @@ function validnatId(natIdLenght) {
 
 function TestaCPF(cpfCnpj) {
   var Soma = 0;
-  var Resto;
+  var Resto = 0;
   if ((this.cpfCnpj === '00000000000') ||
       (this.cpfCnpj === '11111111111') ||
       (this.cpfCnpj === '22222222222') ||
@@ -143,7 +143,7 @@ function validnatId2(natIdLenght2) {
 
 function TestaCPF2(natId) {
   var Soma = 0;
-  var Resto;
+  var Resto = 0;
   if ((this.natId === '00000000000') ||
       (this.natId === '11111111111') ||
       (this.natId === '22222222222') ||
