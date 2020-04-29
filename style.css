@@ -246,6 +246,19 @@ ol.progtrckr li.progtrckr-todo:before {
 .style-btn {
     margin-left: 20%;
 }
+.style-body-modal {
+    margin-top: 5%;
+    text-align: justify;
+}
+.style-checkPrev {
+    display: none;
+}
+.style-checkPost {
+    display: block;
+}
+.style-questions {
+    text-align: justify;
+}
 @media only screen and (min-width: 992px) and (max-width: 1200px){
     
 }

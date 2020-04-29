@@ -34,10 +34,10 @@ function apiCep() {
         $.ajax(settings).done(function (response) {
             var address = response;
             log = address.logradouro;
-            cid = address.localidade;
+            // cid = address.localidade;
             block = address.bairro;        
             document.getElementById("log").value = log;
-            document.getElementById("cid").value = cid;
+            // document.getElementById("cid").value = cid;
             document.getElementById("bai").value = block;
         });
     } else {

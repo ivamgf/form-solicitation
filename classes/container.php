@@ -55,18 +55,23 @@ if ($conn->get_status()==false)
 		{	
 			email_erro('Servidor '.$host.' fora do ar');
 			die("Desculpe o transtorno. O servidor da cidade de sua solicitação está fora do ar, tente novamente mais tarde.");
-		}
+        } 
+        else {
+            echo 'Servidor conectado!';
+        }
 		
 	}
 
 // Function Conection
 
 // ==========================================================================================================
-
+/*
 // Function Solicitation
 
 	$sql="SELECT ".
-        TBL_SOL_FUNC.".ID_CIDADE, ".TBL_SOL_FUNC.".ID_SOLIC_FUNC, ".TBL_SOL_FUNC.".ID_TP_FUNC, ".
+        TBL_SOL_FUNC.".ID_CIDADE, ".
+        TBL_SOL_FUNC.".ID_SOLIC_FUNC, ".
+        TBL_SOL_FUNC.".ID_TP_FUNC, ".
         TBL_SOL_FUNC.".NM_EDIFICACOES, ".
         TBL_SOL_FUNC.".NM_LOGRADOURO, ".
         TBL_SOL_FUNC.".ID_CEP, ".
@@ -478,5 +483,5 @@ else {
 	}
 
 }
-
+*/
 ?>

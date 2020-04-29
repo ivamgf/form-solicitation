@@ -3,7 +3,7 @@
 // Functions
 
 // Function carrega_desc
-
+/*
 function carrega_desc(camp_desc) {
 var dfrm=document.frm_solic_funcionamento;
 if (camp_desc.value!="") {
@@ -259,9 +259,9 @@ function valida_desc_habitese() {
       insere_desc();
     }
 }
-  
+*/  
 // Function consultar_regin
-
+/*
 function consultar_regin(protocolo) {
     if (protocolo.length == 9) {
     window.open("consultar_regin.php?protocolo="+protocolo,"","toolbar=no, location=no, directories=no, scrollbars=no, status=yes, innerheight=yes, innerwidth=yes");
@@ -271,5 +271,5 @@ function consultar_regin(protocolo) {
     }
 
 }
-  
+*/  
   

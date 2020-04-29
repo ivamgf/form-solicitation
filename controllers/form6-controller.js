@@ -54,6 +54,9 @@ function generateForm6() {
                                         <a class="page-link" href="#" onclick="cancel()">Cancelar</a>
                                     </li>
                                     <li class="page-item">
+                                        <a class="page-link" href="#" onclick="previousFormc()">Voltar</a>
+                                    </li>
+                                    <li class="page-item">
                                         <a id="next" class="page-link" href="#">Avançar</a>
                                     </li>
                                     <li class="page-item">
@@ -93,7 +96,8 @@ function nextForm7() {
     document.getElementById("blockForm6").style.position = "relative";
     document.getElementById("blockForm7").style.display = "block";
     document.getElementById("blockProgress6").style.display = "none";
-    document.getElementById("blockProgress7").style.display = "block";    
+    document.getElementById("blockProgress7").style.display = "block";
+    ConfirmSolic();
 }
 
 function validaCaptcha() {

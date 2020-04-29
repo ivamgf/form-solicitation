@@ -1,8 +1,8 @@
 // floors
 
-var floorsList = ["<option>Selecione uma opção</option>"];
+var floorsList = ["<option>1</option>"];
 var options =  ``;
-for (i = 1; i < 101; i++) {
+for (i = 2; i < 101; i++) {
     floorsList.push(`<option value="` + i + `">`+ i +`</option>`);
     options = floorsList;
 };

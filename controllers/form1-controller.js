@@ -55,10 +55,10 @@ var checkRegin = false;
 
 function regin() {    
     if(checkRegin === false) {
-        checkRegin = "nao";
+        checkRegin = "Não";
     }
     if(checkRegin === true) {
-        checkRegin = "sim";
+        checkRegin = "Sim";
     }
 }
 

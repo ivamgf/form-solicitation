@@ -44,12 +44,12 @@ function generateForm1() {
 
                                 <div class="form-check">
                                 <label class="form-check-label">
-                                    <input id="meiYes" type="radio" class="form-check-input radioMei" value="sim" name="optMei" onclick="radioEnabYes()">Sim
+                                    <input id="meiYes" type="radio" class="form-check-input radioMei" value="Sim" name="optMei" onclick="radioEnabYes()">Sim
                                 </label>
                                 </div>
                                 <div class="form-check">
                                 <label class="form-check-label">
-                                    <input id="meiNo" type="radio" class="form-check-input radioMei" value="nao" name="optMei" onclick="radioEnabNo()">Não
+                                    <input id="meiNo" type="radio" class="form-check-input radioMei" value="Não" name="optMei" onclick="radioEnabNo()">Não
                                 </label>
                                 </div><br>
 
@@ -57,6 +57,56 @@ function generateForm1() {
                                     <label for="qtd">Quantos funcionários há na empresa incluindo o proprietário?</label>
                                     <input type="number" class="form-control col-6" id="qtd">
                                 </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label style-questions">
+                                        <input id="noEdif" type="checkbox" class="form-check-input" onclick="bindNoEdif()">
+                                        Sua atividade é exercida em área não edificada e transitória, como ambulantes,
+                                        carrinhos de lanches em geral, foodtrucks, barracas itinerantes, trios elétricos, carros alegóricos e
+                                        similares.
+                                    </label>
+                                </div><br>
+
+                                <div class="form-check">
+                                    <label class="form-check-label style-questions">
+                                        <input id="noEdif2" type="checkbox" class="form-check-input" onclick="bindNoEdif2()">
+                                        Sua atividade é exercida em área não edificada (ambulante), mas possua ponto
+                                        fixo durante determinado período do dia ou da noite e que faça uso de estruturas de tendas ou toldos
+                                        como área de apoio com até 50 metros quadrados.
+                                    </label>
+                                </div><br>
+
+                                <div class="form-check">
+                                    <label class="form-check-label style-questions">
+                                        <input id="tower" type="checkbox" class="form-check-input" onclick="bindtower()">
+                                        Trata-se de uma: torres de transmissão, estações de antena ou de serviço que não
+                                        sejam locais de trabalho fixo, que não possuam características de local habitável e que não estejam
+                                        posicionadas sobre edificações passíveis de fiscalização pelo CBMSC.
+                                    </label>
+                                </div><br>
+
+                                <div class="form-check">
+                                    <label class="form-check-label style-questions">
+                                        <input id="ativCom" type="checkbox" class="form-check-input" onclick="bindAtivCom()">
+                                        Trata-se de atividades comerciais ou industriais desenvolvidas em edificação
+                                        residencial privativa unifamiliar de até 200 m2 de área total construída e com no máximo 1 (um)
+                                        empregado, ressalvadas aquelas que se enquadrem em atividades de alto risco.
+                                    </label>
+                                </div><br>
+
+                                <div class="form-check">
+                                    <label class="form-check-label style-questions">
+                                        <input id="agrop" type="checkbox" class="form-check-input" onclick="bindAgrop()">
+                                        Trata-se de uma edificação: agropastoris, utilizadas na agricultura familiar, assim
+                                        classificados conforme diretrizes para a formulação da Política Nacional da Agricultura Familiar e
+                                        Empreendimentos Familiares Rurais, independente de sua área tais como aviários, silos, armazéns,
+                                        cocheiras, estábulos, chiqueiros, estrebarias, maternidades animais, garagens de máquinas, estufas,
+                                        depósitos, inclusive áreas de preparo e transformação de produtos ou embalagens.
+                                    </label>
+                                    <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal2b">
+                                        ?
+                                    </span>
+                                </div><br>                                
 
                                 <ul class="pagination justify-content-end" style="margin:20px 0">
                                     <li class="page-item">
@@ -113,6 +163,38 @@ function generateForm1() {
 
                             </div>
                         </div>
+                        </div>
+                        
+                        <!-- The Modal 2b -->
+                        <div class="modal" id="myModal2b">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header style-header-modal">
+                                <h4 class="modal-title style-title-model">Saiba Mais</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body style-body-model">
+                                <b>Edificações agropastoris:</b><br> 
+                                <p class="style-questions">
+                                    Edificações agropastoris, utilizadas na agricultura familiar, assim
+                                    classificados conforme diretrizes para a formulação da Política Nacional da Agricultura Familiar e
+                                    Empreendimentos Familiares Rurais, independente de sua área tais como aviários, silos, armazéns,
+                                    cocheiras, estábulos, chiqueiros, estrebarias, maternidades animais, garagens de máquinas, estufas,
+                                    depósitos, inclusive áreas de preparo e transformação de produtos ou embalagens.
+                                </p>                                
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer style-footer-model">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+
+                            </div>
+                        </div>
                         </div>`;
 
     // Handling variables
@@ -121,6 +203,16 @@ function generateForm1() {
 
 // Variables
 
+var noEdif = "Não";
+var checkedNoEdif = "";
+var noEdif2 = "Não";
+var checkedNoEdif2 = "";
+var tower = "Não";
+var checkedTower = "";
+var ativCom = "Não";
+var checkedAtivCom = "";
+var agrop = "Não";
+var checkedAgrop = "";
 var qtdFunc = null;
 var radioMei = "";
 
@@ -147,7 +239,57 @@ function check() {
     document.getElementById("meiNo").checked = true;
     radioMei = document.getElementById("meiNo").value;
     console.log("radioMei:", radioMei);
-  }
+}
+
+function bindNoEdif() {
+    checkedNoEdif = document.getElementById("noEdif").checked;
+    if(checkedNoEdif == true) {
+        noEdif = "Sim";
+    } else {
+        noEdif = "Não";
+    }
+    console.log("Atividade em área não edificada:", noEdif);
+}
+
+function bindNoEdif2() {
+    checkedNoEdif2 = document.getElementById("noEdif2").checked;
+    if(checkedNoEdif2 == true) {
+        noEdif2 = "Sim";
+    } else {
+        noEdif2 = "Não";
+    }
+    console.log("Atividade em área não edificada (ambulante):", noEdif2);
+}
+
+function bindtower() {
+    checkedTower = document.getElementById("tower").checked;
+    if(checkedTower == true) {
+        tower = "Sim";
+    } else {
+        tower = "Não";
+    }
+    console.log("Torres de transmissão:", tower);
+}
+
+function bindAtivCom() {
+    checkedAtivCom = document.getElementById("ativCom").checked;
+    if(checkedAtivCom == true) {
+        ativCom = "Sim";
+    } else {
+        ativCom = "Não"; 
+    }
+    console.log("Atividades comerciais:", ativCom);
+}
+
+function bindAgrop() {
+    checkedAgrop = document.getElementById("agrop").checked;
+    if(checkedAgrop == true) {
+        agrop = "Sim"; 
+    } else {
+        agrop = "Não";
+    }
+    console.log("Edificação: agropastoris:", agrop);
+}
 
 function bindBack2() {
     qtdFunc = document.getElementById("qtd").value;
@@ -170,6 +312,11 @@ function clearForm4() {
 function transferVar2() {
     response.push(radioMei);
     response.push(qtdFunc);
+    response.push(noEdif);
+    response.push(noEdif2);
+    response.push(tower);
+    response.push(ativCom);
+    response.push(agrop);
     showresponse();
 }
 

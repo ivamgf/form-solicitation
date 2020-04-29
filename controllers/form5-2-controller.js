@@ -64,14 +64,58 @@ function generateForm5b() {
                         </div>`;
 
     // BlockQuest
-    var blockQuest = `<div class="form-group">
+    var blockQuest = `<div class="form-group">                
+    
                         <label for="ocup">*Ocupação:
                           <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal2">
                               ?
                           </span>
                         </label>
                         <select class="form-control" id="ocup" onclick="bindOccupation()">
-                          
+                          <option value="0">Selecione uma ocupação</option>
+                          <option value="1">RESIDENCIAL PRIVATIVA MULTIFAMILIAR</option>
+                          <option value="2">RESIDENCIAL PRIVATIVA UNIFAMILIAR</option>
+                          <option value="6">RESIDENCIAL COLETIVA</option>
+                          <option value="7">RESIDENCIAL TRANSITÓRIA</option>
+                          <option value="8">COMERCIAL</option>
+                          <option value="9">INDUSTRIAL</option>
+                          <option value="10">MISTA</option>
+                          <option value="11">PÚBLICA</option>
+                          <option value="12">ESCOLAR GERAL</option>
+                          <option value="13">HOSPITALAR COM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE</option>
+                          <option value="14">GARAGENS</option>
+                          <option value="15">REUNIÄO DE PÚBLICO</option>
+                          <option value="16">EDIFICAÇÖES ESPECIAIS</option>
+                          <option value="17">EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE COMBUSTIVEIS E/OU INFLAMÁVEIS</option>
+                          <option value="18">EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE EXPLOSIVOS E MUNIÇÕES</option>
+                          <option value="19">POSTOS PARA REABASTECIMENTOS DE COMBUSTÍVEIS</option>
+                          <option value="20">POSTOS DE REVENDA DE GLP</option>
+                          <option value="21">DEPÓSITOS</option>
+                          <option value="22">LOCAIS COM RESTRIÇÃO DE LIBERDADE</option>
+                          <option value="23">MATAS NATIVAS E REFLORESTAMENTOS</option>
+                          <option value="24">PARQUES AQUÁTICOS</option>
+                          <option value="25">ATIVIDADES AGROPASTORIS E SILOS</option>
+                          <option value="26">TÚNEIS, GALERIAS E MINAS</option>
+                          <option value="27">RISCOS DIFERENCIADOS - ESTAÇÃO DE RÁDIO E TV</option>
+                          <option value="28">RISCOS DIFERENCIADOS - CENTRO DE COMPUTAÇÃO</option>
+                          <option value="29">RISCOS DIFERENCIADOS - SUBESTAÇÃO ELÉTRICA</option>
+                          <option value="30">RISCOS DIFERENCIADOS - HIDROELÉTRICA, TERMOELÉTRICA OU USINA EÓLICA</option>
+                          <option value="31">RISCOS DIFERENCIADOS - CENTRAIS TELEFÔNICAS OU DE TELECOMUNICAÇÕES</option>
+                          <option value="32">RISCOS DIFERENCIADOS - TORRE DE TRANSMISSÃO DE RÁDIO, TV OU TELEFONIA</option>
+                          <option value="33">RISCOS DIFERENCIADOS - PORTOS</option>
+                          <option value="34">EDIFICAÇÖES ESPECIAIS - OFICINAS DE CONSERTOS DE VEICULOS AUTOMOTORES</option>
+                          <option value="35">EDIFICAÇÖES ESPECIAIS - CALDEIRAS E VASOS DE PRESSÃO</option>
+                          <option value="36">SHOPPING CENTER</option>
+                          <option value="37">ESCOLAR DIFERENCIADA</option>
+                          <option value="38">HOSPITALAR SEM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group" id="descr">
+                        <label for="desc">Descrição:</label>
+                        <select class="form-control" id="desc" onclick="bindDesc()">
+                          <option value="0"> --- </option>
+                          <option value="`+ id_description +`">`+ sub_occupation +`</option>
                         </select>
                       </div>
 
@@ -83,10 +127,10 @@ function generateForm5b() {
                           </span>
                         </label>
                         <select class="form-control" id="sit" onclick="bindSituation()">
-                          <option> Selecione uma opção </option>
-                          <option> Existente </option>
-                          <option> Nova </option>
-                          <option> Recente </option>
+                          <option value="0"> Selecione uma opção </option>
+                          <option value="1"> Existente </option>
+                          <option value="2"> Nova </option>
+                          <option value="3"> Recente </option>
                         </select>
                       </div>
                       
@@ -106,14 +150,14 @@ function generateForm5b() {
                             </span>
                             </label>
                             <select class="form-control" id="tipo" onclick="bindStairs()">
-                            <option> Selecione uma opção </option>
-                            <option> Sem escada </option>
-                            <option> Comum </option>
-                            <option> Protegida </option>
-                            <option> Enclausurada </option>
-                            <option> Enclausurada a prova de fumaça </option>
-                            <option> Pressurizada </option>
-                            <option> Acesso restrito </option>
+                            <option value="0"> Selecione uma opção </option>
+                            <option value="1"> Sem escada </option>
+                            <option value="2"> Comum </option>
+                            <option value="3"> Protegida </option>
+                            <option value="4"> Enclausurada </option>
+                            <option value="5"> Enclausurada a prova de fumaça </option>
+                            <option value="6"> Pressurizada </option>
+                            <option value="7"> Acesso restrito </option>
                             </select>
                         </div>
 
@@ -148,6 +192,16 @@ function generateForm5b() {
                             
                             </select>
                         </div>
+                    </div><br>
+
+                    <div class="form-check">
+                        <label class="form-check-label style-questions">
+                            <input id="mist" type="checkbox" class="form-check-input" onclick="bindMist()">
+                            trata-se de uma edificação mista?
+                        </label>
+                        <span class="badge badge-pill badge-danger style-bagde" data-toggle="modal" data-target="#myModal7">
+                            ?
+                        </span>
                     </div><br>
 
                     <div>
@@ -201,14 +255,30 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="expYes" type="radio" class="form-check-input" value="sim" name="optCom" onblur="bindExp()">Sim
+                            <input id="expYes" type="radio" class="form-check-input" value="sim" name="optCom" onclick="bindExp()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="expNo" type="radio" class="form-check-input" value="nao" name="optCom" onblur="bindExp()">Não
+                            <input id="expNo" type="radio" class="form-check-input" value="nao" name="optCom" onclick="bindExp()">Não
                             </label>
                         </div> 
+                    </div><br>            
+                    
+                    <div>
+                      <label class="form-check-label">
+                        A empresa irá armazenar em área externa (ao ar livre) em tanques aéreos ou em recipientes fracionados, até 20 m3 de líquidos inflamáveis e combustíveis?
+                      </label>
+                      <div class="form-check">
+                          <label class="form-check-label">
+                            <input id="StoreYes" type="radio" class="form-check-input" value="sim" name="optStore" onclick="bindStore()">Sim
+                          </label>
+                      </div>
+                      <div class="form-check">
+                          <label class="form-check-label">
+                            <input id="StoreNo" type="radio" class="form-check-input" value="nao" name="optStore" onclick="bindStore()">Não
+                          </label>
+                      </div> 
                     </div><br>
 
                     <div>
@@ -223,12 +293,12 @@ function generateForm5b() {
                         </label>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="atiYes" type="radio" class="form-check-input" value="sim" name="optAti" onblur="bindReunion()">Sim
+                            <input id="atiYes" type="radio" class="form-check-input" value="sim" name="optAti" onclick="bindReunion()">Sim
                             </label>
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">
-                            <input id="atiNo" type="radio" class="form-check-input" value="nao" name="optAti" onblur="bindReunion()">Não
+                            <input id="atiNo" type="radio" class="form-check-input" value="nao" name="optAti" onclick="bindReunion()">Não
                             </label>
                         </div> 
                     </div><br>
@@ -447,7 +517,7 @@ function generateForm5b() {
                                 (Para acessar a norma clique aqui)
                               </a><br>
                               <div id="modal5Text2" class="style-text-modal"></div><br>
-                              <img src="../assets//images/glp.png" class="rounded mx-auto d-block" alt="Gás GLP">                        
+                              <img src="../assets/images/glp.png" class="rounded mx-auto d-block" alt="Gás GLP">                        
                             </div>
 
                             <!-- Modal footer -->
@@ -487,7 +557,35 @@ function generateForm5b() {
 
                           </div>
                         </div>
-                      </div>                      
+                      </div>
+                      
+                      <!-- The Modal 7 -->
+                      <div class="modal" id="myModal7">
+                        <div class="modal-dialog modal-lg">
+                          <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header style-header-modal">
+                              <h4 class="modal-title style-title-model">Saiba Mais</h4>
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body style-body-model">
+                              Edificações mista são aquelas que se destinam a mais de um
+                              tipo de ocupação. Selecione a ocupação com maior risco da edificação, a metragem da edificação deve
+                              ser a de toda edificação.                        
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer style-footer-model">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+
                       <br>
                       <p>*Campos Obrigatórios!</p>
                       `;
@@ -495,17 +593,18 @@ function generateForm5b() {
     // Handling variables
     document.getElementById("blockForm5b").innerHTML = blockForm5b;
     document.getElementById("quest").innerHTML = blockQuest;
+    document.getElementById("descr").style.display = "none";
 }
 
 // Variables
 
 var occupation = "";
 var situation = "";
-var floors = "";
+var floors = 1;
 var stairs = "";
 var capacity = "";
 var type = "";
-var comboBlock = "";
+var comboBlock = 1;
 var optionGlpYes = "";
 var optionGlpNo = "";
 var quantGlp = "";
@@ -525,6 +624,32 @@ var optionEdiNo = "";
 var edification = "";
 var edifArea = "";
 var area = "";
+var store = "";
+var description = "";
+var OptionStoreYes = "";
+var OptionStoreNo = "";
+var mist = "Não";
+var checkedMist = "";
+var transfer = "false";
+var sub_occupation;
+var id_description;
+
+function ocup() {
+  // Request JQuery + Ajax
+  $.ajax({
+    type: "POST",
+    url: "../classes/form-model.php",
+    data:{
+        sl_occupation: occupation
+        },
+        success: function (result) {
+            $('#result1').html(result);
+        },
+        error: function (result) {
+            $('#result1').html(result);
+        }
+  })
+}
 
 function previousFormb() {
     document.getElementById("blockForm5").style.display = "block";
@@ -542,7 +667,11 @@ function nextForm6() {
     document.getElementById("blockProgress5b").style.display = "none";
     document.getElementById("blockProgress6").style.display = "block";
     bindArea();
-    transferVar5b();
+    if(transfer == "false") {
+      transferVar5b();
+      transfer = "true";
+      console.log("transferência realizada:", transfer);
+    }   
 }
 
 function buscaCep() {
@@ -555,16 +684,48 @@ function check() {
   document.getElementById("expNo").checked = true;
   document.getElementById("atiNo").checked = true;
   document.getElementById("locNo").checked = true;
+  document.getElementById("StoreNo").checked = true;
 }
 function decimalMask() {
     $(document).ready(function(){
         $("#qtdLoc2").mask("9.999.999,99", { reverse : true});
     });
 }
+
+function bindMist() {
+  checkedMist = document.getElementById("mist").checked;
+  if(checkedMist == true) {
+    mist = "Sim";
+  } else {
+    mist = "Não";
+  }
+  console.log("Residencia do solicitante:", mist);
+}
+
+function bindDesc() {
+  // ocup();
+  description = document.getElementById("desc").value;
+  console.log("Descrição:", description);
+  document.getElementById("blockAlertQuestions").style.display = "none";  
+}
+function bindStore() {  
+  OptionStoreYes = document.getElementById("StoreYes").checked;
+  OptionStoreNo = document.getElementById("StoreNo").checked;
+  if(OptionStoreYes == true) {
+    store = "Sim";
+    console.log("Armazena tanques aéreos?", store);      
+  }
+  if(OptionStoreNo == true) {
+    store = "Não";
+    console.log("Armazena tanques aéreos?", store);
+  }
+  document.getElementById("blockAlertQuestions").style.display = "none";
+}
 function bindOccupation() {
   occupation = document.getElementById("ocup").value;
   console.log("Ocupação:", occupation);
   document.getElementById("blockAlertQuestions").style.display = "none";
+  document.getElementById("descr").style.display = "block";  
 }
 function bindSituation() {
   situation = document.getElementById("sit").value;
@@ -661,6 +822,7 @@ function bindReunion() {
   document.getElementById("blockAlertQuestions").style.display = "none";  
 }
 function bindEdif() {
+  edification = "Não";
   optionEdiYes = document.getElementById("locYes").checked;
   optionEdiNo = document.getElementById("locNo").checked;
   if(optionEdiYes == true) {
@@ -746,23 +908,30 @@ function clearForm6() {
   document.getElementById("qtdLoc").disabled = true;
   check();
 }
-function transferVar5b() {  
+function transferVar5b() {
+  if(edification !== "Sim") {
+    edification = "Não";    
+  }  
   response.push(occupation);
+  response.push(description);
   response.push(situation);
   response.push(floors); 
   response.push(stairs);
   response.push(capacity); 
   response.push(type);
-  response.push(comboBlock); 
+  response.push(comboBlock);
+  response.push(mist); 
   response.push(glp);
   response.push(quantGlp); 
   response.push(dep);
   response.push(depLiq);
   response.push(exp);
+  response.push(store);
   response.push(comboReunion);
   response.push(edification);
   response.push(edifArea);
-  response.push(area);
+  response.push(area);    
+  response.push(sl_checkRead);  
   showresponse();
 }
 
@@ -926,56 +1095,56 @@ function textOccupation() {
           }
       }
   };
-
+/*
   function ocupCombo() {
       ocup = {
-          1: "RESIDENCIAL PRIVATIVA MULTIFAMILIAR",
-          2: "RESIDENCIAL PRIVATIVA UNIFAMILIAR",
-          3: "RESIDENCIAL COLETIVA",
-          4: "RESIDENCIAL TRANSITÓRIA",
-          5: "COMERCIAL",
-          6: "INDUSTRIAL",
-          7: "MISTA",
-          8: "PÚBLICA",
-          9: "ESCOLAR GERAL",
-          10: "HOSPITALAR COM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE",
-          11: "GARAGENS",
-          12: "REUNIÄO DE PÚBLICO",
-          13: "EDIFICAÇÖES ESPECIAIS",
-          14: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE COMBUSTIVEIS E/OU INFLAMÁVEIS",
-          15: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE EXPLOSIVOS E MUNIÇÕES",
-          16: "POSTOS PARA REABASTECIMENTOS DE COMBUSTÍVEIS",
-          17: "POSTOS DE REVENDA DE GLP",
-          18: "DEPÓSITOS",
-          19: "LOCAIS COM RESTRIÇÃO DE LIBERDADE",
-          20: "MATAS NATIVAS E REFLORESTAMENTOS",
-          21: "PARQUES AQUÁTICOS",
-          22: "ATIVIDADES AGROPASTORIS E SILOS",
-          23: "TÚNEIS, GALERIAS E MINAS",
-          24: "RISCOS DIFERENCIADOS - ESTAÇÃO DE RÁDIO E TV",
-          25: "RISCOS DIFERENCIADOS - CENTRO DE COMPUTAÇÃO",
-          26: "RISCOS DIFERENCIADOS - SUBESTAÇÃO ELÉTRICA",
-          27: "RISCOS DIFERENCIADOS - HIDROELÉTRICA, TERMOELÉTRICA OU USINA EÓLICA",
-          28: "RISCOS DIFERENCIADOS - CENTRAIS TELEFÔNICAS OU DE TELECOMUNICAÇÕES",
-          29: "RISCOS DIFERENCIADOS - TORRE DE TRANSMISSÃO DE RÁDIO, TV OU TELEFONIA",
-          30: "RISCOS DIFERENCIADOS - PORTOS",
-          31: "EDIFICAÇÖES ESPECIAIS - OFICINAS DE CONSERTOS DE VEICULOS AUTOMOTORES",
-          32: "EDIFICAÇÖES ESPECIAIS - CALDEIRAS E VASOS DE PRESSÃO",
-          33: "SHOPPING CENTER",
-          34: "ESCOLAR DIFERENCIADA",
-          35: "HOSPITALAR SEM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE"
+        1: "RESIDENCIAL PRIVATIVA MULTIFAMILIAR",
+        2: "RESIDENCIAL PRIVATIVA UNIFAMILIAR",
+        6: "RESIDENCIAL COLETIVA",
+        7: "RESIDENCIAL TRANSITÓRIA",
+        8: "COMERCIAL",
+        9: "INDUSTRIAL",
+        10: "MISTA",
+        11: "PÚBLICA",
+        12: "ESCOLAR GERAL",
+        13: "HOSPITALAR COM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE",
+        14: "GARAGENS",
+        15: "REUNIÄO DE PÚBLICO",
+        16: "EDIFICAÇÖES ESPECIAIS",
+        17: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE COMBUSTIVEIS E/OU INFLAMÁVEIS",
+        18: "EDIFICAÇÖES ESPECIAIS - DEPÓSITO DE EXPLOSIVOS E MUNIÇÕES",
+        19: "POSTOS PARA REABASTECIMENTOS DE COMBUSTÍVEIS",
+        20: "POSTOS DE REVENDA DE GLP",
+        21: "DEPÓSITOS",
+        22: "LOCAIS COM RESTRIÇÃO DE LIBERDADE",
+        23: "MATAS NATIVAS E REFLORESTAMENTOS",
+        24: "PARQUES AQUÁTICOS",
+        25: "ATIVIDADES AGROPASTORIS E SILOS",
+        26: "TÚNEIS, GALERIAS E MINAS",
+        27: "RISCOS DIFERENCIADOS - ESTAÇÃO DE RÁDIO E TV",
+        28: "RISCOS DIFERENCIADOS - CENTRO DE COMPUTAÇÃO",
+        29: "RISCOS DIFERENCIADOS - SUBESTAÇÃO ELÉTRICA",
+        30: "RISCOS DIFERENCIADOS - HIDROELÉTRICA, TERMOELÉTRICA OU USINA EÓLICA",
+        31: "RISCOS DIFERENCIADOS - CENTRAIS TELEFÔNICAS OU DE TELECOMUNICAÇÕES",
+        32: "RISCOS DIFERENCIADOS - TORRE DE TRANSMISSÃO DE RÁDIO, TV OU TELEFONIA",
+        33: "RISCOS DIFERENCIADOS - PORTOS",
+        34: "EDIFICAÇÖES ESPECIAIS - OFICINAS DE CONSERTOS DE VEICULOS AUTOMOTORES",
+        35: "EDIFICAÇÖES ESPECIAIS - CALDEIRAS E VASOS DE PRESSÃO",
+        36: "SHOPPING CENTER",
+        37: "ESCOLAR DIFERENCIADA",
+        38: "HOSPITALAR SEM INTERNAÇÃO OU RESTRIÇÃO DE MOBILIDADE"
       }
 
-      cmbInit = `<option value="">Selecione uma ocupação</option>`;
+      cmbInit = `<option value=0>Selecione uma ocupação</option>`;
       cmbOcupation.push(cmbInit);
       for(i = 1; i < 37; i++) {
           ocupArray = ocup;        
-          itemCombo = `<option value="`+ocupArray[i]+`">`+ocupArray[i]+`</option>`;
+          itemCombo = `<option value="`+ocupArray[i].substring(1, 2)+`">`+ocupArray[i]+`</option>`;
           cmbOcupation.push(itemCombo);
           document.getElementById("ocup").innerHTML = cmbOcupation;
       }
   }
-
+*/
   document.getElementById("title1").innerHTML = occupation.title1;
   document.getElementById("text1").innerHTML = occupation.text1;
   document.getElementById("textLink1").innerHTML = occupation.textLink1;
@@ -1041,7 +1210,7 @@ function textOccupation() {
 
   // Execute functions
 
-  ocupCombo();
+  // ocupCombo();
 }
 
 function textSituation() {
@@ -1121,6 +1290,7 @@ generateProgress5b();
 generateForm5b();
 check();
 decimalMask();
+bindStore();
 bindGlp();
 bindDep();
 bindExp();

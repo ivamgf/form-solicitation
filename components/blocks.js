@@ -1,8 +1,8 @@
 // Text Block
 
-var blockList = ["<option>Selecione uma opção</option>"];
+var blockList = ["<option>1</option>"];
 var optionsBlock =  ``;
-for (i = 1; i < 21; i++) {
+for (i = 2; i < 21; i++) {
     blockList.push(`<option value="` + i + `">`+ i +`</option>`);
     optionsBlock =  blockList;
 };
